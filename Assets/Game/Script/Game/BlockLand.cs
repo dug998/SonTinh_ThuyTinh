@@ -8,8 +8,11 @@ public class BlockLand : MonoBehaviour
     public SpriteRenderer _spriteIcon;
     public GameObject _children;
     public bool _isFull;
-    public void Init(Sprite sprite)
+    public int row, col;
+    public void Init(int row, int col, Sprite sprite)
     {
+        this.row = row;
+        this.col = col;
         _spriteIcon.sprite = sprite;
     }
     private void OnMouseDown()

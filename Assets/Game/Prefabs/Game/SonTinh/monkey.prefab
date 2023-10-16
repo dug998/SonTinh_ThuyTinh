@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1459768524062086565}
   m_Layer: 0
   m_Name: monkey
-  m_TagString: Player
+  m_TagString: sonTinh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,8 +180,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.038613796, y: -0.059465554}
-  m_Size: {x: 0.29695758, y: 0.39674425}
+  m_Offset: {x: 0.038613796, y: -0.03097024}
+  m_Size: {x: 0.29695758, y: 0.45373487}
   m_Direction: 0
 --- !u!114 &5237085631285248001
 MonoBehaviour:
@@ -195,6 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b2aa41eb4c3834d8f5d320a06c8fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objectBase: {fileID: 1459768524062086565}
+  _maxHealth: 100
+  _currentHealth: 0
 --- !u!114 &1459768524062086565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,8 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f375aae7e7da1d42abf1a98232f8b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: {fileID: 5237085631285248001}
   speed: 0
   move: 0
   _bulletPref: {fileID: 1074870381605142, guid: 694bc24796303794897dc5e4e83cada2, type: 3}
   _locationAppears: {fileID: 4620668594812566}
+  _isHitting: 0
   _nextHitting: 2

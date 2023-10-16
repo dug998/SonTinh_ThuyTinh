@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     public Grounds _grounds;
     public FactoryCoin _factoryCoin;
+    [SerializeField] SpawnThuyTinh _pawnThuyTinh;
     public void Awake()
     {
         Instance = this;
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
         _gameState = GameState.PLAYING;
         _grounds.SpawnBlocks();
         _factoryCoin.SpawnCoins();
+        StartCoroutine(_pawnThuyTinh.CreateArmyList());
+
     }
     public void UpdateCoin(int values)
     {

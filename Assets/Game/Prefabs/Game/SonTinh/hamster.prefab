@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5960005822627243466}
   m_Layer: 0
   m_Name: hamster
-  m_TagString: Player
+  m_TagString: sonTinh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,8 +122,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08, y: -0.059465554}
-  m_Size: {x: 0.29695758, y: 0.39674425}
+  m_Offset: {x: -0.066671744, y: -0.028810525}
+  m_Size: {x: 0.32361415, y: 0.4580543}
   m_Direction: 0
 --- !u!114 &1169558089335066662
 MonoBehaviour:
@@ -137,6 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b2aa41eb4c3834d8f5d320a06c8fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objectBase: {fileID: 5960005822627243466}
+  _maxHealth: 100
+  _currentHealth: 0
 --- !u!114 &5960005822627243466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 842014868c99f354b81a58ecacf8fe61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: {fileID: 1169558089335066662}
   speed: 0
   move: 0
   _resourcesPref: {fileID: 1985855474967314, guid: 96cabfe1124903c4fa14ea72eb759396, type: 3}

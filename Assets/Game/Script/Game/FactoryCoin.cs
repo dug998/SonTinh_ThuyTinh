@@ -18,7 +18,7 @@ public class FactoryCoin : MonoBehaviour
         StartCoroutine(FastAction(_nextSpawn));
 
     }
-    IEnumerator FastAction(float _nextSpawn = 2)
+    IEnumerator FastAction(float _nextSpawn = 6)
     {
         while (true)
         {

@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     Rigidbody2D myBody;
-
+    [SerializeField] int dame;
     public GameObject ballHit;
 
     // Use this for initialization
@@ -26,8 +26,8 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(ObjTag.thuyTinh))
         {
-            //MonsterHealth monsterHealth = collision.gameObject.GetComponent<MonsterHealth>();
-           // monsterHealth.health--;
+            Monster monsterHealth = collision.gameObject.GetComponent<Monster>();
+            monsterHealth.UpdateHealth(-dame);
             Instantiate(ballHit, collision.gameObject.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
             Destroy(gameObject);
         }

@@ -21,7 +21,7 @@ public class Monster : ObjectAttackTT
 
     public override void Die()
     {
-
+        Destroy(gameObject);
     }
 
     public override void Move()
@@ -46,6 +46,4 @@ public class Monster : ObjectAttackTT
     {
         Move();
     }
-
-
 }

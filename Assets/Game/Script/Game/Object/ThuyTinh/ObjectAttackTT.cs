@@ -12,13 +12,14 @@ public abstract class ObjectAttackTT : ObjectBase
 
     public override void Born()
     {
-        Attack();
+        base.Born();
+        StartCoroutine(Attack());
     }
     public abstract IEnumerator Attack();
     public abstract void SpawnButtlet();
     protected virtual void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(ObjTag.sonTinh) && collision.enabled == true)
+        if (collision.gameObject.CompareTag(ObjTag.sonTinh) && collision.isTrigger == true)
         {
             _isHitting = true;
             _stand = true;
@@ -26,7 +27,7 @@ public abstract class ObjectAttackTT : ObjectBase
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(ObjTag.sonTinh) && collision.enabled == true)
+        if (collision.gameObject.CompareTag(ObjTag.sonTinh) && collision.isTrigger == true)
         {
             _isHitting = true;
             _stand = true;
