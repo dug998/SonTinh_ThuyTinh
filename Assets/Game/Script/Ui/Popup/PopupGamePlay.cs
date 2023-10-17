@@ -15,6 +15,7 @@ public class PopupGamePlay : PopupBase
     {
         _posCoin = _parentCoin.transform.position;
         base.Show(data);
+        UpdateTextCoin(GameManager.curCoin);
         GameManager._targetCoin = _parentCoin.transform;
         LoadBattleCard();
     }

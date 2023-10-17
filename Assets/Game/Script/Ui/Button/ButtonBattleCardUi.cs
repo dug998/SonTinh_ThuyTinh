@@ -1,3 +1,4 @@
+﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,17 @@ using UnityEngine.UI;
 
 public class ButtonBattleCardUi : ButtonBase
 {
-    public Image _iconCard;
+    [Header("___ Data ___"), Space(20)]
+    public DataCard _data;
+    public bool _canUse;
+    public bool _canActive = false;
     public int _price;
-    bool _active = false;
-    [Header("__")]
-    public Image _activeImgFill;
-    public Image _ImgOff;
-    DataCard _data;
+    public float _duration;
+    [Header("____ Ui ___"), Space(20)]
+    [SerializeField] Image _iconCard;
+    [SerializeField] Image _activeImgFill;
+    [SerializeField] Image _ImgOff;
+    [SerializeField] Text _txtPrice;
     protected override void Awake()
     {
         AddEvent(OnClick);
@@ -21,25 +26,54 @@ public class ButtonBattleCardUi : ButtonBase
         _data = (DataCard)data;
         _iconCard.sprite = _data._spriteiIcon;
         _price = _data._price;
+        _canActive = true;
+        _txtPrice.text = _price.ToString();
+        _duration = _data._timeRecoveryCard;
 
+    }
+    private void OnEnable()
+    {
+        GameEvent.changeCoin += UpdateStatusCard;
+    }
+    private void OnDisable()
+    {
+        GameEvent.changeCoin -= UpdateStatusCard;
     }
     public void UpdateStatusCard(int CurCoin)
     {
 
-        if (CurCoin >= _price)
-        {
-            _btn.enabled = _active;
-            _ImgOff.gameObject.SetActive(false);
-        }
-        else
-        {
-            _btn.enabled = false;
-            _ImgOff.gameObject.SetActive(true);
-        }
+        // lấy ra sử dụng
+
+        _canUse = CurCoin >= _price;
+
+        _ImgOff.gameObject.SetActive(!_canUse);
+
     }
     public void OnClick()
     {
+        if (!_canUse)
+        {
+            Debug.Log(" no use ");
+         
+            return;
+        }
+        if (!_canActive)
+        {
+            Debug.Log("No  Active");
+            return;
+        }
         print(_data._id + " : " + _data._title);
-        GameManager._CardSelect = _data;
+        GameManager._curBattleCard = this;
+    }
+    public void UsingCard()
+    {
+        _canActive = false;
+        Debug.Log("  Active");
+        _activeImgFill.DOKill();
+        _activeImgFill.DOFillAmount(0, _duration).From(1).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            Debug.Log("  Active 2");
+            _canActive = true;
+        });
     }
 }

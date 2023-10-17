@@ -14,6 +14,7 @@ public class DataCard
     public string _title;
     public string _description;
     public int _price;
+    public float _timeRecoveryCard;
     public Sprite _spriteiIcon;
     public GameObject _ObjPref;
 }

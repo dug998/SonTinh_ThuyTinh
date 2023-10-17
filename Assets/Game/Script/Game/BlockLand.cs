@@ -24,19 +24,30 @@ public class BlockLand : MonoBehaviour
     }
     public void OnMouseUp()
     {
-        if (_curBlock != null && GameManager._CardSelect != null && GameManager._gameState == GameState.PLAYING && !_isFull)
+        if (_curBlock != null && GameManager._curBattleCard != null && GameManager._gameState == GameState.PLAYING && !_isFull)
         {
-            _isFull = true;
-            SpawnObj();
+            if (GameManager._curBattleCard._canActive)
+            {
+                SpawnObj();
+            }
         }
     }
     public void SpawnObj()
     {
-        DataCard card = GameManager._CardSelect;
-
-        _children = Instantiate(card._ObjPref, transform);
-        ObjectBase objectBase = _children.GetComponent<ObjectBase>();
-        objectBase.Born();
-        _children.transform.localPosition = new Vector3(0, .3f);
+        DataCard card = GameManager._curBattleCard._data;
+        if (GameManager.Instance.CheckEnoughCoin(card._price))
+        {
+            GameManager._curBattleCard.UsingCard();
+            _isFull = true;
+            _children = Instantiate(card._ObjPref, transform);
+            GameManager.Instance.UpdateCoin(-card._price);
+            ObjectBase objectBase = _children.GetComponent<ObjectBase>();
+            objectBase.Born();
+            _children.transform.localPosition = new Vector3(0, .3f);
+        }
+        else
+        {
+            Debug.Log("not enough coins");
+        }
     }
 }

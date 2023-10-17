@@ -9,27 +9,27 @@ public class Hamster : ObjectExploit
         yield return new WaitForSeconds(_timeExploit);
         while (true)
         {
-            yield return new WaitUntil(() => GameManager._gameState == GameState.PLAYING);
-            SpawnResource();
+            yield return new WaitUntil(() => (GameManager._gameState == GameState.PLAYING && !_canHarvert));
             yield return new WaitForSeconds(_timeExploit);
+            ManufactureResource();
         }
 
     }
-    public override void SpawnResource()
+    public override void ManufactureResource()
     {
-        GameObject obj = Instantiate(_resourcesPref);
+        base.ManufactureResource();
+        GameObject obj = Instantiate(_resourcesPref, transform);
         obj.transform.position = _locationAppears.position;
+        obj.GetComponent<Coin>()._parrent = gameObject;
+        obj.GetComponent<Coin>()._typeCoin = _typeCoin;
     }
     public override void Die()
     {
         StopCoroutine(Exploit());
 
     }
-
     public override void Move()
     {
 
     }
-
-   
 }

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public static Queue<DataCard> _CardChoiseBattle = new Queue<DataCard>();
-    public static DataCard _CardSelect;
+    public static ButtonBattleCardUi _curBattleCard;
     public static GameState _gameState;
     public static Transform _targetCoin;
     public int _maxNumberCardBattle = 3;
@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     {
         curCoin += values;
         GameEvent.changeCoin?.Invoke(curCoin);
+    }
+    public bool CheckEnoughCoin(int values)
+    {
+        return curCoin >= values;
     }
     public void AddCardBattle(DataCard card)
     {
@@ -60,7 +64,7 @@ public class GameManager : MonoBehaviour
 
                     if (hitCollider != null && hitCollider.gameObject.CompareTag("Gold"))
                     {
-                        hitCollider.GetComponent<Coin>().TakeCoin(PopupGamePlay._posCoin);
+                        hitCollider.GetComponent<Coin>()?.TakeCoin(PopupGamePlay._posCoin);
                     }
                 }
             }

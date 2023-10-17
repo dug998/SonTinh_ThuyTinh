@@ -168,7 +168,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 2457525813930440322}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -215,10 +215,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _btn: {fileID: 4018306787139760746}
-  _iconCard: {fileID: 4018306788279097106}
+  _data:
+    _id: 0
+    _title: 
+    _description: 
+    _price: 0
+    _spriteiIcon: {fileID: 0}
+    _ObjPref: {fileID: 0}
+  _canUse: 0
   _price: 0
-  _activeImgFill: {fileID: 0}
-  _ImgOff: {fileID: 0}
+  _duration: 0
+  _iconCard: {fileID: 4018306788279097106}
+  _activeImgFill: {fileID: 8161010661504377416}
+  _ImgOff: {fileID: 8361450057291406319}
+  _txtPrice: {fileID: 4018306788459916245}
 --- !u!1 &4018306788279097116
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +456,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
