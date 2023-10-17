@@ -28,7 +28,8 @@ public class Bullet : MonoBehaviour
         {
             Monster monsterHealth = collision.gameObject.GetComponent<Monster>();
             monsterHealth.UpdateHealth(-dame);
-            Instantiate(ballHit, collision.gameObject.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            Instantiate(ballHit, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            ballHit.transform.localScale = Vector2.one * 0.5f;
             Destroy(gameObject);
         }
 

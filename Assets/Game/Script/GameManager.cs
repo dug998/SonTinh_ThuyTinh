@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -44,17 +45,25 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
+        if (Input.touchCount > 0)
         {
-            Coin obj = hit.collider.GetComponent<Coin>();
-            if (obj != null)
+            for (int i = 0; i < Input.touchCount; i++)
             {
-                obj.TakeCoin(_targetCoin.position);
-            }
+                Touch touch = Input.GetTouch(i);
 
+                if (touch.phase == TouchPhase.Began)
+                {
+
+                    Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+
+                    Collider2D hitCollider = Physics2D.OverlapPoint(touchPosition);
+
+                    if (hitCollider != null && hitCollider.gameObject.CompareTag("Gold"))
+                    {
+                        hitCollider.GetComponent<Coin>().TakeCoin(PopupGamePlay._posCoin);
+                    }
+                }
+            }
         }
 
     }

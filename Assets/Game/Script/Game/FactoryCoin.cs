@@ -25,7 +25,7 @@ public class FactoryCoin : MonoBehaviour
             yield return new WaitUntil(() => GameManager._gameState == GameState.PLAYING);
 
             GameObject obj = Instantiate(_coinPref, transform);
-
+          //  obj.transform.
             yield return new WaitForSeconds(_nextSpawn);
 
         }

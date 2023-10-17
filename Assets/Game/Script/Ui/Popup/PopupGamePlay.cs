@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PopupGamePlay : PopupBase
 {
+    public static Vector2 _posCoin = Vector2.zero;
     [Header(" ____ Coin ____ ")]
     public Text _txtCoin;
     public GameObject _parentCoin;
@@ -12,9 +13,22 @@ public class PopupGamePlay : PopupBase
     public List<ButtonBattleCardUi> _listBattleCardUi;
     public override void Show(object data = null)
     {
+        _posCoin = _parentCoin.transform.position;
         base.Show(data);
         GameManager._targetCoin = _parentCoin.transform;
         LoadBattleCard();
+    }
+    private void OnEnable()
+    {
+        GameEvent.changeCoin += UpdateTextCoin;
+    }
+    private void OnDisable()
+    {
+        GameEvent.changeCoin -= UpdateTextCoin;
+    }
+    public void UpdateTextCoin(int values)
+    {
+        _txtCoin.text = values.ToString();
     }
     public void LoadBattleCard()
     {

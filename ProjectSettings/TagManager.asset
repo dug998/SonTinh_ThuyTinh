@@ -6,6 +6,12 @@ TagManager:
   tags:
   - sonTinh
   - thuyTinh
+  - Destructible
+  - Ball
+  - Gold
+  - Tile
+  - Undefined
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -46,8 +52,14 @@ TagManager:
   - name: BackGround
     uniqueID: 3355193115
     locked: 0
-  - name: GamePlay
+  - name: ObjAfter
+    uniqueID: 207181651
+    locked: 0
+  - name: Character
     uniqueID: 773842377
+    locked: 0
+  - name: ObjBefore
+    uniqueID: 3228615491
     locked: 0
   - name: Canvas
     uniqueID: 374081655
