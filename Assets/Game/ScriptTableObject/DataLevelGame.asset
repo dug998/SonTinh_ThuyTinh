@@ -17,95 +17,156 @@ MonoBehaviour:
     _title: Level 1
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 98ceeb477f116cb45bb363fbed8d67b8, type: 3}
+    _numberLevelAttack: 3
+    _dataLevelAttacks:
+    - {fileID: 11400000, guid: 3f6a69917c7dea24baff7b48a02f1ecf, type: 2}
+    - {fileID: 11400000, guid: 3f6a69917c7dea24baff7b48a02f1ecf, type: 2}
   - _id: 2
     _title: Level 1
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: ae79c928708081547aefe66c5b41b1cf, type: 3}
+    _numberLevelAttack: 5
+    _dataLevelAttacks:
+    - {fileID: 11400000, guid: 3f6a69917c7dea24baff7b48a02f1ecf, type: 2}
+    - {fileID: 11400000, guid: 3f6a69917c7dea24baff7b48a02f1ecf, type: 2}
+    - {fileID: 11400000, guid: 2cd38ee6956b35b47b0c554944ec90b6, type: 2}
   - _id: 3
     _title: Level 3
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 5a5ad190f20e2924685ac087918f778e, type: 3}
+    _numberLevelAttack: 7
+    _dataLevelAttacks:
+    - {fileID: 11400000, guid: 3f6a69917c7dea24baff7b48a02f1ecf, type: 2}
+    - {fileID: 11400000, guid: 3f6a69917c7dea24baff7b48a02f1ecf, type: 2}
+    - {fileID: 11400000, guid: 2cd38ee6956b35b47b0c554944ec90b6, type: 2}
+    - {fileID: 11400000, guid: 2cd38ee6956b35b47b0c554944ec90b6, type: 2}
   - _id: 4
     _title: Level 4
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: fd6cc10d5051f9a4bae2217a801f7a31, type: 3}
+    _numberLevelAttack: 8
+    _dataLevelAttacks:
+    - {fileID: 11400000, guid: 3f6a69917c7dea24baff7b48a02f1ecf, type: 2}
+    - {fileID: 11400000, guid: 3f6a69917c7dea24baff7b48a02f1ecf, type: 2}
+    - {fileID: 11400000, guid: 2cd38ee6956b35b47b0c554944ec90b6, type: 2}
+    - {fileID: 11400000, guid: a2a5bc024ed58ec4ba228d8ef6fa0b5e, type: 2}
   - _id: 5
     _title: Level 5
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 22da54feb11a76f4b9ede7d1e5f45807, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 6
     _title: Level 6
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 0001fd4e23c95bd4081fd4a8d40a6ff3, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 7
     _title: Level 7
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: e87082c4cd9ba97418f6c02bd9b2e98e, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 8
     _title: Level 8
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: c8edd0199feeca84bbf62adfbe42a4ba, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 9
     _title: Level 9
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 370eb86786ad9874a86428f383a07efa, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 10
     _title: Level 10
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 5d4f74ebca53abc4b852a2fcfbefaca4, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 11
     _title: Level 11
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 490431ff92fec4541a148f0d6a3eda1c, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 12
     _title: Level 12
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 1a1617b5a5d944145a4d825ac58450c3, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 13
     _title: Level 13
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 1464443b800070d46836b771b3d8b2c6, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 14
     _title: Level 14
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 8c1af926c9709e343a074ef0e8eabd22, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 15
     _title: Level 15
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 78131d9273260e044afa848a83bbdf10, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 16
     _title: Level 16
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 21be905d86695e343bff7c3603a01ce2, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 17
     _title: Level 17
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: f3a1a5065f44a674e85f1cb8d034f0be, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 18
     _title: Level 18
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: dac3ed099b770764e93db812be1321f8, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 19
     _title: Level 19
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 1e74838394a27ac4fae6306afea52af8, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 20
     _title: Level 20
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 9538b8cea94ce8d4bb10e6c8f5b2fca9, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 21
     _title: Level 21
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 17b6c4cb8b8769542bc691c87080b4a8, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 22
     _title: Level 22
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 8a540559d112dd84fb08d09469878021, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 23
     _title: Level 23
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: fced4ea6196ac204cba9fb3f4df79f6d, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []
   - _id: 24
     _title: Level 24
     _description: 
     _spriteiIcon: {fileID: 21300000, guid: 0413a11d8fce65f459397bd0025ce3fc, type: 3}
+    _numberLevelAttack: 0
+    _dataLevelAttacks: []

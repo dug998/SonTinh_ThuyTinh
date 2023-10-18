@@ -21,7 +21,8 @@ public class Monster : ObjectAttackTT
 
     public override void Die()
     {
-        Destroy(gameObject);
+        SpawnThuyTinh.Instance?.RemoveMonster(this);
+        gameObject.SetActive(false);
     }
 
     public override void Move()

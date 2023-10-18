@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class ObjectAttackTT : ObjectBase
 {
-    [Header(" ___ ObjectCounterattack ___"), Space(30)]
+    [Header(" ___ Object Counterattack ___"), Space(30)]
     [SerializeField] protected GameObject _bulletPref;
     [SerializeField] protected Transform _locationAppears;
     protected bool _isHitting, _stand;
@@ -25,8 +25,9 @@ public abstract class ObjectAttackTT : ObjectBase
             _stand = true;
         }
     }
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        base.OnTriggerEnter2D(collision);
         if (collision.gameObject.CompareTag(ObjTag.sonTinh) && collision.isTrigger == true)
         {
             _isHitting = true;

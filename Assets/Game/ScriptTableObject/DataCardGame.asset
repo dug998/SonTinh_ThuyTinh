@@ -41,3 +41,17 @@ MonoBehaviour:
     _timeRecoveryCard: 4
     _spriteiIcon: {fileID: 21300000, guid: 3f405a15a605fad43b6b1b939eb8b917, type: 3}
     _ObjPref: {fileID: 1558818587510542, guid: 10b3355eb7ab83a4eb300bc6def71c19, type: 3}
+  - _id: 5
+    _title: Stone
+    _description: 
+    _price: 50
+    _timeRecoveryCard: 4
+    _spriteiIcon: {fileID: 21300000, guid: 6257d8d7023287a4eb36cdd8d6c34c4b, type: 3}
+    _ObjPref: {fileID: 1003796982903348, guid: 44e7d1f9220ef364ca0c7f3e2de0d604, type: 3}
+  - _id: 6
+    _title: Ice
+    _description: 
+    _price: 175
+    _timeRecoveryCard: 4
+    _spriteiIcon: {fileID: 21300000, guid: b9d17553820c6964c8a52af39c64a57f, type: 3}
+    _ObjPref: {fileID: 1490517349983274, guid: 42a38a18935957a478af0a09933870be, type: 3}

@@ -6,7 +6,7 @@ public class HealthBase : MonoBehaviour
 {
     [SerializeField] ObjectBase _objectBase;
     [SerializeField] protected int _maxHealth;
-    [SerializeField] protected int _currentHealth;
+    protected int _currentHealth;
     public void SetMaxHealth()
     {
         _currentHealth = _maxHealth;
@@ -23,5 +23,9 @@ public class HealthBase : MonoBehaviour
     public void Die()
     {
         _objectBase.Die();
+    }
+    public int GetCurrentHealth()
+    {
+        return _currentHealth;
     }
 }

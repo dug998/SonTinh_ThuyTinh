@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DataLevelGame", menuName = "Game/DataLevelGame")]
 public class DataLevelGame : ScriptableObject
 {
- 
+
     public List<DataLevel> dataLevels = new List<DataLevel>();
 }
 [System.Serializable]
@@ -14,4 +14,7 @@ public class DataLevel
     public string _title;
     public string _description;
     public Sprite _spriteiIcon;
+    [Header(" ___ data Monter ___ "), Space(30)]
+    public int _numberLevelAttack;
+    public List<DataLevelAttack> _dataLevelAttacks;
 }

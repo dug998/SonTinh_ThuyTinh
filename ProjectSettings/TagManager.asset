@@ -12,6 +12,9 @@ TagManager:
   - Tile
   - Undefined
   - Trap
+  - Enemy
+  - Enemy_Ball
+  - DeadZone
   layers:
   - Default
   - TransparentFX

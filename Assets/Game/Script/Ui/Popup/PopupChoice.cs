@@ -57,18 +57,20 @@ public class PopupChoice : PopupBase
             DataLevel data = dataLevel[i];
             ui.Show();
             ui.Init(data);
-            ui.AddEvent(() => ChooseLevel(data._id));
+            ui.AddEvent(() => ChooseLevel(data));
 
         }
 
     }
-    public void ChooseLevel(int chooseLevel)
+    public void ChooseLevel(DataLevel Data)
     {
         _levelParent.SetActive(false);
         _cardParent.SetActive(true);
         _SlotParent.SetActive(true);
+
+        GameManager._dataLevelGame = Data;
         //  _backButton.SetActive(true);
-        Debug.Log("Level: " + chooseLevel);
+        Debug.Log("Level: " + Data._id);
     }
     #endregion
     #region Card Button
@@ -92,7 +94,7 @@ public class PopupChoice : PopupBase
     }
     public void ChooseCard(int chooseCard)
     {
-       
+
         if (_currentSlot < _maxSlot)
         {
             CardSlotUi card = _listCardSlotUi[_currentSlot];

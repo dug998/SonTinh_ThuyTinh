@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 58734206314322046}
   - component: {fileID: 50236687040328518}
   - component: {fileID: 3745735383865302531}
+  - component: {fileID: 1844438614278995998}
   m_Layer: 25
   m_Name: monkey_ball
   m_TagString: Ball
@@ -136,6 +137,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161d79beee709ec4b95bd390c847d87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: {fileID: 1844438614278995998}
   speed: 12
+  move: 1
   dame: 30
   ballHit: {fileID: 4224561887848955622, guid: d1ea2e95e7b40124dab07761091ef2bf, type: 3}
+--- !u!114 &1844438614278995998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074870381605142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b2aa41eb4c3834d8f5d320a06c8fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectBase: {fileID: 3745735383865302531}
+  _maxHealth: 0

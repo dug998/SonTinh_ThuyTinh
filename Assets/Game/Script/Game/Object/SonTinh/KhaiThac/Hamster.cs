@@ -6,11 +6,11 @@ public class Hamster : ObjectExploit
 {
     public override IEnumerator Exploit()
     {
-        yield return new WaitForSeconds(_timeExploit);
+        yield return new WaitForSeconds(_nextExploit);
         while (true)
         {
             yield return new WaitUntil(() => (GameManager._gameState == GameState.PLAYING && !_canHarvert));
-            yield return new WaitForSeconds(_timeExploit);
+            yield return new WaitForSeconds(_nextExploit);
             ManufactureResource();
         }
 

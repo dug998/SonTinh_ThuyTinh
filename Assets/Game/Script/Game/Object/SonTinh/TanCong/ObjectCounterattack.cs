@@ -7,7 +7,7 @@ public abstract class ObjectCounterattack : ObjectBase
     [Header(" ___ ObjectCounterattack ___"), Space(30)]
     [SerializeField] protected GameObject _bulletPref;
     [SerializeField] protected Transform _locationAppears;
-    [SerializeField] protected bool _isHitting;
+    protected bool _isHitting;
     [SerializeField] protected float _nextHitting;
     public override void Born()
     {

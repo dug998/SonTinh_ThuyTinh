@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public static Queue<DataCard> _CardChoiseBattle = new Queue<DataCard>();
     public static ButtonBattleCardUi _curBattleCard;
+    public int _maxNumberCardBattle = 3;
+
+    public static DataLevel _dataLevelGame;
     public static GameState _gameState;
     public static Transform _targetCoin;
-    public int _maxNumberCardBattle = 3;
     public static int curCoin;
 
     public Grounds _grounds;
@@ -83,4 +85,5 @@ public class ObjTag
 {
     public const string sonTinh = "sonTinh";
     public const string thuyTinh = "thuyTinh";
+    public const string deadZone = "DeadZone";
 }
