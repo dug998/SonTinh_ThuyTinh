@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 95289282859940890}
   - component: {fileID: 3994477187114149909}
   - component: {fileID: 5647111284930908202}
+  - component: {fileID: 1520569858854165688}
   m_Layer: 11
   m_Name: monster3
   m_TagString: Enemy
@@ -184,11 +185,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 3994477187114149909}
+  _Dead: {fileID: 1520569858854165688}
   speed: 0.2
   move: 1
   _bulletPref: {fileID: 1074870381605142, guid: 2183003d329f46346b2ceb276b42254e, type: 3}
   _locationAppears: {fileID: 4331053521944478}
   _nextHitting: 2
+--- !u!114 &1520569858854165688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407153194283356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 212278465562739872}
+  _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}
 --- !u!1 &1810104008549044
 GameObject:
   m_ObjectHideFlags: 0

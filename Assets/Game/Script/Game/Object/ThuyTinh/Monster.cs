@@ -18,15 +18,25 @@ public class Monster : ObjectAttackTT
             _myAnim.SetBool("hit", false);
         }
     }
-
-    public override void Die()
+    public override void Died()
     {
+        _isDead = true;
+        _stand = true;
+        base.Died();
+    }
+    public override IEnumerator Die()
+    {
+        _myColli.enabled = false;
         SpawnThuyTinh.Instance?.RemoveMonster(this);
+
+        _Dead.PixelGravityDie(1);
+        yield return new WaitForSeconds(1.2f);
         gameObject.SetActive(false);
     }
 
     public override void Move()
     {
+        base.Move();
         if (_stand)
         {
             _myBody.velocity = new Vector2(0, _myBody.velocity.y);

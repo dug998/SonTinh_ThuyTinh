@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 95182943391100842}
   - component: {fileID: 2160540003723683735}
   - component: {fileID: 2617694392872966762}
+  - component: {fileID: 3370497441825681248}
   m_Layer: 27
   m_Name: tank
   m_TagString: Enemy
@@ -215,8 +216,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 2160540003723683735}
+  _Dead: {fileID: 3370497441825681248}
   speed: 0.2
   move: 1
   _bulletPref: {fileID: 1074870381605142, guid: 9b89ce5ad068d0144b2515795a8bcd5b, type: 3}
   _locationAppears: {fileID: 4398693984446484}
   _nextHitting: 2
+--- !u!114 &3370497441825681248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843535517284466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 212066975880583482}
+  _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}

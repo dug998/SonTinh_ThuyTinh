@@ -24,7 +24,7 @@ public class ST_BulletRegular : ObjectBase
         if (collision.gameObject.CompareTag(ObjTag.thuyTinh))
         {
             CollideWithMonsters(collision.gameObject);
-            Die();
+            Died();
         }
 
     }
@@ -40,8 +40,9 @@ public class ST_BulletRegular : ObjectBase
         _myBody.velocity = new Vector2(speed * move, _myBody.velocity.y);
     }
 
-    public override void Die()
+    public override IEnumerator Die()
     {
         gameObject.SetActive(false);
+        yield return null;
     }
 }

@@ -31,4 +31,10 @@ public abstract class ObjectCounterattack : ObjectBase
         }
 
     }
+    public override IEnumerator Die()
+    {
+        _Dead.PixelGravityDie();
+        yield return new WaitForSeconds(1);
+        gameObject.SetActive(false);
+    }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 58423557392681672}
   - component: {fileID: 200098772430093058}
   - component: {fileID: 8716907517785862382}
+  - component: {fileID: 8550399748149938748}
   m_Layer: 0
   m_Name: ice_ball
   m_TagString: Ball
@@ -138,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 8716907517785862382}
+  _Dead: {fileID: 8550399748149938748}
   speed: 12
   move: 1
   dame: 30
@@ -157,3 +159,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 200098772430093058}
   _maxHealth: 0
+--- !u!114 &8550399748149938748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801618092695052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 212008703262329818}
+  _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}

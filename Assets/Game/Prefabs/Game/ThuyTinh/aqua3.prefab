@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 95829540110550500}
   - component: {fileID: 5064946817239403671}
   - component: {fileID: 1659394331027180551}
+  - component: {fileID: 596543343398846517}
   m_Layer: 24
   m_Name: aqua3
   m_TagString: Enemy
@@ -215,8 +216,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 5064946817239403671}
+  _Dead: {fileID: 596543343398846517}
   speed: 0.45
   move: 1
   _bulletPref: {fileID: 1074870381605142, guid: 2183003d329f46346b2ceb276b42254e, type: 3}
   _locationAppears: {fileID: 4923569854431276}
   _nextHitting: 2
+--- !u!114 &596543343398846517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516817221131240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 212382820411987262}
+  _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}

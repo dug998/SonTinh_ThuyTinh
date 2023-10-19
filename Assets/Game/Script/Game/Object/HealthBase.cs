@@ -22,7 +22,7 @@ public class HealthBase : MonoBehaviour
     }
     public void Die()
     {
-        _objectBase.Die();
+       _objectBase.Died();
     }
     public int GetCurrentHealth()
     {

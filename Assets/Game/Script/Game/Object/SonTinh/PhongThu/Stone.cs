@@ -5,10 +5,7 @@ using UnityEngine;
 public class Stone : ObjectDefense
 {
     [SerializeField] int _valuesStatus = 50;
-    public override void Die()
-    {
-
-    }
+  
 
     public override void Move()
     {

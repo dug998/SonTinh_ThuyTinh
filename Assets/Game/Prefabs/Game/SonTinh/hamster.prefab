@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 70860203623851466}
   - component: {fileID: 1169558089335066662}
   - component: {fileID: 5960005822627243466}
+  - component: {fileID: 3897292516076491345}
   m_Layer: 0
   m_Name: hamster
   m_TagString: sonTinh
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 773842377
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 4ae2d77a48cf1ec43aa968fd64640e3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -139,7 +140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 5960005822627243466}
   _maxHealth: 100
-  _currentHealth: 0
 --- !u!114 &5960005822627243466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,10 +153,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 1169558089335066662}
+  _Dead: {fileID: 3897292516076491345}
   speed: 0
   move: 0
   _resourcesPref: {fileID: 1985855474967314, guid: 96cabfe1124903c4fa14ea72eb759396, type: 3}
   _locationAppears: {fileID: 5988475895461269868}
+  _canHarvert: 0
+--- !u!114 &3897292516076491345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598944560447584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 212968696152483376}
+  _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}
 --- !u!1 &6143244511343572063
 GameObject:
   m_ObjectHideFlags: 0

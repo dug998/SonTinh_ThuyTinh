@@ -5,14 +5,18 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(HealthBase))]
+[RequireComponent(typeof(Dead))]
 public abstract class ObjectBase : MonoBehaviour
 {
     [Header(" ___ Component ___"), Space(30)]
     protected Rigidbody2D _myBody;
+    protected Collider2D _myColli;
     protected Animator _myAnim;
     protected SpriteRenderer _sprite;
     [SerializeField] protected HealthBase _health;
+    [SerializeField] protected Dead _Dead;
     [Header(" ___ Properties ____"), Space(30)]
+    [SerializeField] protected bool _isDead;
     [SerializeField] protected float speed;
     [SerializeField] protected float move;
 
@@ -23,13 +27,19 @@ public abstract class ObjectBase : MonoBehaviour
         _myAnim = GetComponent<Animator>();
         _sprite = GetComponent<SpriteRenderer>();
         _myBody = GetComponent<Rigidbody2D>();
+        _myColli = GetComponent<Collider2D>();
     }
     public virtual void Born()
     {
+        _isDead = false;
         _health.SetMaxHealth();
     }
     public abstract void Move();
-    public abstract void Die();
+    public abstract IEnumerator Die();
+    public virtual void Died()
+    {
+        StartCoroutine(Die());
+    }
     public virtual void UpdateHealth(int values)
     {
         if (values < 0)
@@ -51,7 +61,8 @@ public abstract class ObjectBase : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(ObjTag.deadZone))
         {
-            Die();
+            Died();
         }
     }
+
 }

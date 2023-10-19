@@ -8,6 +8,7 @@ public class PopupController : MonoBehaviour
     public PopupHome _popupHome;
     public PopupGamePlay _popupGamePlay;
     public PopupChoice _popupChoice;
+    public PopupWinGame _popupWinGame;
     public void Init()
     {
         Instance = this;
@@ -44,6 +45,17 @@ public class PopupController : MonoBehaviour
         else
         {
             _popupGamePlay.Hide();
+        }
+    }
+    public void ShowPopupWinGame(bool _show = true)
+    {
+        if (_show)
+        {
+            _popupWinGame.Show();
+        }
+        else
+        {
+            _popupWinGame.Hide();
         }
     }
 }

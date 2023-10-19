@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 95520486558425442}
   - component: {fileID: 5643882496692992158}
   - component: {fileID: 4358261425712808292}
+  - component: {fileID: 6461152052721522188}
   m_Layer: 9
   m_Name: monster
   m_TagString: thuyTinh
@@ -171,7 +172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 4358261425712808292}
   _maxHealth: 50
-  _currentHealth: 0
 --- !u!114 &4358261425712808292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,11 +185,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 5643882496692992158}
+  _Dead: {fileID: 6461152052721522188}
   speed: 0.4
   move: 1
   _bulletPref: {fileID: 1074870381605142, guid: 2183003d329f46346b2ceb276b42254e, type: 3}
   _locationAppears: {fileID: 4801058324159018}
   _nextHitting: 0
+--- !u!114 &6461152052721522188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363261665061106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 212341155055285378}
+  _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}
 --- !u!1 &1661159138815776
 GameObject:
   m_ObjectHideFlags: 0

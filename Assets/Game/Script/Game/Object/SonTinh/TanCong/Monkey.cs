@@ -29,9 +29,6 @@ public class Monkey : ObjectCounterattack
         obj.transform.position = _locationAppears.position;
     }
 
-    public override void Die()
-    {
-    }
 
     public override void Move()
     {

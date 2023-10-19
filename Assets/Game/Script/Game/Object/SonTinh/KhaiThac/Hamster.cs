@@ -23,11 +23,7 @@ public class Hamster : ObjectExploit
         obj.GetComponent<Coin>()._parrent = gameObject;
         obj.GetComponent<Coin>()._typeCoin = _typeCoin;
     }
-    public override void Die()
-    {
-        StopCoroutine(Exploit());
 
-    }
     public override void Move()
     {
 

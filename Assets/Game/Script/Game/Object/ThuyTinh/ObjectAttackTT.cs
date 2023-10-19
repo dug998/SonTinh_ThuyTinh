@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public abstract class ObjectAttackTT : ObjectBase
@@ -14,6 +16,15 @@ public abstract class ObjectAttackTT : ObjectBase
     {
         base.Born();
         StartCoroutine(Attack());
+    }
+    public override void Move()
+    {
+        if (_isDead)
+        {
+            _myBody.velocity = new Vector2(0, _myBody.velocity.y);
+            _myAnim.SetBool("walk", false);
+            return;
+        }
     }
     public abstract IEnumerator Attack();
     public abstract void SpawnButtlet();

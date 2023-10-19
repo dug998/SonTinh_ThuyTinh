@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 95285307596904972}
   - component: {fileID: 4970065069393694872}
   - component: {fileID: 3610055053424317808}
+  - component: {fileID: 8215471960612379164}
   m_Layer: 0
   m_Name: stone
   m_TagString: Player
@@ -161,6 +162,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 4970065069393694872}
+  _Dead: {fileID: 8215471960612379164}
   speed: 0
   move: 0
   _valuesStatus: 100
+--- !u!114 &8215471960612379164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003796982903348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 212319214752590270}
+  _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}
