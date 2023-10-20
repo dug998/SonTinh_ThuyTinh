@@ -1024,9 +1024,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088dc8c9912ac4c448105a8c100b6c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _popupLoading: {fileID: 0}
   _popupHome: {fileID: 0}
-  _popupGamePlay: {fileID: 802531794}
   _popupChoice: {fileID: 1374085714}
+  _popupGamePlay: {fileID: 802531794}
   _popupWinGame: {fileID: 1350349555}
 --- !u!1 &116591283
 GameObject:
@@ -24618,7 +24619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2147170148
 RectTransform:
   m_ObjectHideFlags: 0
