@@ -54,7 +54,7 @@ public class SpawnThuyTinh : MonoBehaviour
     {
         if (_listMonter.Count <= 0)
         {
-            print("win");
+            GameManager.Instance.WinGame();
         }
     }
 }

@@ -73,6 +73,11 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    public void WinGame()
+    {
+        _gameState = GameState.GAME_OVER;
+        PopupController.Instance.ShowPopupWinGame(true);
+    }
 }
 public enum GameState
 {

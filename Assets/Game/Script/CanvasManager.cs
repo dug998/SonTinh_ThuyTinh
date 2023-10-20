@@ -6,12 +6,10 @@ using UnityEngine;
 public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager Instance;
-    public ButtonController _buttonController;
     public PopupController _popupController;
-    private void Awake()
+    public void Init()
     {
         Instance = this;
-        _buttonController.Init();
         _popupController.Init();
     }
     public void StartGame()
