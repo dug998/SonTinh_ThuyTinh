@@ -1,0 +1,55 @@
+
+Avatar.png
+size: 928,855
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 2, 79
+  size: 429, 392
+  orig: 429, 392
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 635, 596
+  size: 257, 279
+  orig: 257, 279
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: true
+  xy: 635, 374
+  size: 220, 283
+  orig: 224, 283
+  offset: 0, 0
+  index: -1
+Lleg
+  rotate: false
+  xy: 433, 256
+  size: 170, 215
+  orig: 170, 215
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: false
+  xy: 605, 2
+  size: 321, 370
+  orig: 321, 370
+  offset: 0, 0
+  index: -1
+Rleg
+  rotate: false
+  xy: 433, 43
+  size: 121, 211
+  orig: 121, 211
+  offset: 0, 0
+  index: -1
+Turtle
+  rotate: false
+  xy: 2, 473
+  size: 631, 380
+  orig: 631, 380
+  offset: 0, 0
+  index: -1

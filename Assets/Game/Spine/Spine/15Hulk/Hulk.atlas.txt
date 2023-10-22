@@ -1,0 +1,48 @@
+
+Hulk.png
+size: 1795,421
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 2, 26
+  size: 457, 393
+  orig: 457, 393
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 1498, 105
+  size: 314, 295
+  orig: 314, 295
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: false
+  xy: 1004, 2
+  size: 244, 417
+  orig: 244, 417
+  offset: 0, 0
+  index: -1
+Lleg
+  rotate: false
+  xy: 739, 11
+  size: 263, 408
+  orig: 263, 408
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: false
+  xy: 1250, 17
+  size: 246, 402
+  orig: 246, 402
+  offset: 0, 0
+  index: -1
+Rleg
+  rotate: false
+  xy: 461, 9
+  size: 276, 410
+  orig: 276, 410
+  offset: 0, 0
+  index: -1

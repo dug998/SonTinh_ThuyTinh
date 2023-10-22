@@ -1,0 +1,48 @@
+
+Black Widow.png
+size: 770,601
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 586, 377
+  size: 182, 222
+  orig: 182, 222
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 2, 222
+  size: 377, 372
+  orig: 377, 372
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: true
+  xy: 376, 12
+  size: 261, 312
+  orig: 261, 312
+  offset: 0, 0
+  index: -1
+Lleg
+  rotate: false
+  xy: 2, 2
+  size: 211, 218
+  orig: 211, 218
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: false
+  xy: 376, 275
+  size: 208, 324
+  orig: 208, 324
+  offset: 0, 0
+  index: -1
+Rleg
+  rotate: false
+  xy: 215, 3
+  size: 159, 217
+  orig: 159, 217
+  offset: 0, 0
+  index: -1

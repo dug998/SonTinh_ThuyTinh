@@ -13,14 +13,6 @@ public class PopupController : MonoBehaviour
     public PopupGamePlay _popupGamePlay;
     public PopupWinGame _popupWinGame;
 
-    public void ShowHome()
-    {
-
-    }
-    public void ShowGame()
-    {
-
-    }
     public void Init()
     {
         Instance = this;

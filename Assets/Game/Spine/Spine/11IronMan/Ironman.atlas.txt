@@ -1,0 +1,48 @@
+
+Ironman.png
+size: 503,522
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 287, 264
+  size: 214, 256
+  orig: 214, 256
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 199
+  size: 283, 321
+  orig: 283, 321
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: false
+  xy: 2, 2
+  size: 162, 195
+  orig: 162, 195
+  offset: 0, 0
+  index: -1
+Lleg
+  rotate: false
+  xy: 166, 17
+  size: 105, 180
+  orig: 105, 180
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: false
+  xy: 287, 134
+  size: 198, 128
+  orig: 198, 128
+  offset: 0, 0
+  index: -1
+Rleg
+  rotate: true
+  xy: 273, 10
+  size: 122, 163
+  orig: 122, 163
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,48 @@
+
+Zombie6.png
+size: 1293,457
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+6/Body
+  rotate: false
+  xy: 432, 110
+  size: 325, 345
+  orig: 325, 345
+  offset: 0, 0
+  index: -1
+6/Head
+  rotate: false
+  xy: 2, 2
+  size: 428, 453
+  orig: 428, 453
+  offset: 0, 0
+  index: -1
+6/Lhand
+  rotate: true
+  xy: 1065, 155
+  size: 300, 226
+  orig: 300, 226
+  offset: 0, 0
+  index: -1
+6/Lleg
+  rotate: true
+  xy: 1007, 10
+  size: 143, 230
+  orig: 143, 230
+  offset: 0, 0
+  index: -1
+6/Rhand
+  rotate: false
+  xy: 759, 200
+  size: 304, 255
+  orig: 304, 255
+  offset: 0, 0
+  index: -1
+6/Rleg
+  rotate: true
+  xy: 759, 17
+  size: 181, 246
+  orig: 181, 246
+  offset: 0, 0
+  index: -1

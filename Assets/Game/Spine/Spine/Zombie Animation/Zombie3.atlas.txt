@@ -1,0 +1,48 @@
+
+Zombie3.png
+size: 944,531
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+3/Body
+  rotate: false
+  xy: 432, 206
+  size: 281, 323
+  orig: 284, 336
+  offset: 0, 13
+  index: -1
+3/Head
+  rotate: false
+  xy: 2, 76
+  size: 428, 453
+  orig: 428, 453
+  offset: 0, 0
+  index: -1
+3/Lhand
+  rotate: false
+  xy: 432, 12
+  size: 255, 192
+  orig: 255, 192
+  offset: 0, 0
+  index: -1
+3/Lleg
+  rotate: true
+  xy: 715, 147
+  size: 135, 227
+  orig: 135, 227
+  offset: 0, 0
+  index: -1
+3/Rhand
+  rotate: true
+  xy: 715, 284
+  size: 245, 225
+  orig: 245, 225
+  offset: 0, 0
+  index: -1
+3/Rleg
+  rotate: true
+  xy: 689, 2
+  size: 143, 249
+  orig: 143, 249
+  offset: 0, 0
+  index: -1

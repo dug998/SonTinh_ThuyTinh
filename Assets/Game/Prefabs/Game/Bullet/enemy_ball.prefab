@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 70010998773755172}
   - component: {fileID: 2766830212986726580}
   - component: {fileID: 7630520555544378082}
+  - component: {fileID: 5836175160471520990}
   m_Layer: 0
   m_Name: enemy_ball
   m_TagString: Undefined
@@ -99,7 +100,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 2766830212986726580}
+  _Dead: {fileID: 5836175160471520990}
+  _isDead: 0
   speed: 0
   move: 0
   dame: 20
   ballHit: {fileID: 0}
+--- !u!114 &5836175160471520990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074870381605142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 0}
+  _material: {fileID: 0}

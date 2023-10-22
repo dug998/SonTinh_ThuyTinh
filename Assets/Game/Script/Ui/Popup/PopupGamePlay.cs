@@ -14,10 +14,16 @@ public class PopupGamePlay : PopupBase
     public override void Show(object data = null)
     {
         _posCoin = _parentCoin.transform.position;
+        CanvasManager.Instance._Bg.SetActive(false);
         base.Show(data);
         UpdateTextCoin(GameManager.curCoin);
         GameManager._targetCoin = _parentCoin.transform;
         LoadBattleCard();
+    }
+    public override void Hide()
+    {
+        CanvasManager.Instance._Bg.SetActive(true);
+        base.Hide();
     }
     private void OnEnable()
     {

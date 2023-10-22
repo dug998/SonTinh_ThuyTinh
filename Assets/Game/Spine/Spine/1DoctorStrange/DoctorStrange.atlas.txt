@@ -1,0 +1,62 @@
+
+DoctorStrange.png
+size: 348,1033
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 2, 72
+  size: 184, 198
+  orig: 184, 198
+  offset: 0, 0
+  index: -1
+Circle1
+  rotate: true
+  xy: 2, 2
+  size: 68, 198
+  orig: 68, 198
+  offset: 0, 0
+  index: -1
+Circle2
+  rotate: false
+  xy: 213, 188
+  size: 133, 247
+  orig: 133, 247
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 654
+  size: 340, 377
+  orig: 340, 377
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: false
+  xy: 202, 33
+  size: 144, 153
+  orig: 144, 153
+  offset: 0, 0
+  index: -1
+Lleg
+  rotate: true
+  xy: 2, 442
+  size: 210, 247
+  orig: 211, 247
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: true
+  xy: 251, 437
+  size: 215, 95
+  orig: 215, 95
+  offset: 0, 0
+  index: -1
+Rleg
+  rotate: false
+  xy: 2, 258
+  size: 209, 182
+  orig: 209, 182
+  offset: 0, 0
+  index: -1

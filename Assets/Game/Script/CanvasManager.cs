@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,20 +8,23 @@ public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager Instance;
     public PopupController _popupController;
+    public GameObject _Bg;
     public void Init()
     {
         Instance = this;
         _popupController.Init();
+        LoadingGame();
     }
-    public void StartGame()
+    public void LoadingGame()
     {
-        _popupController.ShowPopupChoice(true);
-        _popupController.ShowPopupHome(false);
+        PopupController.Instance.ShowPopupLoading(true);
+        DOVirtual.DelayedCall(5, () =>
+        {
+            PopupController.Instance.ShowPopupLoading(false);
+            PopupController.Instance.ShowPopupHome();
+        });
     }
-    public void PlayGame()
-    {
-        _popupController.ShowPopupChoice(false);
-        _popupController.ShowPopupGamePlay(true);
-        GameManager.Instance.StartGame();
-    }
+
+
+
 }

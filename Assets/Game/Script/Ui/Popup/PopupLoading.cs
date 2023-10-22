@@ -9,7 +9,7 @@ public class PopupLoading : PopupBase
 
     public override void Show(object data = null)
     {
-        base.Show(data);
+        gameObject.SetActive(true);
         _title.DOAnchorPosY(20, 2).From(Vector2.zero).SetEase(Ease.OutQuad);
     }
 }

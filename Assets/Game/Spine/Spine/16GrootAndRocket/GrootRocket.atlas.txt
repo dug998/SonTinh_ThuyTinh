@@ -1,0 +1,62 @@
+
+GrootRocket.png
+size: 1360,448
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 282, 19
+  size: 244, 427
+  orig: 244, 427
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 1166, 179
+  size: 192, 267
+  orig: 192, 267
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: false
+  xy: 528, 188
+  size: 303, 258
+  orig: 303, 258
+  offset: 0, 0
+  index: -1
+LhandRocket
+  rotate: true
+  xy: 1141, 2
+  size: 175, 200
+  orig: 175, 200
+  offset: 0, 0
+  index: -1
+Lleg
+  rotate: true
+  xy: 833, 261
+  size: 185, 331
+  orig: 185, 331
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: false
+  xy: 872, 30
+  size: 267, 229
+  orig: 267, 229
+  offset: 0, 0
+  index: -1
+Rleg
+  rotate: true
+  xy: 528, 15
+  size: 171, 342
+  orig: 171, 342
+  offset: 0, 0
+  index: -1
+Rocket
+  rotate: false
+  xy: 2, 16
+  size: 278, 430
+  orig: 278, 430
+  offset: 0, 0
+  index: -1

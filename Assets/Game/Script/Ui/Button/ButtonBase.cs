@@ -13,8 +13,12 @@ public abstract class ButtonBase : MonoBehaviour
     }
     public virtual void AddEvent(UnityAction action)
     {
-        _btn.onClick.RemoveAllListeners();
+        _btn.onClick.RemoveListener(action);
         _btn.onClick.AddListener(action);
+    }
+    public void RemoveAll()
+    {
+        _btn.onClick.RemoveAllListeners();
     }
     public virtual void Show()
     {
@@ -24,6 +28,12 @@ public abstract class ButtonBase : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public virtual void Activity(bool values)
+    {
+
+        _btn.enabled = values;
+    }
+
     public abstract void Init(object data);
 
 }

@@ -1,0 +1,48 @@
+
+Zombie2.png
+size: 563,872
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2/Body
+  rotate: false
+  xy: 2, 29
+  size: 303, 386
+  orig: 303, 386
+  offset: 0, 0
+  index: -1
+2/Head
+  rotate: false
+  xy: 2, 417
+  size: 428, 453
+  orig: 428, 453
+  offset: 0, 0
+  index: -1
+2/Lhand
+  rotate: false
+  xy: 307, 2
+  size: 236, 192
+  orig: 236, 192
+  offset: 0, 0
+  index: -1
+2/Lleg
+  rotate: false
+  xy: 432, 653
+  size: 129, 217
+  orig: 129, 217
+  offset: 0, 0
+  index: -1
+2/Rhand
+  rotate: false
+  xy: 307, 196
+  size: 221, 219
+  orig: 221, 219
+  offset: 0, 0
+  index: -1
+2/Rleg
+  rotate: false
+  xy: 432, 417
+  size: 127, 234
+  orig: 130, 235
+  offset: 0, 0
+  index: -1

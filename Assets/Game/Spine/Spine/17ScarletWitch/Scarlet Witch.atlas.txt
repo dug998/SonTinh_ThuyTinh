@@ -1,0 +1,83 @@
+
+Scarlet Witch.png
+size: 730,878
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 2, 45
+  size: 180, 265
+  orig: 180, 265
+  offset: 0, 0
+  index: -1
+Cloak
+  rotate: false
+  xy: 2, 227
+  size: 372, 333
+  orig: 372, 333
+  offset: 0, 0
+  index: -1
+Effect1
+  rotate: false
+  xy: 645, 89
+  size: 77, 79
+  orig: 92, 101
+  offset: 6, 4
+  index: -1
+Effect2
+  rotate: false
+  xy: 591, 355
+  size: 136, 137
+  orig: 164, 182
+  offset: 13, 14
+  index: -1
+Effect3
+  rotate: true
+  xy: 269, 13
+  size: 186, 187
+  orig: 230, 249
+  offset: 20, 20
+  index: -1
+Hair
+  rotate: true
+  xy: 409, 494
+  size: 382, 316
+  orig: 382, 316
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 562
+  size: 405, 314
+  orig: 405, 314
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: false
+  xy: 376, 323
+  size: 213, 169
+  orig: 213, 169
+  offset: 0, 0
+  index: -1
+Lleg
+  rotate: true
+  xy: 376, 201
+  size: 120, 231
+  orig: 120, 231
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: false
+  xy: 458, 2
+  size: 185, 166
+  orig: 185, 166
+  offset: 0, 0
+  index: -1
+Rleg
+  rotate: false
+  xy: 609, 170
+  size: 119, 183
+  orig: 119, 183
+  offset: 0, 0
+  index: -1

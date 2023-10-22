@@ -1,0 +1,48 @@
+
+Zombie5.png
+size: 816,907
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+5/Body
+  rotate: false
+  xy: 536, 2
+  size: 278, 361
+  orig: 278, 361
+  offset: 0, 0
+  index: -1
+5/Head
+  rotate: true
+  xy: 2, 365
+  size: 540, 549
+  orig: 540, 549
+  offset: 0, 0
+  index: -1
+5/Lhand
+  rotate: true
+  xy: 2, 14
+  size: 349, 532
+  orig: 349, 532
+  offset: 0, 0
+  index: -1
+5/Lleg
+  rotate: true
+  xy: 553, 427
+  size: 128, 217
+  orig: 129, 217
+  offset: 0, 0
+  index: -1
+5/Rhand
+  rotate: false
+  xy: 553, 686
+  size: 221, 219
+  orig: 221, 219
+  offset: 0, 0
+  index: -1
+5/Rleg
+  rotate: true
+  xy: 553, 557
+  size: 127, 234
+  orig: 130, 235
+  offset: 0, 0
+  index: -1

@@ -8,9 +8,9 @@ public class PopupWinGame : PopupBase
 {
     [Header(" ______ Button  _____ "), Space(20)]
 
-    public Button _btnHome;
-    public Button _btnContinue;
-    public Button _btnReplay;
+    public ButtonBase _btnHome;
+    public ButtonBase _btnContinue;
+    public ButtonBase _btnReplay;
 
     [Header(" ___ Particle ___ "), Space(20)]
 
@@ -25,7 +25,12 @@ public class PopupWinGame : PopupBase
 
     public GameObject _parGlow;
     public GameObject _txtVictory;
-
+    private void Awake()
+    {
+        _btnHome.AddEvent(OnClickButtonHome);
+        _btnContinue.AddEvent(OnClickButtonContinue);
+        _btnReplay.AddEvent(OnClickButtonReplay);
+    }
     public override void Show(object data = null)
     {
         base.Show(data);
@@ -36,11 +41,13 @@ public class PopupWinGame : PopupBase
         });
 
     }
-    public override void Hide()
+    public void HideNew(System.Action action)
     {
         _isShow = false;
+        EffectHide();
         DOVirtual.DelayedCall(3, () =>
         {
+            action?.Invoke();
             base.Hide();
         });
     }
@@ -50,8 +57,11 @@ public class PopupWinGame : PopupBase
         {
             return;
         }
-        print("Home");
-        Hide();
+        HideNew(() =>
+        {
+            PopupController.Instance.ShowPopupHome(true);
+
+        });
     }
     public void OnClickButtonContinue()
     {
@@ -59,8 +69,10 @@ public class PopupWinGame : PopupBase
         {
             return;
         }
-        print("Continue");
-        Hide();
+        HideNew(() =>
+        {
+            PopupController.Instance.ShowPopupChoice(true);
+        });
     }
     public void OnClickButtonReplay()
     {
@@ -68,8 +80,10 @@ public class PopupWinGame : PopupBase
         {
             return;
         }
-        print("Replay");
-        Hide();
+        HideNew(() =>
+        {
+            GameManager.Instance.StartLevelGame();
+        });
     }
     #region Effect
     [ContextMenu("show")]

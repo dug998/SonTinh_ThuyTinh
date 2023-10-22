@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopupChoice : PopupBase
 {
@@ -8,9 +9,12 @@ public class PopupChoice : PopupBase
     [Header("")]
     int _currentSlot = 0;
     int _maxSlot = 6;
+    [Header(" ____ Button ___ "), Space(20)]
 
-    [Header(" ____ Parent ____ "), Space(30)]
+    public ButtonBase _btnBackHome;
+    public ButtonBase _btnPlay;
 
+    [Header(" ___ Parrent ___ "), Space(20)]
     public GameObject _levelParent;
     public GameObject _cardParent;
     public GameObject _SlotParent;
@@ -29,6 +33,12 @@ public class PopupChoice : PopupBase
 
     [Header(" ___ Slot ___"), Space(30)]
     public List<CardSlotUi> _listCardSlotUi;
+
+    public void Awake()
+    {
+        _btnPlay.AddEvent(OnClickButtonPlay);
+        _btnBackHome.AddEvent(OnClickButonBackHome);
+    }
     public override void Show(object data = null)
     {
         _maxSlot = GameManager.Instance._maxNumberCardBattle;
@@ -39,10 +49,36 @@ public class PopupChoice : PopupBase
     {
         _levelParent.SetActive(true);
         _cardParent.SetActive(false);
+        _SlotParent.SetActive(false);
+        CloseDataCardSlotUi();
         LoadDataLevel();
         LoadDataCard();
     }
 
+    #region On Click
+
+    void OnClickButtonPlay()
+    {
+        Hide();
+        PopupController.Instance.ShowPopupGamePlay(true);
+        GameManager.Instance.StartLevelGame();
+    }
+    void OnClickButonBackHome()
+    {
+        Hide();
+        PopupController.Instance.ShowPopupHome(true);
+    }
+    #endregion
+    #region Slot Card
+    public void CloseDataCardSlotUi()
+    {
+        _currentSlot = 0;
+        foreach (var slot in _listCardSlotUi)
+        {
+            slot.Init();
+        }
+    }
+    #endregion
     #region Level Button
     public void LoadDataLevel()
     {
@@ -87,6 +123,7 @@ public class PopupChoice : PopupBase
             DataCard data = dataCard[i];
             ui.Show();
             ui.Init(data);
+            ui.RemoveAll();
             ui.AddEvent(() => ChooseCard(data._id));
 
         }

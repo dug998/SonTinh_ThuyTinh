@@ -12,6 +12,9 @@ public class CardSlotUi : MonoBehaviour
     public void Init()
     {
         _mask.SetActive(true);
+        _txtTitle.text = "";
+        _txtPrice.text = "";
+       // _icon.sprite = null;
     }
     public void Show()
     {

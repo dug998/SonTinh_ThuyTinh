@@ -1,0 +1,69 @@
+
+Antman.png
+size: 1581,604
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 1192, 336
+  size: 203, 266
+  orig: 203, 266
+  offset: 0, 0
+  index: -1
+Effect
+  rotate: true
+  xy: 2, 2
+  size: 600, 862
+  orig: 655, 889
+  offset: 42, 3
+  index: -1
+Head
+  rotate: false
+  xy: 866, 221
+  size: 324, 381
+  orig: 324, 381
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: false
+  xy: 1397, 339
+  size: 149, 263
+  orig: 149, 263
+  offset: 0, 0
+  index: -1
+Lleg
+  rotate: true
+  xy: 1192, 161
+  size: 173, 210
+  orig: 173, 210
+  offset: 0, 0
+  index: -1
+Lleg2
+  rotate: true
+  xy: 1366, 23
+  size: 123, 213
+  orig: 123, 216
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: false
+  xy: 866, 23
+  size: 290, 196
+  orig: 290, 196
+  offset: 0, 0
+  index: -1
+Rhand2
+  rotate: true
+  xy: 1404, 148
+  size: 189, 171
+  orig: 189, 171
+  offset: 0, 0
+  index: -1
+Rleg
+  rotate: true
+  xy: 1158, 7
+  size: 152, 206
+  orig: 152, 206
+  offset: 0, 0
+  index: -1

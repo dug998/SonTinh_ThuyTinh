@@ -32,7 +32,6 @@ public class FactoryCoin : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => GameManager._gameState == GameState.PLAYING);
-
             GameObject obj = Instantiate(_coinPref, transform);
             obj.transform.localScale = Vector3.one * 1.5f;
             obj.GetComponent<Coin>().DoMove(_pathFrom.wps[Random.Range(0, _numberFrom)], _pathTo.wps[Random.Range(0, _numberTo)], 2);

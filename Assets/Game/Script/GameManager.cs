@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public CanvasManager _canvasManager;
+    [Header(" ____  Static ___ ")]
     public static Queue<DataCard> _CardChoiseBattle = new Queue<DataCard>();
     public static ButtonBattleCardUi _curBattleCard;
     public int _maxNumberCardBattle = 3;
@@ -15,19 +19,23 @@ public class GameManager : MonoBehaviour
     public static Transform _targetCoin;
     public static int curCoin;
 
-    public Grounds _grounds;
-    public FactoryCoin _factoryCoin;
-    [SerializeField] SpawnThuyTinh _pawnThuyTinh;
+
+    [Header(" ___ Pref __ "), Space(20)]
+    public GameObject _prefLeveGame;
+    GameObject _curLevelGame;
     public void Awake()
     {
         Instance = this;
+        _canvasManager.Init();
     }
-    public void StartGame()
+    public void StartLevelGame()
     {
         _gameState = GameState.PLAYING;
-        _grounds.SpawnBlocks();
-        _factoryCoin.SpawnCoins();
-        StartCoroutine(_pawnThuyTinh.CreateArmyList());
+        if (_curLevelGame != null)
+            Destroy(_curLevelGame);
+        _curLevelGame = Instantiate(_prefLeveGame, transform);
+
+        _curLevelGame.GetComponent<GameLevel>().Init();
 
     }
     public void UpdateCoin(int values)
@@ -76,6 +84,8 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         _gameState = GameState.GAME_OVER;
+
+        PopupController.Instance.ShowPopupGamePlay(false);
         PopupController.Instance.ShowPopupWinGame(true);
     }
 }
@@ -92,3 +102,22 @@ public class ObjTag
     public const string thuyTinh = "thuyTinh";
     public const string deadZone = "DeadZone";
 }
+#if UNITY_EDITOR
+
+
+public static class Pref
+{
+    [MenuItem("player_pref/clear_all")]
+    public static void clear_all()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
+    [MenuItem("player_pref/add_coin")]
+    public static void AddCoin()
+    {
+        GameManager.Instance.UpdateCoin(200);
+    }
+
+}
+#endif
