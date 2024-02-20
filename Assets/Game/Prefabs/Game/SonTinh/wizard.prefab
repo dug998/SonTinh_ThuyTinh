@@ -41,6 +41,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4017441684664198}
   - component: {fileID: 212839655616533894}
+  - component: {fileID: 3410896581218263374}
+  - component: {fileID: 2836653638754235961}
+  - component: {fileID: 618172373663461810}
   m_Layer: 0
   m_Name: wizard
   m_TagString: Player
@@ -103,7 +106,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 773842377
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 25
   m_Sprite: {fileID: 21300000, guid: d2011154b76190f478f0466b7f66850b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -116,3 +119,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3410896581218263374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577274731438658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b2aa41eb4c3834d8f5d320a06c8fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectBase: {fileID: 618172373663461810}
+  _maxHealth: 0
+--- !u!114 &2836653638754235961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577274731438658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 0}
+  _material: {fileID: 0}
+--- !u!114 &618172373663461810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577274731438658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fdb035e5d496124682920e50f785baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 3410896581218263374}
+  _Dead: {fileID: 2836653638754235961}
+  _isDead: 0
+  speed: 0
+  _bulletPref: {fileID: 1689738209267954, guid: 4e0616163304be34e87aa72a5a86909b, type: 3}
+  _locationAppears: {fileID: 4080807653400092}
+  _nextHitting: 1

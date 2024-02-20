@@ -12,7 +12,6 @@ public class ST_BulletIce : ST_BulletRegular
         ObjectBase _obj = obj.GetComponent<ObjectBase>();
         if (_obj != null)
         {
-            _obj.ChangeMove(_reductionRate);
             _obj.ChangeSpeed(_reductionRate);
         }
     }

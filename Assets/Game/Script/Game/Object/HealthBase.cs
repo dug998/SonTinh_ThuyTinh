@@ -28,4 +28,8 @@ public class HealthBase : MonoBehaviour
     {
         return _currentHealth;
     }
+    public int GetMaxHealth()
+    {
+        return _maxHealth;
+    }
 }

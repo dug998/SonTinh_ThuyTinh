@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// Popup allows level and card selection
+/// </summary>
 public class PopupChoice : PopupBase
 {
     public Queue<DataCard> _CardChoiseBattle = new Queue<DataCard>();

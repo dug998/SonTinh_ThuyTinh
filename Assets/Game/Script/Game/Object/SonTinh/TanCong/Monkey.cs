@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Monkey has the ability to throw projectiles after a period of time
+/// </summary>
+///
 public class Monkey : ObjectCounterattack
 {
 

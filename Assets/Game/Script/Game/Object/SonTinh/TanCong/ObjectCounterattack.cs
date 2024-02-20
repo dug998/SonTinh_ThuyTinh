@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// class base for objects that can attack
+/// 
+/// 
+/// </summary>
 public abstract class ObjectCounterattack : ObjectBase
 {
     [Header(" ___ ObjectCounterattack ___"), Space(30)]
@@ -31,6 +35,11 @@ public abstract class ObjectCounterattack : ObjectBase
         }
 
     }
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+    }
+
     public override IEnumerator Die()
     {
         _Dead.PixelGravityDie();

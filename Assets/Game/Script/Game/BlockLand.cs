@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// block (cell) can contain 1 object
+/// </summary>
 public class BlockLand : MonoBehaviour
 {
     public static BlockLand _curBlock;

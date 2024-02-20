@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Soil consists of many blocks (soil cells) that have the function of generating desired blocks
+/// </summary>
 public class Grounds : MonoBehaviour
 {
     [SerializeField] GameObject _blockPref;

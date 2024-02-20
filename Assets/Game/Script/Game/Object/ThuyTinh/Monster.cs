@@ -44,7 +44,7 @@ public class Monster : ObjectAttackTT
         }
         else
         {
-            _myBody.velocity = new Vector2(-speed * move, _myBody.velocity.y);
+            _myBody.velocity = new Vector2(-speed, _myBody.velocity.y);
             _myAnim.SetBool("walk", true);
         }
     }

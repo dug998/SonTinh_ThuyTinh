@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 212760607727698990}
   - component: {fileID: 95131626528905874}
   - component: {fileID: 61206446141932884}
+  - component: {fileID: 5820295094264789793}
+  - component: {fileID: 6333219767374672743}
+  - component: {fileID: 2944984232551516487}
   m_Layer: 0
   m_Name: shrew
   m_TagString: Player
@@ -73,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 773842377
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: c30886ca41727924fb28e6933deadecb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -132,3 +135,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &5820295094264789793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558818587510542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b2aa41eb4c3834d8f5d320a06c8fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectBase: {fileID: 2944984232551516487}
+  _maxHealth: 1
+--- !u!114 &6333219767374672743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558818587510542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 0}
+  _material: {fileID: 0}
+--- !u!114 &2944984232551516487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558818587510542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9c9cdc5c927f245933d2484187f97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 5820295094264789793}
+  _Dead: {fileID: 6333219767374672743}
+  _isDead: 0
+  speed: 0
+  _bulletPref: {fileID: 0}
+  _locationAppears: {fileID: 0}
+  _nextHitting: 0
+  Shrew_die: {fileID: 1689738209267954, guid: bbfe573aaca5bfe4c8e6380808802dac, type: 3}
