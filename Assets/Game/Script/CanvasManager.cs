@@ -18,11 +18,7 @@ public class CanvasManager : MonoBehaviour
     public void LoadingGame()
     {
         PopupController.Instance.ShowPopupLoading(true);
-        DOVirtual.DelayedCall(5, () =>
-        {
-            PopupController.Instance.ShowPopupLoading(false);
-            PopupController.Instance.ShowPopupHome();
-        });
+       
     }
 
 

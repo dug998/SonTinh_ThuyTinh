@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonLevelUi : ButtonBase
 {
     [SerializeField] int _id;
-    [SerializeField] Text _textTitle;
+    [SerializeField] TextMeshProUGUI _textTitle;
     [SerializeField] Image _spriteIcon;
 
     public override void Init(object data)

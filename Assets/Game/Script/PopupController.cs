@@ -9,7 +9,8 @@ public class PopupController : MonoBehaviour
     public PopupHome _popupHome;
 
 
-    public PopupChoice _popupChoice;
+    public PopupChoiceLevel _popupChoiceLevel;
+    public PopupChoiceHero _popupChoiceHero;
     public PopupGamePlay _popupGamePlay;
     public PopupWinGame _popupWinGame;
 
@@ -30,15 +31,26 @@ public class PopupController : MonoBehaviour
         }
 
     }
-    public void ShowPopupChoice(bool _show = true, object data = null)
+    public void ShowPopupChoiceLevel(bool _show = true, object data = null)
     {
         if (_show)
         {
-            _popupChoice.Show(data);
+            _popupChoiceLevel.Show(data);
         }
         else
         {
-            _popupChoice.Hide();
+            _popupChoiceLevel.Hide();
+        }
+    }
+    public void ShowPopupChoiceHero(bool _show = true, object data = null)
+    {
+        if (_show)
+        {
+            _popupChoiceHero.Show(data);
+        }
+        else
+        {
+            _popupChoiceHero.Hide();
         }
     }
     public void ShowPopupHome(bool _show = true, object data = null)

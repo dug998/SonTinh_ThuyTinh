@@ -312,8 +312,8 @@ MonoBehaviour:
   _blockPref: {fileID: 307258027134368322, guid: a4f3cb57fcf901145909d81928bd7cfa, type: 3}
   _parentBlock: {fileID: 6423207015082984189}
   Blocks: []
-  _block1: {fileID: 21300000, guid: c6715a690375b3d4cb858e4beaade3ee, type: 3}
-  _block2: {fileID: 21300000, guid: 5a9fc7111bf67fb4b9b00b765cc54f83, type: 3}
+  _block1: {fileID: 21300000, guid: 7d3ac7999a9762a46a9e9e27a82feb10, type: 3}
+  _block2: {fileID: 21300000, guid: 7d3ac7999a9762a46a9e9e27a82feb10, type: 3}
 --- !u!1 &6423207015324556125
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +363,7 @@ MonoBehaviour:
   _coinPref: {fileID: 1985855474967314, guid: 96cabfe1124903c4fa14ea72eb759396, type: 3}
   _pathFrom: {fileID: 6423207014880655238}
   _pathTo: {fileID: 6423207016139194361}
+  _size: 2
 --- !u!1 &6423207015899690882
 GameObject:
   m_ObjectHideFlags: 0

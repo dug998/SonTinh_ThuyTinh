@@ -10,6 +10,7 @@ public abstract class ButtonBase : MonoBehaviour
     public Button _btn;
     protected virtual void Awake()
     {
+       
     }
     public virtual void AddEvent(UnityAction action)
     {

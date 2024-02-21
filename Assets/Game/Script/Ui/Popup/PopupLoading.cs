@@ -1,15 +1,34 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopupLoading : PopupBase
 {
-    public RectTransform _title;
-
+    public TextMeshProUGUI _txt_LoadingValue;
+    public Slider _sliderLoadingBar;
     public override void Show(object data = null)
     {
         gameObject.SetActive(true);
-        _title.DOAnchorPosY(20, 2).From(Vector2.zero).SetEase(Ease.OutQuad);
+        StartCoroutine(CoroutineLoading());
+    }
+    IEnumerator CoroutineLoading()
+    {
+        int currentValues = 0;
+        _txt_LoadingValue.text = $"Loading... {currentValues}%";
+        _sliderLoadingBar.value = currentValues;
+        while (currentValues < 100)
+        {
+            yield return new WaitForSeconds(Random.value/4);
+            currentValues++;
+            _txt_LoadingValue.text = $"Loading... {currentValues}%";
+            _sliderLoadingBar.value = currentValues;
+        }
+        yield return null;
+        PopupController.Instance.ShowPopupLoading(false);
+        PopupController.Instance.ShowPopupHome();
+
     }
 }

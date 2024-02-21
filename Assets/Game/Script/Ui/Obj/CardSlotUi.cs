@@ -8,17 +8,25 @@ public class CardSlotUi : MonoBehaviour
     [SerializeField] Text _txtTitle;
     [SerializeField] Text _txtPrice;
     [SerializeField] Image _icon;
-    [SerializeField] GameObject _mask;
-    public void Init()
+    [SerializeField] GameObject _maskAdd, _maskLock;
+    bool _locked = false;
+    public void Init(bool _locked)
     {
-        _mask.SetActive(true);
+        this._locked = _locked;
+        _maskAdd.SetActive(!_locked);
+        _maskLock.SetActive(_locked);
+
         _txtTitle.text = "";
         _txtPrice.text = "";
-       // _icon.sprite = null;
+        // _icon.sprite = null;
     }
     public void Show()
     {
-        _mask.SetActive(false);
+        if (_locked)
+        {
+            return;
+        }
+        _maskAdd.SetActive(false);
     }
     public void UpdateData(DataCard data)
     {

@@ -13,6 +13,7 @@ public class FactoryCoin : MonoBehaviour
     [SerializeField] DOTweenPath _pathFrom;
     [SerializeField] DOTweenPath _pathTo;
     int _numberFrom, _numberTo;
+    public int _size;
     private void Awake()
     {
         _numberFrom = _pathFrom.wps.Count;
@@ -33,7 +34,7 @@ public class FactoryCoin : MonoBehaviour
         {
             yield return new WaitUntil(() => GameManager._gameState == GameState.PLAYING);
             GameObject obj = Instantiate(_coinPref, transform);
-            obj.transform.localScale = Vector3.one * 1.5f;
+            obj.transform.localScale = Vector3.one * _size;
             obj.GetComponent<Coin>().DoMove(_pathFrom.wps[Random.Range(0, _numberFrom)], _pathTo.wps[Random.Range(0, _numberTo)], 2);
             yield return new WaitForSeconds(_nextSpawn);
 
