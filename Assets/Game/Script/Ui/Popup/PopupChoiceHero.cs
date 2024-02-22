@@ -13,15 +13,16 @@ public class PopupChoiceHero : PopupBase
     public ButtonBase _btnBackHome;
     public ButtonBase _btnPlay;
 
-    [Header(" ____ Card ____"), Space(30)]
+    [Header(" ____ Card ____ "), Space(30)]
 
     public DataCardGame _dataCards;
     List<DataCard> dataCard;
     public List<ButtonCardUi> _listCardUi;
 
-    [Header(" ___ Slot ___"), Space(30)]
+    [Header(" ____ Slot ____ "), Space(30)]
     public List<CardSlotUi> _listCardSlotUi;
-
+    [Header(" ____ Hero ____ ")]
+    public HeroesInfo _heroesInfo;
     bool _canPlay;
     public void Awake()
     {
@@ -31,6 +32,8 @@ public class PopupChoiceHero : PopupBase
     public override void Show(object data = null)
     {
         _maxCurrentSlot = GameManager.Instance._maxNumberCardBattle;
+        GameManager._CardChoiseBattle.Clear();
+        _currentSlot = 0;
         base.Show(data);
         Init();
     }
@@ -38,6 +41,8 @@ public class PopupChoiceHero : PopupBase
     {
         CloseDataCardSlotUi();
         LoadDataCard();
+        _canPlay = false;
+        _btnPlay.Activity(_canPlay);
     }
 
     #region On Click
@@ -86,32 +91,33 @@ public class PopupChoiceHero : PopupBase
             ui.Show();
             ui.Init(data);
             ui.RemoveAll();
-            ui.AddEvent(() => ChooseCard(data._id));
+            ui.AddEvent(() => ui.ChooseCard());
 
         }
 
     }
-    public void ChooseCard(int chooseCard)
+    public void ChooseCard(ButtonCardUi btnUi)
     {
+        GameManager.Instance.AddCardBattle(btnUi);
 
-        if (_currentSlot < _maxCurrentSlot)
+        ButtonCardUi[] dataCards = GameManager._CardChoiseBattle.ToArray();
+        for (int i = 0; i < dataCards.Length; i++)
         {
-            CardSlotUi card = _listCardSlotUi[_currentSlot];
-            DataCard data = dataCard.Find(x => x._id == chooseCard);
-            card.UpdateData(data);
-            GameManager.Instance.AddCardBattle(data);
-            card.Show();
-            _currentSlot++;
-            if(_currentSlot == _maxCurrentSlot)
+            DataCard data = dataCards[i]._data;
+            if (data != null && _currentSlot < _maxCurrentSlot)
             {
-                _canPlay = true;
-                Debug.Log(" Full Slot");
+                _currentSlot++;
             }
+            CardSlotUi card = _listCardSlotUi[i];
+            card.UpdateData(data);
+            card.Show();
         }
-        else
+        if (_currentSlot == _maxCurrentSlot)
         {
-            _canPlay = true;
             Debug.Log(" Full Slot");
+
+            _canPlay = true;
+            _btnPlay.Activity(_canPlay);
         }
 
     }

@@ -32,7 +32,7 @@ public class SpawnThuyTinh : MonoBehaviour
             for (int i = 0; i < _dataLevelAttack._numberMonter; i++)
             {
                 SpawnObj(_dataLevelAttack.GetObjRandom());
-                yield return new WaitForSeconds(Random.Range(0, 1));
+                yield return new WaitForSeconds(Random.Range(2, 3));
             }
             yield return new WaitForSeconds(5);
         }

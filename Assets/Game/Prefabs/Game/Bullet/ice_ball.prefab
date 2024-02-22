@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1066351805
+  m_SortingLayer: 4
   m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: 50b423e912fd2524fabbb7f173f98ce0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,10 +140,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 8716907517785862382}
   _Dead: {fileID: 8550399748149938748}
+  _isDead: 0
   speed: 12
-  move: 1
   dame: 30
-  ballHit: {fileID: 0}
+  ballHit: {fileID: 4224561887848955622, guid: 13bfdccdb35cee049ae27416227efc22, type: 3}
   _reductionRate: 0.9
 --- !u!114 &8716907517785862382
 MonoBehaviour:

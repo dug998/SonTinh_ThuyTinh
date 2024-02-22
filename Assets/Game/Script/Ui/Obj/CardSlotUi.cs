@@ -30,8 +30,17 @@ public class CardSlotUi : MonoBehaviour
     }
     public void UpdateData(DataCard data)
     {
+        if (_locked)
+        {
+            _maskLock.SetActive(_locked);
+            return;
+        }
+        if (data == null)
+        {
+            _maskAdd.SetActive(true);
+        }
         _txtTitle.text = data._title;
         _txtPrice.text = data._price.ToString();
-        _icon.sprite = data._spriteiIcon;
+        _icon.sprite = data._spriteCard;
     }
 }

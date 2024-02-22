@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(Dead))]
 public abstract class ObjectBase : MonoBehaviour
 {
+
     [Header(" ___ Component ___"), Space(30)]
 
     protected Rigidbody2D _myBody;

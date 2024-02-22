@@ -39,7 +39,7 @@ public class PopupGamePlay : PopupBase
     }
     public void LoadBattleCard()
     {
-        DataCard[] dataCards = GameManager._CardChoiseBattle.ToArray();
+        ButtonCardUi[] dataCards = GameManager._CardChoiseBattle.ToArray();
         foreach (var cardUi in _listBattleCardUi)
         {
             cardUi.Hide();
@@ -47,7 +47,7 @@ public class PopupGamePlay : PopupBase
         for (int i = 0; i < dataCards.Length; i++)
         {
             ButtonBattleCardUi ui = _listBattleCardUi[i];
-            DataCard data = dataCards[i];
+            DataCard data = dataCards[i]._data;
             ui.Show();
             ui.Init(data);
         }

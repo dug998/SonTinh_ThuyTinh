@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 /// <summary>
 /// block (cell) can contain 1 object
@@ -23,9 +24,16 @@ public class BlockLand : MonoBehaviour
         {
             _curBlock = this;
         }
+     //   Debug.Log(_isFull + " -- " + _children.activeSelf);
+        if (_isFull && !_children.activeSelf && _children != null)
+        {
+            Destroy(_children);
+            _isFull = false;
+        }
     }
     public void OnMouseUp()
     {
+
         if (_curBlock != null && GameManager._curBattleCard != null && GameManager._gameState == GameState.PLAYING && !_isFull)
         {
             if (GameManager._curBattleCard._canActive)

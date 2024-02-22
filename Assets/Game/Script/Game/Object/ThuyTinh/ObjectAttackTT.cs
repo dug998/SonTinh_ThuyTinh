@@ -46,4 +46,12 @@ public abstract class ObjectAttackTT : ObjectBase
         }
 
     }
+    protected void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag(ObjTag.sonTinh))
+        {
+            _isHitting = false;
+            _stand = false;
+        }
+    }
 }

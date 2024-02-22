@@ -30,6 +30,8 @@ public class PopupChoiceLevel : PopupBase
     public void Init()
     {
         LoadDataLevel();
+        _canPlay = false;
+        _btnPlay.Activity(_canPlay);
     }
 
     #region On Click
@@ -43,7 +45,6 @@ public class PopupChoiceLevel : PopupBase
         Hide();
         PopupController.Instance.ShowPopupChoiceHero(true);
 
-        GameManager.Instance.StartLevelGame();
     }
     void OnClickButonBackHome()
     {
@@ -76,6 +77,7 @@ public class PopupChoiceLevel : PopupBase
     {
         Debug.Log(" chọn level ");
         _canPlay = true;
+        _btnPlay.Activity(_canPlay);
         GameManager._dataLevelGame = Data;
         //  _backButton.SetActive(true);
         Debug.Log("Level: " + Data._id);

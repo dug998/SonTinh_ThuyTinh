@@ -10,9 +10,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public CanvasManager _canvasManager;
     [Header(" ____  Static ___ ")]
-    public static Queue<DataCard> _CardChoiseBattle = new Queue<DataCard>();
+    public static Queue<ButtonCardUi> _CardChoiseBattle;
     public static ButtonBattleCardUi _curBattleCard;
-    public int _maxNumberCardBattle = 3;
+    public int _maxNumberCardBattle
+    {
+        get { return PrefData.maxNumberCardBattle; }
+        set { PrefData.maxNumberCardBattle = value; }
+
+    }
 
     public static DataLevel _dataLevelGame;
     public static GameState _gameState;
@@ -26,7 +31,9 @@ public class GameManager : MonoBehaviour
     public void Awake()
     {
         Instance = this;
+        _CardChoiseBattle = new Queue<ButtonCardUi>();
         _canvasManager.Init();
+        _gameState = GameState.MENU;
     }
     public void StartLevelGame()
     {
@@ -47,14 +54,17 @@ public class GameManager : MonoBehaviour
     {
         return curCoin >= values;
     }
-    public void AddCardBattle(DataCard card)
+    public void AddCardBattle(ButtonCardUi card)
     {
-        if (_CardChoiseBattle.Count > _maxNumberCardBattle)
+        if (_CardChoiseBattle.Count >= _maxNumberCardBattle)
         {
-            _CardChoiseBattle.Dequeue();
+            Debug.Log("remove card");
+            ButtonCardUi btnCard = _CardChoiseBattle.Dequeue();
+            btnCard.SetSelected(false);
 
         }
         _CardChoiseBattle.Enqueue(card);
+
     }
     void Update()
     {

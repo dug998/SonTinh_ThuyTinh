@@ -24,7 +24,7 @@ public class ButtonBattleCardUi : ButtonBase
     public override void Init(object data)
     {
         _data = (DataCard)data;
-        _iconCard.sprite = _data._spriteiIcon;
+        _iconCard.sprite = _data._spriteCard;
         _price = _data._price;
         _canActive = true;
         _txtPrice.text = _price.ToString();
