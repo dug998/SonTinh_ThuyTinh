@@ -12,8 +12,6 @@ public class PopupChoiceLevel : PopupBase
 
     [Header(" ____ Level ____"), Space(30)]
 
-    public DataLevelGame _dataLevels;
-    List<DataLevel> dataLevel;
     public List<ButtonLevelUi> _listLevelUi;
 
     bool _canPlay;
@@ -57,7 +55,7 @@ public class PopupChoiceLevel : PopupBase
     #region Level Button
     public void LoadDataLevel()
     {
-        dataLevel = _dataLevels.dataLevels;
+        List<DataLevel> dataLevel = GameManager.Instance._dataLevels.dataLevels;
         foreach (var ui in _listLevelUi)
         {
             ui.Hide();
@@ -78,7 +76,7 @@ public class PopupChoiceLevel : PopupBase
         Debug.Log(" chọn level ");
         _canPlay = true;
         _btnPlay.Activity(_canPlay);
-        GameManager._dataLevelGame = Data;
+        GameManager._dataCurLevel = Data;
         //  _backButton.SetActive(true);
         Debug.Log("Level: " + Data._id);
     }

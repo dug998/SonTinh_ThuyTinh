@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,33 +11,71 @@ public class SpawnThuyTinh : MonoBehaviour
     DataLevel _dataLevel;
     public List<ObjectBase> _listMonter;
 
+    StageInfoCurrent _stageInfoCurrent;
+
+    bool _completeOneStage;
+    int _numberCurObj = 0;
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(this);
+        }
         Instance = this;
+        _stageInfoCurrent = PopupController.Instance._popupGamePlay._stageInfoCurrent;
     }
 
-
-    public IEnumerator CreateArmyList()
+    /// <summary>
+    /// Tạo các giai đoạn trong 1 level
+    /// Tiêu diệt hết quái sẽ hoàn thành game 
+    /// </summary>
+    /// <param name="dataLevel"></param>
+    /// <returns></returns>
+    public IEnumerator CreateArmyList(DataLevel dataLevel)
     {
         _location = Grounds._rowLocation;
-        _dataLevel = GameManager._dataLevelGame;
-        DataLevelAttack _dataLevelAttack;
-        int count = 0;
-        yield return new WaitForSeconds(5);
+        _dataLevel = dataLevel;
+        _stageInfoCurrent.Init(dataLevel._dataStageInfos);
+        yield return new WaitForSeconds(_dataLevel._timeWait);
+
+        DataOneStageAttack _dataStage;
+        int _indexTurn = 0;
+        _numberCurObj = 0;
         _listMonter.Clear();
-        while (count < _dataLevel._numberLevelAttack)
+        
+        
+        while (_indexTurn < _dataLevel._numberStageAttack)
         {
-            count++;
-            _dataLevelAttack = _dataLevel._dataLevelAttacks[Random.Range(0, _dataLevel._dataLevelAttacks.Count)];
-            for (int i = 0; i < _dataLevelAttack._numberMonter; i++)
-            {
-                SpawnObj(_dataLevelAttack.GetObjRandom());
-                yield return new WaitForSeconds(Random.Range(2, 3));
-            }
+            _stageInfoCurrent.StartOneStage(_indexTurn);
+            yield return new WaitForSeconds(2);
+            _completeOneStage = false;
+            _dataStage = _dataLevel._dataLevelAttacks[_indexTurn];
+            StartCoroutine(OneStageAttack(_dataStage, _numberCurObj, _dataLevel._numberMaxObj));
+
+            yield return new WaitUntil(() => _completeOneStage);
+            _stageInfoCurrent.EndOneStage(_indexTurn);
+
+            _indexTurn++;
+
             yield return new WaitForSeconds(5);
+            CompleteLevel();
         }
 
     }
+    public IEnumerator OneStageAttack(DataOneStageAttack data, int _numberCurObj, int _numberMaxObj)
+    {
+
+        for (int i = 0; i < data._numberMonter; i++)
+        {
+            SpawnObj(data.GetTypeObjRandom());
+            _numberCurObj++;
+            _stageInfoCurrent.OnChangeValuesSliderBar((float)_numberCurObj / _numberMaxObj);
+            yield return new WaitForSeconds(data._nextTime + Random.Range(1, 3));
+        }
+        yield return new WaitUntil(() => CheckNumberMonterOneStage());
+        _completeOneStage = true;
+    }
+
     public void SpawnObj(GameObject mob1)
     {
         int check = Random.Range(0, 5);
@@ -45,16 +83,26 @@ public class SpawnThuyTinh : MonoBehaviour
         obj.GetComponent<ObjectAttackTT>().Born();
         _listMonter.Add(obj.GetComponent<ObjectBase>());
     }
+    public void RemoveMonsterAll()
+    {
+
+    }
+    public bool CheckNumberMonterOneStage()
+    {
+        return _listMonter.Count <= 0;
+    }
     public void RemoveMonster(ObjectBase obj)
     {
         _listMonter.Remove(obj);
-        CheckWin();
+
     }
-    public void CheckWin()
+    public void CompleteLevel()
     {
-        if (_listMonter.Count <= 0)
+        if (GameManager._gameState != GameState.PLAYING)
         {
-            GameManager.Instance.WinGame();
+            return;
         }
+        GameManager.Instance.EndGame(GameState.WIN_GAME);
+
     }
 }

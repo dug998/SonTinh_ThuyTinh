@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 3370497441825681248}
   m_Layer: 27
   m_Name: tank
-  m_TagString: Enemy
+  m_TagString: thuyTinh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,8 +217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 2160540003723683735}
   _Dead: {fileID: 3370497441825681248}
+  _isDead: 0
   speed: 0.2
-  move: 1
   _bulletPref: {fileID: 1074870381605142, guid: 9b89ce5ad068d0144b2515795a8bcd5b, type: 3}
   _locationAppears: {fileID: 4398693984446484}
   _nextHitting: 2

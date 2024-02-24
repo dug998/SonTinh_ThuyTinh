@@ -45,12 +45,12 @@ public class BlockLand : MonoBehaviour
     public void SpawnObj()
     {
         DataCard card = GameManager._curBattleCard._data;
-        if (GameManager.Instance.CheckEnoughCoin(card._price))
+        if (PopupGamePlay.CheckEnoughCoin(card._price))
         {
             GameManager._curBattleCard.UsingCard();
             _isFull = true;
             _children = Instantiate(card._ObjPref, transform);
-            GameManager.Instance.UpdateCoin(-card._price);
+            PopupGamePlay.UpdateCoin(-card._price);
             ObjectBase objectBase = _children.GetComponent<ObjectBase>();
             objectBase.Born();
             _children.transform.localPosition = new Vector3(0, .3f);

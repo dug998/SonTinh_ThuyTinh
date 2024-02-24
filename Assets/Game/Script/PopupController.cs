@@ -13,6 +13,7 @@ public class PopupController : MonoBehaviour
     public PopupChoiceHero _popupChoiceHero;
     public PopupGamePlay _popupGamePlay;
     public PopupWinGame _popupWinGame;
+    public PopupLose _popupLose;
 
     public void Init()
     {
@@ -84,6 +85,17 @@ public class PopupController : MonoBehaviour
         else
         {
             _popupWinGame.Hide();
+        }
+    }
+    public void ShowPopupLose(bool _show = true, object data = null)
+    {
+        if (_show)
+        {
+            _popupLose.Show(data);
+        }
+        else
+        {
+            _popupLose.Hide();
         }
     }
 }

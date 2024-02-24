@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [Header(" ____  Static ___ ")]
     public static Queue<ButtonCardUi> _CardChoiseBattle;
     public static ButtonBattleCardUi _curBattleCard;
+    [Header(" ----  DATA --- ")]
+    public DataLevelGame _dataLevels;
     public int _maxNumberCardBattle
     {
         get { return PrefData.maxNumberCardBattle; }
@@ -19,11 +21,8 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public static DataLevel _dataLevelGame;
+    public static DataLevel _dataCurLevel;
     public static GameState _gameState;
-    public static Transform _targetCoin;
-    public static int curCoin;
-
 
     [Header(" ___ Pref __ "), Space(20)]
     public GameObject _prefLeveGame;
@@ -42,17 +41,8 @@ public class GameManager : MonoBehaviour
             Destroy(_curLevelGame);
         _curLevelGame = Instantiate(_prefLeveGame, transform);
 
-        _curLevelGame.GetComponent<GameLevel>().Init();
+        _curLevelGame.GetComponent<GameLevel>().Init(_dataCurLevel);
 
-    }
-    public void UpdateCoin(int values)
-    {
-        curCoin += values;
-        GameEvent.changeCoin?.Invoke(curCoin);
-    }
-    public bool CheckEnoughCoin(int values)
-    {
-        return curCoin >= values;
     }
     public void AddCardBattle(ButtonCardUi card)
     {
@@ -75,28 +65,32 @@ public class GameManager : MonoBehaviour
             {
                 Touch touch = Input.GetTouch(i);
 
-                if (touch.phase == TouchPhase.Began)
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+                if (hit.collider != null && hit.collider.CompareTag("Gold"))
                 {
-
-                    Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-
-                    Collider2D hitCollider = Physics2D.OverlapPoint(touchPosition);
-
-                    if (hitCollider != null && hitCollider.gameObject.CompareTag("Gold"))
-                    {
-                        hitCollider.GetComponent<Coin>()?.TakeCoin(PopupGamePlay._posCoin);
-                    }
+                    hit.collider.GetComponent<Coin>()?.TakeCoin(PopupGamePlay._posCoin);
                 }
+
             }
         }
 
     }
-    public void WinGame()
+    public void EndGame(GameState state)
     {
-        _gameState = GameState.GAME_OVER;
-
+        _gameState = state;
         PopupController.Instance.ShowPopupGamePlay(false);
-        PopupController.Instance.ShowPopupWinGame(true);
+        if (state == GameState.WIN_GAME)
+        {
+
+            PopupController.Instance.ShowPopupWinGame(true);
+        }
+        else if (state == GameState.LOSE_GAME)
+        {
+            PopupController.Instance.ShowPopupLose(true);
+        }
+
     }
 }
 public enum GameState
@@ -105,6 +99,8 @@ public enum GameState
     PLAYING,
     PAUSED,
     GAME_OVER,
+    WIN_GAME,
+    LOSE_GAME
 }
 public class ObjTag
 {
@@ -126,7 +122,7 @@ public static class Pref
     [MenuItem("player_pref/add_coin")]
     public static void AddCoin()
     {
-        GameManager.Instance.UpdateCoin(200);
+        PopupGamePlay.UpdateCoin(200);
     }
 
 }

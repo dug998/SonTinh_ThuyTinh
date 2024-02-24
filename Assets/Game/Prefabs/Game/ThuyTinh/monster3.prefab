@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1520569858854165688}
   m_Layer: 11
   m_Name: monster3
-  m_TagString: Enemy
+  m_TagString: thuyTinh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,8 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 3994477187114149909}
   _Dead: {fileID: 1520569858854165688}
+  _isDead: 0
   speed: 0.2
-  move: 1
   _bulletPref: {fileID: 1074870381605142, guid: 2183003d329f46346b2ceb276b42254e, type: 3}
   _locationAppears: {fileID: 4331053521944478}
   _nextHitting: 2

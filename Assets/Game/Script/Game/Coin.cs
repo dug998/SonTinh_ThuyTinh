@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour
         transform.DOKill();
         transform.DOMove(target, 2).OnComplete(() =>
         {
-            GameManager.Instance.UpdateCoin(_values);
+           PopupGamePlay.UpdateCoin(_values);
             Destroy(gameObject);
         });
 

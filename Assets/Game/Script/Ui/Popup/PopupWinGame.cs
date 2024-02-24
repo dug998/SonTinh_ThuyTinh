@@ -38,7 +38,7 @@ public class PopupWinGame : PopupBase
         }
         Hide();
         PopupController.Instance.ShowPopupHome(true);
-
+        CanvasManager.Instance._Bg.SetActive(true);
     }
     public void OnClickButtonContinue()
     {
@@ -47,7 +47,9 @@ public class PopupWinGame : PopupBase
             return;
         }
         Hide();
-        PopupController.Instance.ShowPopupChoiceLevel(true);
+        GameManager._dataCurLevel = GameManager.Instance._dataLevels.GetLevel(GameManager._dataCurLevel._id);
+        PopupController.Instance.ShowPopupGamePlay(true);
+        GameManager.Instance.StartLevelGame();
 
     }
     public void OnClickButtonReplay()
@@ -57,6 +59,7 @@ public class PopupWinGame : PopupBase
             return;
         }
         Hide();
+        PopupController.Instance.ShowPopupGamePlay(true);
         GameManager.Instance.StartLevelGame();
 
     }

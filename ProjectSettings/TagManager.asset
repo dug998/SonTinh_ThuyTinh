@@ -9,10 +9,8 @@ TagManager:
   - Destructible
   - Ball
   - Gold
-  - Tile
   - Undefined
   - Trap
-  - Enemy
   - Enemy_Ball
   - DeadZone
   layers:

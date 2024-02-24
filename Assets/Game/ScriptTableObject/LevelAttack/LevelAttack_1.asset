@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LevelAttack_1
   m_EditorClassIdentifier: 
   _level: 1
-  _numberMonter: 1
-  _monsters:
-  - {fileID: 1363261665061106, guid: b7a4f5bd442dfdf4abb89cd2c152908b, type: 3}
+  _numberMonter: 2
+  _nextTime: 2
+  _typeMonsters:
+  - {fileID: 4358261425712808292, guid: b7a4f5bd442dfdf4abb89cd2c152908b, type: 3}
