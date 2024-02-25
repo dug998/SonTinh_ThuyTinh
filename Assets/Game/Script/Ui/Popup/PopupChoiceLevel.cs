@@ -15,8 +15,9 @@ public class PopupChoiceLevel : PopupBase
     public List<ButtonLevelUi> _listLevelUi;
 
     bool _canPlay;
-    public void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _btnPlay.AddEvent(OnClickButtonPlay);
         _btnBackHome.AddEvent(OnClickButonBackHome);
     }

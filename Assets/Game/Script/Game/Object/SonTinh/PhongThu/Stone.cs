@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Stone : ObjectDefense
 {
-    [SerializeField] int _valuesStatus = 50;
-  
+    float _valuesStatus;
 
+    public override void Born(Object data = null)
+    {
+        base.Born(data);
+        _valuesStatus = _health.GetMaxHealth() * .3f;
+    }
     public override void Move()
     {
 

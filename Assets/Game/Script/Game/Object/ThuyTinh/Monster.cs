@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : ObjectAttackTT
+public class Monster : ObjectThuyTinh
 {
     public override IEnumerator Attack()
     {
@@ -24,7 +24,7 @@ public class Monster : ObjectAttackTT
         _stand = true;
         base.Died();
     }
-    public override IEnumerator Die()
+    public override IEnumerator EffectDie()
     {
         _myColli.enabled = false;
         SpawnThuyTinh.Instance?.RemoveMonster(this);

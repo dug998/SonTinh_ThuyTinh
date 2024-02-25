@@ -497,19 +497,19 @@ public class _2dxFX_AL_SkyCloud_Editor : Editor
             EditorGUILayout.BeginVertical("Box");
 
             Texture2D icone = Resources.Load("2dxfx-icon-size_x") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_OffsetX"), new GUIContent("Offset X", icone, "Change the start offset of the shadow effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_OffsetX"), new GUIContent("Offset X", icone, "Change the start offset of the shadow _effect"));
 
             icone = Resources.Load("2dxfx-icon-size_y") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_OffsetY"), new GUIContent("Offset Y", icone, "Change the start offset of the shadow effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_OffsetY"), new GUIContent("Offset Y", icone, "Change the start offset of the shadow _effect"));
 
             icone = Resources.Load("2dxfx-icon-size") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_Zoom"), new GUIContent("Zoom", icone, "Zoom the shadow effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_Zoom"), new GUIContent("Zoom", icone, "Zoom the shadow _effect"));
 
             icone = Resources.Load("2dxfx-icon-value") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("_Intensity"), new GUIContent("Intensity", icone, "Active the X mouvement of the cloud"));
 
             icone = Resources.Load("2dxfx-icon-value") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollX"), new GUIContent("Auto Scroll X", icone, "Change the value of the posterize effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollX"), new GUIContent("Auto Scroll X", icone, "Change the value of the posterize _effect"));
 
             if (_2dxScript._AutoScrollX)
             {

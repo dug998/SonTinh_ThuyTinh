@@ -8,6 +8,25 @@ public class Coin : MonoBehaviour
     public int _values;
     public TypeCoin _typeCoin;
     public GameObject _parrent;
+    bool _received = false;
+    public void OnEnable()
+    {
+        _received = false;
+        Invoke(nameof(Destroy), 5);
+    }
+    public void Destroy()
+    {
+      
+        if (_received && _typeCoin != TypeCoin.exploit)
+        {
+            return;
+        }
+        Destroy(gameObject);
+    }
+    private void OnDisable()
+    {
+        transform.DOKill();
+    }
     public void DoMove(Vector2 from, Vector2 to, float duration)
     {
         transform.DOKill();
@@ -15,20 +34,25 @@ public class Coin : MonoBehaviour
     }
     public void TakeCoin(Vector2 target)
     {
+        if (_received)
+        {
+            return;
+        }
+        _received = true;
         transform.DOKill();
         transform.DOMove(target, 2).OnComplete(() =>
         {
-           PopupGamePlay.UpdateCoin(_values);
+            PopupGamePlay.UpdateCoin(_values);
             Destroy(gameObject);
         });
 
-        if (_typeCoin == TypeCoin.exploit)
+        if (_typeCoin == TypeCoin.exploit && _parrent != null)
         {
             ObjectExploit objectExploit = _parrent.GetComponent<ObjectExploit>();
             objectExploit.Harvest();
             _parrent = null;
         }
-       
+
     }
 
 }

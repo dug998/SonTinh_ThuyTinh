@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [RequireComponent(typeof(HealthBase))]
 [RequireComponent(typeof(Dead))]
@@ -31,16 +28,18 @@ public abstract class ObjectBase : MonoBehaviour
         _myBody = GetComponent<Rigidbody2D>();
         _myColli = GetComponent<Collider2D>();
     }
-    public virtual void Born()
+    public virtual void Born(Object data = null)
     {
+        Debug.Log("object");
         _isDead = false;
-        _health.SetMaxHealth();
+        _health.Init();
     }
+
     public abstract void Move();
-    public abstract IEnumerator Die();
+    public abstract IEnumerator EffectDie();
     public virtual void Died()
     {
-        StartCoroutine(Die());
+        StartCoroutine(EffectDie());
     }
     public virtual void UpdateHealth(int values)
     {

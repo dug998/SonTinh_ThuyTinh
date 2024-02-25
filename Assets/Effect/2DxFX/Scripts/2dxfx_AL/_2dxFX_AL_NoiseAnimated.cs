@@ -383,7 +383,7 @@ public class _2dxFX_AL_NoiseAnimated_Editor : Editor
             EditorGUILayout.BeginVertical("Box");
 
             Texture2D icone = Resources.Load("2dxfx-icon-contrast") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Noise"), new GUIContent("Noise Value", icone, "Change the value of the Noise effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Noise"), new GUIContent("Noise Value", icone, "Change the value of the Noise _effect"));
 
             EditorGUILayout.BeginVertical("Box");
 

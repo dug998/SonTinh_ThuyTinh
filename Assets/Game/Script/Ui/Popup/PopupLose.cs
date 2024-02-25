@@ -9,8 +9,9 @@ public class PopupLose : PopupBase
     public ButtonBase _btnHome;
     public ButtonBase _btnReplay;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _btnHome.AddEvent(OnClickButtonHome);
         _btnReplay.AddEvent(OnClickButtonReplay);
     }
@@ -36,7 +37,7 @@ public class PopupLose : PopupBase
         PopupController.Instance.ShowPopupHome(true);
         CanvasManager.Instance._Bg.SetActive(true);
     }
-   
+
     public void OnClickButtonReplay()
     {
         if (!_isShow)

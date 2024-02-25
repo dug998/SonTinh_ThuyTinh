@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class ObjectDefense : ObjectBase
+public abstract class ObjectDefense : ObjectSonTinh
 {
     public override void UpdateHealth(int values)
     {
@@ -11,7 +11,7 @@ public abstract class ObjectDefense : ObjectBase
         StatusObjHealth();
     }
     public abstract void StatusObjHealth();
-    public override IEnumerator Die()
+    public override IEnumerator EffectDie()
     {
         _Dead.PixelGravityDie(0);
         yield return new WaitForSeconds(1);

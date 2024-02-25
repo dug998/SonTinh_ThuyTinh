@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4073294522534304694}
   m_Layer: 0
   m_Name: ice
-  m_TagString: Player
+  m_TagString: sonTinh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 6038615886547171877}
   _maxHealth: 0
+  _currentHealth: 0
 --- !u!114 &6038615886547171877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,8 +182,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 7126940028432375326}
   _Dead: {fileID: 4073294522534304694}
+  _isDead: 0
   speed: 0
-  move: 0
+  _dataHero: {fileID: 0}
   _bulletPref: {fileID: 1801618092695052, guid: 13841f7dae2a7a7459add8041a98daf0, type: 3}
   _locationAppears: {fileID: 4132753297312926}
   _nextHitting: 2

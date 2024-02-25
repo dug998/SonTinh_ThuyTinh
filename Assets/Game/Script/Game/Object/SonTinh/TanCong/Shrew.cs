@@ -6,9 +6,9 @@ public class Shrew : ObjectCounterattack
 {
     private float _nextUp;
     public GameObject Shrew_die;
-    public override void Born()
+    public override void Born(Object data = null)
     {
-        base.Born();
+        base.Born(data);
         _nextUp = Random.Range(3, 6);
         StartCoroutine(Attack());
     }
@@ -46,10 +46,10 @@ public class Shrew : ObjectCounterattack
             UpdateHealth(-_health.GetMaxHealth());
         }
     }
-    public override IEnumerator Die()
+    public override IEnumerator EffectDie()
     {
         Instantiate(Shrew_die, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
     }
 }

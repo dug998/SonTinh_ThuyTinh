@@ -14,8 +14,9 @@ public class PopupHome : PopupBase
     [Header("---- Menu --- ")]
     public ButtonBase _btnShop;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _btnPlay.AddEvent(OnClickButtonStartGame);
     }
     public void OnClickButtonStartGame()

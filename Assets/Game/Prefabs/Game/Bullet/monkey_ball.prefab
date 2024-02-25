@@ -142,9 +142,8 @@ MonoBehaviour:
   _Dead: {fileID: 5836175160471520990}
   _isDead: 0
   speed: 12
-  move: 1
   dame: 30
-  ballHit: {fileID: 4224561887848955622, guid: d1ea2e95e7b40124dab07761091ef2bf, type: 3}
+  _effect: {fileID: 4224561887848955622, guid: d1ea2e95e7b40124dab07761091ef2bf, type: 3}
 --- !u!114 &1844438614278995998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 3745735383865302531}
   _maxHealth: 0
+  _currentHealth: 0
 --- !u!114 &5836175160471520990
 MonoBehaviour:
   m_ObjectHideFlags: 0

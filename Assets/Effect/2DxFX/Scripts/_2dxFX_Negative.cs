@@ -277,7 +277,7 @@ public class _2dxFX_Negative_Editor : Editor
             EditorGUILayout.BeginVertical("Box");
 
             Texture2D icone = Resources.Load("2dxfx-icon-contrast") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Negative"), new GUIContent("Negative Value", icone, "Change the value of the Negative effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Negative"), new GUIContent("Negative Value", icone, "Change the value of the Negative _effect"));
 
             EditorGUILayout.BeginVertical("Box");
 

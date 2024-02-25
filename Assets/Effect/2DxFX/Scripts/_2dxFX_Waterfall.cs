@@ -333,7 +333,7 @@ public class _2dxFX_Waterfall_Editor : Editor
             icone = Resources.Load("2dxfx-icon-brightness") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("Light"), new GUIContent("Light Intensity", icone, "Change the intensity of the light"));
             icone = Resources.Load("2dxfx-icon-fade") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("EValue"), new GUIContent("Effect Value", icone, "Change the effect intensity"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("EValue"), new GUIContent("Effect Value", icone, "Change the _effect intensity"));
             icone = Resources.Load("2dxfx-icon-fade") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("TValue"), new GUIContent("Texture Light Value", icone, "Change the Texture Light intensity"));
             icone = Resources.Load("2dxfx-icon-color") as Texture2D;

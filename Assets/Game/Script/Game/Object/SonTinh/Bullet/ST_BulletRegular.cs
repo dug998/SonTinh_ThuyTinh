@@ -5,9 +5,9 @@ using UnityEngine;
 public class ST_BulletRegular : ObjectBase
 {
     [SerializeField] int dame;
-    public GameObject ballHit;
+    public GameObject _effect;
 
-    public override void Born()
+    public override void Born(Object data = null)
     {
     }
     public override void UpdateHealth(int values)
@@ -32,15 +32,15 @@ public class ST_BulletRegular : ObjectBase
     {
         ObjectBase monsterHealth = obj.GetComponent<ObjectBase>();
         monsterHealth.UpdateHealth(-dame);
-        Instantiate(ballHit, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-        ballHit.transform.localScale = Vector2.one * 0.5f;
+        Instantiate(_effect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+        _effect.transform.localScale = Vector2.one * 0.5f;
     }
     public override void Move()
     {
         _myBody.velocity = new Vector2(speed, _myBody.velocity.y);
     }
 
-    public override IEnumerator Die()
+    public override IEnumerator EffectDie()
     {
         gameObject.SetActive(false);
         yield return null;

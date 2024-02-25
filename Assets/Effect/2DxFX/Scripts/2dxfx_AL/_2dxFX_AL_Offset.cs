@@ -461,20 +461,20 @@ public class _2dxFX_AL_Offset_Editor : Editor
             EditorGUILayout.PropertyField(m_object.FindProperty("_ZoomXY"), new GUIContent("Zoom XY", icone, "Change the Zoom value of X and Y. Note if you want to change only the X or the Y, you must set Zoom XY to 1"));
 
             icone = Resources.Load("2dxfx-icon-value") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollX"), new GUIContent("Auto Scroll X", icone, "Change the value of the posterize effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollX"), new GUIContent("Auto Scroll X", icone, "Change the value of the posterize _effect"));
             if (_2dxScript._AutoScrollX)
             {
                 icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedX"), new GUIContent("Auto Scroll Speed X", icone, "Change the value of the posterize effect"));
+                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedX"), new GUIContent("Auto Scroll Speed X", icone, "Change the value of the posterize _effect"));
             }
 
             icone = Resources.Load("2dxfx-icon-value") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollY"), new GUIContent("Auto Scroll Y", icone, "Change the value of the posterize effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollY"), new GUIContent("Auto Scroll Y", icone, "Change the value of the posterize _effect"));
 
             if (_2dxScript._AutoScrollY)
             {
                 icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedY"), new GUIContent("Auto Scroll Speed Y", icone, "Change the value of the posterize effect"));
+                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedY"), new GUIContent("Auto Scroll Speed Y", icone, "Change the value of the posterize _effect"));
             }
 
 

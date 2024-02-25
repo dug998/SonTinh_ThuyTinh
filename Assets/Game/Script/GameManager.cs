@@ -9,28 +9,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public CanvasManager _canvasManager;
-    [Header(" ____  Static ___ ")]
-    public static Queue<ButtonCardUi> _CardChoiseBattle;
-    public static ButtonBattleCardUi _curBattleCard;
     [Header(" ----  DATA --- ")]
     public DataLevelGame _dataLevels;
-    public int _maxNumberCardBattle
-    {
-        get { return PrefData.maxNumberCardBattle; }
-        set { PrefData.maxNumberCardBattle = value; }
-
-    }
 
     public static DataLevel _dataCurLevel;
     public static GameState _gameState;
 
     [Header(" ___ Pref __ "), Space(20)]
     public GameObject _prefLeveGame;
-    GameObject _curLevelGame;
+    public GameLevel _curLevelGame;
     public void Awake()
     {
         Instance = this;
-        _CardChoiseBattle = new Queue<ButtonCardUi>();
+
         _canvasManager.Init();
         _gameState = GameState.MENU;
     }
@@ -38,45 +29,14 @@ public class GameManager : MonoBehaviour
     {
         _gameState = GameState.PLAYING;
         if (_curLevelGame != null)
-            Destroy(_curLevelGame);
-        _curLevelGame = Instantiate(_prefLeveGame, transform);
+            Destroy(_curLevelGame.gameObject);
+        _curLevelGame = Instantiate(_prefLeveGame, transform).GetComponent<GameLevel>();
 
         _curLevelGame.GetComponent<GameLevel>().Init(_dataCurLevel);
 
     }
-    public void AddCardBattle(ButtonCardUi card)
-    {
-        if (_CardChoiseBattle.Count >= _maxNumberCardBattle)
-        {
-            Debug.Log("remove card");
-            ButtonCardUi btnCard = _CardChoiseBattle.Dequeue();
-            btnCard.SetSelected(false);
 
-        }
-        _CardChoiseBattle.Enqueue(card);
-
-    }
-    void Update()
-    {
-
-        if (Input.touchCount > 0)
-        {
-            for (int i = 0; i < Input.touchCount; i++)
-            {
-                Touch touch = Input.GetTouch(i);
-
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-                if (hit.collider != null && hit.collider.CompareTag("Gold"))
-                {
-                    hit.collider.GetComponent<Coin>()?.TakeCoin(PopupGamePlay._posCoin);
-                }
-
-            }
-        }
-
-    }
+   
     public void EndGame(GameState state)
     {
         _gameState = state;

@@ -171,7 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 4358261425712808292}
-  _maxHealth: 50
+  _maxHealth: 200
+  _currentHealth: 0
 --- !u!114 &4358261425712808292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +188,7 @@ MonoBehaviour:
   _health: {fileID: 5643882496692992158}
   _Dead: {fileID: 6461152052721522188}
   _isDead: 0
-  speed: 0.4
+  speed: 0.3
   _bulletPref: {fileID: 1074870381605142, guid: 2183003d329f46346b2ceb276b42254e, type: 3}
   _locationAppears: {fileID: 4801058324159018}
   _nextHitting: 0

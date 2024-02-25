@@ -23,8 +23,8 @@ public class ETFXTarget : MonoBehaviour
     {
         targetRenderer.enabled = true; //Shows the target
 		targetCollider.enabled = true; //Enables the collider
-		GameObject respawnEffect = Instantiate(respawnParticle, transform.position, transform.rotation) as GameObject; //Spawns attached respawn effect
-		Destroy(respawnEffect, 3.5f); //Removes attached respawn effect after x seconds
+		GameObject respawnEffect = Instantiate(respawnParticle, transform.position, transform.rotation) as GameObject; //Spawns attached respawn _effect
+		Destroy(respawnEffect, 3.5f); //Removes attached respawn _effect after x seconds
     }
 
     void OnTriggerEnter(Collider col)
@@ -34,8 +34,8 @@ public class ETFXTarget : MonoBehaviour
             if (hitParticle)
             {
 				//Debug.Log("Target hit!");
-				GameObject destructibleEffect = Instantiate(hitParticle, transform.position, transform.rotation) as GameObject; // Spawns attached hit effect
-				Destroy(destructibleEffect, 2f); // Removes hit effect after x seconds
+				GameObject destructibleEffect = Instantiate(hitParticle, transform.position, transform.rotation) as GameObject; // Spawns attached hit _effect
+				Destroy(destructibleEffect, 2f); // Removes hit _effect after x seconds
 				targetRenderer.enabled = false; // Hides the target
 				targetCollider.enabled = false; // Disables target collider
 				StartCoroutine(Respawn()); // Sets timer for respawning the target

@@ -10,13 +10,17 @@ public abstract class ButtonBase : MonoBehaviour
     public Button _btn;
     protected virtual void Awake()
     {
-
+        _btn.onClick.AddListener(() =>
+        {
+            SoundManager.Instance.PlayShot(SoundManager.Instance.click);
+        });
     }
     public virtual void AddEvent(UnityAction action)
     {
         _btn.onClick.RemoveListener(action);
         _btn.onClick.AddListener(action);
     }
+
     public void RemoveAll()
     {
         _btn.onClick.RemoveAllListeners();

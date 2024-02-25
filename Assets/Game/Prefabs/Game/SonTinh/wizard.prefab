@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 618172373663461810}
   _maxHealth: 0
+  _currentHealth: 0
 --- !u!114 &2836653638754235961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +164,7 @@ MonoBehaviour:
   _Dead: {fileID: 2836653638754235961}
   _isDead: 0
   speed: 0
-  _bulletPref: {fileID: 1689738209267954, guid: 4e0616163304be34e87aa72a5a86909b, type: 3}
+  _dataHero: {fileID: 0}
+  _bulletPref: {fileID: 1689738209267954, guid: 41b538d8fb02d494fad83947d94c848d, type: 3}
   _locationAppears: {fileID: 4080807653400092}
   _nextHitting: 1

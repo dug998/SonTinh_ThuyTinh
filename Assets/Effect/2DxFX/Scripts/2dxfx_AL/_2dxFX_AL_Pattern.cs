@@ -455,30 +455,30 @@ public class _2dxFX_AL_Pattern_Editor : Editor
 
 
             Texture2D icone = Resources.Load("2dxfx-icon-color") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("__MainTex2"), new GUIContent("Texture Pattern", icone, "Change the value of the posterize effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("__MainTex2"), new GUIContent("Texture Pattern", icone, "Change the value of the posterize _effect"));
             if (_2dxScript.__MainTex2)
             {
                 icone = Resources.Load("2dxfx-icon-size_x") as Texture2D;
-                EditorGUILayout.PropertyField(m_object.FindProperty("_OffsetX"), new GUIContent("Offset X", icone, "Change the value of the posterize effect"));
+                EditorGUILayout.PropertyField(m_object.FindProperty("_OffsetX"), new GUIContent("Offset X", icone, "Change the value of the posterize _effect"));
 
                 icone = Resources.Load("2dxfx-icon-size_y") as Texture2D;
-                EditorGUILayout.PropertyField(m_object.FindProperty("_OffsetY"), new GUIContent("Offset Y", icone, "Change the value of the posterize effect"));
+                EditorGUILayout.PropertyField(m_object.FindProperty("_OffsetY"), new GUIContent("Offset Y", icone, "Change the value of the posterize _effect"));
 
                 icone = Resources.Load("2dxfx-icon-value") as Texture2D;
-                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollX"), new GUIContent("Auto Scroll X", icone, "Change the value of the posterize effect"));
+                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollX"), new GUIContent("Auto Scroll X", icone, "Change the value of the posterize _effect"));
                 if (_2dxScript._AutoScrollX)
                 {
                     icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-                    EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedX"), new GUIContent("Auto Scroll Speed X", icone, "Change the value of the posterize effect"));
+                    EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedX"), new GUIContent("Auto Scroll Speed X", icone, "Change the value of the posterize _effect"));
                 }
 
                 icone = Resources.Load("2dxfx-icon-value") as Texture2D;
-                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollY"), new GUIContent("Auto Scroll Y", icone, "Change the value of the posterize effect"));
+                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollY"), new GUIContent("Auto Scroll Y", icone, "Change the value of the posterize _effect"));
 
                 if (_2dxScript._AutoScrollY)
                 {
                     icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-                    EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedY"), new GUIContent("Auto Scroll Speed Y", icone, "Change the value of the posterize effect"));
+                    EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedY"), new GUIContent("Auto Scroll Speed Y", icone, "Change the value of the posterize _effect"));
                 }
             }
             else

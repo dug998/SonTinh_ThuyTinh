@@ -35,7 +35,7 @@ public class ParticleEffectsLibrary : MonoBehaviour {
 	public float[] ParticleEffectLifetimes;
 	public GameObject[] ParticleEffectPrefabs;
 
-	// Storing for deleting if looping particle effect
+	// Storing for deleting if looping particle _effect
 	#pragma warning disable 414
 	private string effectNameString = "";
 	#pragma warning disable 414

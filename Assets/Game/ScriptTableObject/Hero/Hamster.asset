@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c274b5fd18f68ac458def2571ee8d4ab, type: 3}
+  m_Name: Hamster
+  m_EditorClassIdentifier: 
+  _id: 1
+  _title: 
+  _name: Hamster
+  _description: 
+  _price: 50
+  _timeRecoveryCard: 2
+  _spriteAvatar: {fileID: 21300000, guid: 4ae2d77a48cf1ec43aa968fd64640e3f, type: 3}
+  _spriteCard: {fileID: 21300000, guid: 981b04419803dc344a67342e93814400, type: 3}
+  _ObjPref: {fileID: 1598944560447584, guid: da4b4d3bc2fc38d49bc3d0d9f75f6929, type: 3}
+  _statHp: 200
+  _statDamage: 0
+  _statDefense: 5

@@ -5,15 +5,20 @@ using UnityEngine;
 [RequireComponent(typeof(CanvasGroup))]
 public class PopupBase : MonoBehaviour
 {
+    public CanvasGroup _canvasGroup;
+    protected virtual void Awake()
+    {
+        _canvasGroup = GetComponent<CanvasGroup>();
+    }
     public bool _isShow;
     public virtual void Show(object data = null)
     {
-        GetComponent<CanvasGroup>().DOFade(1, 1).From(0).SetEase(Ease.InCubic);
+        _canvasGroup.alpha = 1;
         gameObject.SetActive(true);
     }
     public virtual void Hide()
     {
-        GetComponent<CanvasGroup>().DOFade(0, 1).From(1).SetEase(Ease.OutCubic).OnComplete(() =>
+        _canvasGroup.DOFade(0, 1).From(1).SetEase(Ease.OutCubic).OnComplete(() =>
         {
             gameObject.SetActive(false);
         });

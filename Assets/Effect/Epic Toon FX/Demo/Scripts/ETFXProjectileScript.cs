@@ -8,7 +8,7 @@ using System.Collections;
         public GameObject muzzleParticle; // Effect instantly spawned when gameobject is spawned
         [Header("Adjust if not using Sphere Collider")]
         public float colliderRadius = 1f;
-        [Range(0f, 1f)] // This is an offset that moves the impact effect slightly away from the point of impact to reduce clipping of the impact effect
+        [Range(0f, 1f)] // This is an offset that moves the impact _effect slightly away from the point of impact to reduce clipping of the impact _effect
         public float collideOffset = 0.15f;
 
         void Start()
@@ -18,7 +18,7 @@ using System.Collections;
             if (muzzleParticle)
             {
                 muzzleParticle = Instantiate(muzzleParticle, transform.position, transform.rotation) as GameObject;
-                Destroy(muzzleParticle, 1.5f); // 2nd parameter is lifetime of effect in seconds
+                Destroy(muzzleParticle, 1.5f); // 2nd parameter is lifetime of _effect in seconds
             }
         }
 		
@@ -48,7 +48,7 @@ using System.Collections;
             {
                 transform.position = hit.point + (hit.normal * collideOffset); // Move projectile to point of collision
 
-                GameObject impactP = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, hit.normal)) as GameObject; // Spawns impact effect
+                GameObject impactP = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, hit.normal)) as GameObject; // Spawns impact _effect
 
                 ParticleSystem[] trails = GetComponentsInChildren<ParticleSystem>(); // Gets a list of particle systems, as we need to detach the trails
                 //Component at [0] is that of the parent i.e. this object (if there is any)
@@ -63,8 +63,8 @@ using System.Collections;
                     }
                 }
 
-                Destroy(projectileParticle, 3f); // Removes particle effect after delay
-                Destroy(impactP, 3.5f); // Removes impact effect after delay
+                Destroy(projectileParticle, 3f); // Removes particle _effect after delay
+                Destroy(impactP, 3.5f); // Removes impact _effect after delay
                 Destroy(gameObject); // Removes the projectile
             }
         }

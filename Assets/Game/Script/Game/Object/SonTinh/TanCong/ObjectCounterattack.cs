@@ -6,16 +6,16 @@ using UnityEngine;
 /// 
 /// 
 /// </summary>
-public abstract class ObjectCounterattack : ObjectBase
+public abstract class ObjectCounterattack : ObjectSonTinh
 {
     [Header(" ___ ObjectCounterattack ___"), Space(30)]
     [SerializeField] protected GameObject _bulletPref;
     [SerializeField] protected Transform _locationAppears;
     protected bool _isHitting;
     [SerializeField] protected float _nextHitting;
-    public override void Born()
+    public override void Born(Object data = null)
     {
-        base.Born();
+        base.Born(data);
         StartCoroutine(Attack());
     }
     public abstract IEnumerator Attack();
@@ -40,7 +40,7 @@ public abstract class ObjectCounterattack : ObjectBase
         base.OnTriggerEnter2D(collision);
     }
 
-    public override IEnumerator Die()
+    public override IEnumerator EffectDie()
     {
         _Dead.PixelGravityDie();
         yield return new WaitForSeconds(1);

@@ -7,14 +7,18 @@ public class HealthBase : MonoBehaviour
     [SerializeField] ObjectBase _objectBase;
     [SerializeField] protected int _maxHealth;
     [SerializeField] protected int _currentHealth;
-    public void SetMaxHealth()
+    public void SetMaxHealth(int values)
+    {
+        _maxHealth = values;
+    }
+    public void Init()
     {
         _currentHealth = _maxHealth;
     }
     public void TakeDame(int dame)
     {
         _currentHealth += dame;
-        if (_currentHealth < 0)
+        if (_currentHealth <= 0)
         {
             _currentHealth = 0;
             Die();
@@ -22,7 +26,7 @@ public class HealthBase : MonoBehaviour
     }
     public void Die()
     {
-       _objectBase.Died();
+        _objectBase.Died();
     }
     public int GetCurrentHealth()
     {

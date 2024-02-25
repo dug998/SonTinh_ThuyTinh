@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a798000d56859468ee86b9cb4c4c7a, type: 3}
+  m_Name: DataHeroGame
+  m_EditorClassIdentifier: 
+  dataHeros:
+  - {fileID: 11400000, guid: 9827d3e7bd8437943834f1a39c968db6, type: 2}
+  - {fileID: 11400000, guid: 82c8cc7af02bd5c4e8f3d564680f7098, type: 2}
+  - {fileID: 11400000, guid: 6548e18a938b5f34486026b29457d5c7, type: 2}
+  - {fileID: 11400000, guid: c79ac67987796424c99d21fa3b96bc8e, type: 2}
+  - {fileID: 11400000, guid: a604c640ae1060a45b1ff51b8b74dec4, type: 2}
+  - {fileID: 11400000, guid: 6cd403f6560e2c444876e5ec45f4a82d, type: 2}

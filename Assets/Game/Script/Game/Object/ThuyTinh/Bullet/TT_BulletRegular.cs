@@ -7,7 +7,7 @@ public class TT_BulletRegular : ObjectBase
     [SerializeField] int dame;
     public GameObject ballHit;
 
-    public override void Born()
+    public override void Born(Object data = null)
     {
     }
     public override void UpdateHealth(int values)
@@ -39,7 +39,7 @@ public class TT_BulletRegular : ObjectBase
         _myBody.velocity = new Vector2(speed, _myBody.velocity.y);
     }
 
-    public override IEnumerator Die()
+    public override IEnumerator EffectDie()
     {
         gameObject.SetActive(false);
         yield return null;

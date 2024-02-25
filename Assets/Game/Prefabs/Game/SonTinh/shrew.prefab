@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2944984232551516487}
   m_Layer: 0
   m_Name: shrew
-  m_TagString: Player
+  m_TagString: sonTinh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 2944984232551516487}
   _maxHealth: 1
+  _currentHealth: 0
 --- !u!114 &6333219767374672743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +180,7 @@ MonoBehaviour:
   _Dead: {fileID: 6333219767374672743}
   _isDead: 0
   speed: 0
+  _dataHero: {fileID: 0}
   _bulletPref: {fileID: 0}
   _locationAppears: {fileID: 0}
   _nextHitting: 0

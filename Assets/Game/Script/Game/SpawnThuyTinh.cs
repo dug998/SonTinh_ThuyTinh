@@ -17,10 +17,6 @@ public class SpawnThuyTinh : MonoBehaviour
     int _numberCurObj = 0;
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(this);
-        }
         Instance = this;
         _stageInfoCurrent = PopupController.Instance._popupGamePlay._stageInfoCurrent;
     }
@@ -42,27 +38,27 @@ public class SpawnThuyTinh : MonoBehaviour
         int _indexTurn = 0;
         _numberCurObj = 0;
         _listMonter.Clear();
-        
-        
+
+
         while (_indexTurn < _dataLevel._numberStageAttack)
         {
             _stageInfoCurrent.StartOneStage(_indexTurn);
             yield return new WaitForSeconds(2);
             _completeOneStage = false;
             _dataStage = _dataLevel._dataLevelAttacks[_indexTurn];
-            StartCoroutine(OneStageAttack(_dataStage, _numberCurObj, _dataLevel._numberMaxObj));
+            StartCoroutine(OneStageAttack(_dataStage, _dataLevel._numberMaxObj));
 
             yield return new WaitUntil(() => _completeOneStage);
             _stageInfoCurrent.EndOneStage(_indexTurn);
 
             _indexTurn++;
 
-            yield return new WaitForSeconds(5);
-            CompleteLevel();
+            yield return new WaitForSeconds(3);
         }
+        CompleteLevel();
 
     }
-    public IEnumerator OneStageAttack(DataOneStageAttack data, int _numberCurObj, int _numberMaxObj)
+    public IEnumerator OneStageAttack(DataOneStageAttack data, int _numberMaxObj)
     {
 
         for (int i = 0; i < data._numberMonter; i++)
@@ -70,7 +66,8 @@ public class SpawnThuyTinh : MonoBehaviour
             SpawnObj(data.GetTypeObjRandom());
             _numberCurObj++;
             _stageInfoCurrent.OnChangeValuesSliderBar((float)_numberCurObj / _numberMaxObj);
-            yield return new WaitForSeconds(data._nextTime + Random.Range(1, 3));
+            Debug.Log("SpawnObj");
+            yield return new WaitForSeconds(data._nextTime + Random.Range(3, 7));
         }
         yield return new WaitUntil(() => CheckNumberMonterOneStage());
         _completeOneStage = true;
@@ -80,7 +77,7 @@ public class SpawnThuyTinh : MonoBehaviour
     {
         int check = Random.Range(0, 5);
         GameObject obj = Instantiate(mob1, new Vector2(_location[check].x, _location[check].y + .5f), Quaternion.identity, _parrent.transform);
-        obj.GetComponent<ObjectAttackTT>().Born();
+        obj.GetComponent<ObjectThuyTinh>().Born();
         _listMonter.Add(obj.GetComponent<ObjectBase>());
     }
     public void RemoveMonsterAll()

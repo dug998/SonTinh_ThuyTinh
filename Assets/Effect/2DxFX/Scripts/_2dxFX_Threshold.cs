@@ -274,7 +274,7 @@ public class _2dxFX_Threshold_Editor : Editor
             EditorGUILayout.BeginVertical("Box");
 
             Texture2D icone = Resources.Load("2dxfx-icon-contrast") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Threshold"), new GUIContent("Threshold Value", icone, "Change the value of the Threshold effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Threshold"), new GUIContent("Threshold Value", icone, "Change the value of the Threshold _effect"));
 
             EditorGUILayout.BeginVertical("Box");
 

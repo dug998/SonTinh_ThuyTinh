@@ -9,7 +9,7 @@ public class HomeTower : ObjectBase
     {
         Instance = this;
     }
-    public override IEnumerator Die()
+    public override IEnumerator EffectDie()
     {
         yield return null;
         if (GameManager._gameState != GameState.PLAYING)

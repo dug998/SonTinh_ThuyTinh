@@ -12,8 +12,9 @@ public class PopupWinGame : PopupBase
     public ButtonBase _btnContinue;
     public ButtonBase _btnReplay;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _btnHome.AddEvent(OnClickButtonHome);
         _btnContinue.AddEvent(OnClickButtonContinue);
         _btnReplay.AddEvent(OnClickButtonReplay);

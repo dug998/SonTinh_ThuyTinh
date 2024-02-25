@@ -281,7 +281,7 @@ public class _2dxFX_Teleportation_Editor : Editor
             EditorGUILayout.BeginVertical("Box");
 
             Texture2D icone = Resources.Load("2dxfx-icon-value") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Teleportation"), new GUIContent("Teleportation Value", icone, "Change the value of the Teleportation effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Teleportation"), new GUIContent("Teleportation Value", icone, "Change the value of the Teleportation _effect"));
 
             EditorGUILayout.BeginVertical("Box");
 

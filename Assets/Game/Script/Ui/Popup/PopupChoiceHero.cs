@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PopupChoiceHero : PopupBase
 {
-    public Queue<DataCard> _CardChoiseBattle = new Queue<DataCard>();
+    public static Queue<ButtonHeroUi> _HeroChoiseBattle = new Queue<ButtonHeroUi>();
+
     [Header("")]
     int _currentSlot = 0;
     int _maxCurrentSlot = 6;
@@ -13,33 +14,36 @@ public class PopupChoiceHero : PopupBase
     public ButtonBase _btnBackHome;
     public ButtonBase _btnPlay;
 
-    [Header(" ____ Card ____ "), Space(30)]
+    [Header(" ____ Card Hero ____ "), Space(30)]
 
-    public DataCardGame _dataCards;
-    List<DataCard> dataCard;
-    public List<ButtonCardUi> _listCardUi;
+    public DataHeroGames _dataHeros;
+    public List<ButtonHeroUi> _listCardUi;
 
     [Header(" ____ Slot ____ "), Space(30)]
-    public List<CardSlotUi> _listCardSlotUi;
+    public List<HeroSlotUi> _listHeroSlotUi;
     [Header(" ____ Hero ____ ")]
     public HeroesInfo _heroesInfo;
     bool _canPlay;
-    public void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        _HeroChoiseBattle = new Queue<ButtonHeroUi>();
+
         _btnPlay.AddEvent(OnClickButtonPlay);
         _btnBackHome.AddEvent(OnClickButonBackHome);
     }
     public override void Show(object data = null)
     {
-        _maxCurrentSlot = GameManager.Instance._maxNumberCardBattle;
-        GameManager._CardChoiseBattle.Clear();
-        _currentSlot = 0;
+        _maxCurrentSlot = PrefData.maxNumberHeroBattle;
         base.Show(data);
+        if (_HeroChoiseBattle.Count > 0)
+            _HeroChoiseBattle.Clear();
+        _currentSlot = 0;
         Init();
     }
     public void Init()
     {
-        CloseDataCardSlotUi();
+        CloseDataHeroSlotUi();
         LoadDataCard();
         _canPlay = false;
         _btnPlay.Activity(_canPlay);
@@ -64,51 +68,52 @@ public class PopupChoiceHero : PopupBase
         PopupController.Instance.ShowPopupHome(true);
     }
     #endregion
-    #region Slot Card
-    public void CloseDataCardSlotUi()
+    #region Slot Hero
+
+    public void CloseDataHeroSlotUi()
     {
         _currentSlot = 0;
-        for (int i = 0; i < _listCardSlotUi.Count; i++)
+        for (int i = 0; i < _listHeroSlotUi.Count; i++)
         {
-            _listCardSlotUi[i].Init(i >= _maxCurrentSlot);
+            _listHeroSlotUi[i].Init(i >= _maxCurrentSlot);
 
         }
     }
     #endregion
 
-    #region Card Button
+    #region Hero Button
     public void LoadDataCard()
     {
-        dataCard = _dataCards.dataCards;
+        List<DataHero> dataHero = _dataHeros.dataHeros;
         foreach (var ui in _listCardUi)
         {
             ui.Hide();
         }
-        for (int i = 0; i < dataCard.Count; i++)
+        for (int i = 0; i < dataHero.Count; i++)
         {
-            ButtonCardUi ui = _listCardUi[i];
-            DataCard data = dataCard[i];
+            ButtonHeroUi ui = _listCardUi[i];
+            DataHero data = dataHero[i];
             ui.Show();
             ui.Init(data);
             ui.RemoveAll();
-            ui.AddEvent(() => ui.ChooseCard());
+            ui.AddEvent(() => ui.ChooseHero());
 
         }
 
     }
-    public void ChooseCard(ButtonCardUi btnUi)
+    public void ChooseHero(ButtonHeroUi btnUi)
     {
-        GameManager.Instance.AddCardBattle(btnUi);
+        AddCardBattle(btnUi);
 
-        ButtonCardUi[] dataCards = GameManager._CardChoiseBattle.ToArray();
+        ButtonHeroUi[] dataCards = _HeroChoiseBattle.ToArray();
         for (int i = 0; i < dataCards.Length; i++)
         {
-            DataCard data = dataCards[i]._data;
+            DataHero data = dataCards[i]._data;
             if (data != null && _currentSlot < _maxCurrentSlot)
             {
                 _currentSlot++;
             }
-            CardSlotUi card = _listCardSlotUi[i];
+            HeroSlotUi card = _listHeroSlotUi[i];
             card.UpdateData(data);
             card.Show();
         }
@@ -123,13 +128,17 @@ public class PopupChoiceHero : PopupBase
     }
     #endregion
 
-    public void AddCardBattle(DataCard card)
+
+    public void AddCardBattle(ButtonHeroUi card)
     {
-        if (_CardChoiseBattle.Count > _maxCurrentSlot)
+        if (_HeroChoiseBattle.Count >= PrefData.maxNumberHeroBattle)
         {
-            _CardChoiseBattle.Dequeue();
+            Debug.Log("remove card");
+            ButtonHeroUi btnCard = _HeroChoiseBattle.Dequeue();
+            btnCard.SetSelected(false);
 
         }
-        _CardChoiseBattle.Enqueue(card);
+        _HeroChoiseBattle.Enqueue(card);
+
     }
 }

@@ -381,7 +381,7 @@ public class _2dxFX_AL_Posterize_Editor : Editor
             EditorGUILayout.BeginVertical("Box");
 
             Texture2D icone = Resources.Load("2dxfx-icon-contrast") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Posterize"), new GUIContent("Posterize Value", icone, "Change the value of the posterize effect"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Posterize"), new GUIContent("Posterize Value", icone, "Change the value of the posterize _effect"));
 
             EditorGUILayout.BeginVertical("Box");
 
