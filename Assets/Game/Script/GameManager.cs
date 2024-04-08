@@ -36,19 +36,19 @@ public class GameManager : MonoBehaviour
 
     }
 
-   
+
     public void EndGame(GameState state)
     {
         _gameState = state;
-        PopupController.Instance.ShowPopupGamePlay(false);
+        PopupController.Instance.HidePopup(TypePopup.PopupWinGame);
         if (state == GameState.WIN_GAME)
         {
 
-            PopupController.Instance.ShowPopupWinGame(true);
+            PopupController.Instance.ShowPopup(TypePopup.PopupWinGame);
         }
         else if (state == GameState.LOSE_GAME)
         {
-            PopupController.Instance.ShowPopupLose(true);
+            PopupController.Instance.ShowPopup(TypePopup.PopupLose);
         }
 
     }

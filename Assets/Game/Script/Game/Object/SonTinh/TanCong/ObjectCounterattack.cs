@@ -6,9 +6,9 @@ using UnityEngine;
 /// 
 /// 
 /// </summary>
-public abstract class ObjectCounterattack : ObjectSonTinh
+public abstract class ObjectCounterAttack : ObjectSonTinh
 {
-    [Header(" ___ ObjectCounterattack ___"), Space(30)]
+    [Header(" ___ ObjectCounterAttack ___"), Space(30)]
     [SerializeField] protected GameObject _bulletPref;
     [SerializeField] protected Transform _locationAppears;
     protected bool _isHitting;

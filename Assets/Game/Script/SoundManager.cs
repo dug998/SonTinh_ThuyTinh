@@ -18,7 +18,7 @@ public class SoundManager : MonoBehaviour
 
     [Header("UI Sound")]
     public AudioClip click;
-   
+
     private void Awake()
     {
         if (Instance != null)
@@ -33,7 +33,7 @@ public class SoundManager : MonoBehaviour
             _queueLoops = new Queue<AudioSource>(loopSources);
         }
     }
- 
+
     public void OnEnable()
     {
         UpdateMute();
@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayVibrate()
     {
-        if (!PrefData.turnOffVibrate)
+        if (!UserData.turnOffVibrate)
         {
             return;
         }
@@ -80,15 +80,15 @@ public class SoundManager : MonoBehaviour
     {
         foreach (var sound in sound_sources)
         {
-            sound.mute = !PrefData.turnOffSound;
+            sound.volume = UserData.turnVolumeSound;
         }
         foreach (var sound in loopSources)
         {
-            sound.mute = !PrefData.turnOffSound;
+            sound.volume = UserData.turnVolumeSound;
         }
     }
     public void ChangeMusic()
     {
-        music_source.mute = !PrefData.turnOffMusic;
+        music_source.volume = UserData.turnVolumeMusic;
     }
 }

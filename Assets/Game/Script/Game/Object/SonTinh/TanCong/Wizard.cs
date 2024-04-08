@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wizard : ObjectCounterattack
+public class Wizard : ObjectCounterAttack
 {
     public override IEnumerator Attack()
     {

@@ -15,7 +15,8 @@ MonoBehaviour:
   _id: 3
   _title: 
   _name: Wizard
-  _description: 
+  _description: It is a melee character that uses a sword  and a shield freely, and
+    it is easy to operate.
   _price: 100
   _timeRecoveryCard: 2
   _spriteAvatar: {fileID: 21300000, guid: d2011154b76190f478f0466b7f66850b, type: 3}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef6e9082667fa74098d7553a50adf35, type: 3}
+  m_Name: Axe 0
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 2800000, guid: 5a927d8bb3ac7434db5fe487560c6d01, type: 3}
+  Names: Axe 0
+  Description: 'Ramblings of a mad man
+
+'
+  IconLevel:
+  - {fileID: 2800000, guid: 5a927d8bb3ac7434db5fe487560c6d01, type: 3}
+  - {fileID: 2800000, guid: e74a482de2bdc43f78d747cfdf14d810, type: 3}
+  - {fileID: 2800000, guid: d8984d8219d8b4d6591efbba556cc279, type: 3}
+  - {fileID: 2800000, guid: ec0f3dca92bc44ca59a7cfee7fc1a76c, type: 3}
+  - {fileID: 2800000, guid: c07f8506dd7e442748cae004e26e2080, type: 3}

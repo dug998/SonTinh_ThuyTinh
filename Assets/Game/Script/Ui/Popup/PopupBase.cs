@@ -2,12 +2,19 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 [RequireComponent(typeof(CanvasGroup))]
 public class PopupBase : MonoBehaviour
 {
     public CanvasGroup _canvasGroup;
+    public Button _btnBack;
     protected virtual void Awake()
     {
+        if (_btnBack != null)
+        {
+            _btnBack.onClick.AddListener(Hide);
+        }
         _canvasGroup = GetComponent<CanvasGroup>();
     }
     public bool _isShow;

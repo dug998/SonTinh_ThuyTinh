@@ -15,7 +15,8 @@ MonoBehaviour:
   _id: 4
   _title: 
   _name: Sherw
-  _description: 
+  _description: It is a melee character that uses a sword  and a shield freely, and
+    it is easy to operate.
   _price: 100
   _timeRecoveryCard: 2
   _spriteAvatar: {fileID: 21300004, guid: c30886ca41727924fb28e6933deadecb, type: 3}

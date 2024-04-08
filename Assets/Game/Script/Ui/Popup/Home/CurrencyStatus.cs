@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CurrencyStatus : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Button _btnAdd;
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _btnAdd.onClick.AddListener(() =>
+        {
+            PopupController.Instance.ShowPopup(TypePopup.PopupShop);
+        });
     }
 }

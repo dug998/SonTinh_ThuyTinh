@@ -7,6 +7,7 @@ public class DataHero : ScriptableObject
     public int _id;
     public string _title;
     public string _name;
+    [TextArea]
     public string _description;
     public int _price;
     public float _timeRecoveryCard;

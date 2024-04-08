@@ -21,14 +21,13 @@ public class PopupLoading : PopupBase
         _sliderLoadingBar.value = currentValues;
         while (currentValues < 100)
         {
-            yield return new WaitForSeconds(Random.value/4);
+            yield return new WaitForSeconds(Random.value / 4);
             currentValues++;
             _txt_LoadingValue.text = $"Loading... {currentValues}%";
             _sliderLoadingBar.value = currentValues;
         }
         yield return null;
-        PopupController.Instance.ShowPopupLoading(false);
-        PopupController.Instance.ShowPopupHome();
-
+        PopupController.Instance.HidePopup(TypePopup.PopupLoading);
+        PopupController.Instance.ShowPopup(TypePopup.PopupHome);
     }
 }

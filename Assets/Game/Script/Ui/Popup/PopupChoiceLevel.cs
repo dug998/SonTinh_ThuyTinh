@@ -42,14 +42,14 @@ public class PopupChoiceLevel : PopupBase
             return;
         }
         Hide();
-        PopupController.Instance.ShowPopupChoiceHero(true);
+        PopupController.Instance.ShowPopup(TypePopup.PopupChoiceHero);
 
     }
     void OnClickButonBackHome()
     {
         _canPlay = false;
         Hide();
-        PopupController.Instance.ShowPopupHome(true);
+        PopupController.Instance.ShowPopup(TypePopup.PopupHome);
     }
     #endregion
 

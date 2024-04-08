@@ -34,7 +34,7 @@ public class PopupChoiceHero : PopupBase
     }
     public override void Show(object data = null)
     {
-        _maxCurrentSlot = PrefData.maxNumberHeroBattle;
+        _maxCurrentSlot = UserData.maxNumberHeroBattle;
         base.Show(data);
         if (_HeroChoiseBattle.Count > 0)
             _HeroChoiseBattle.Clear();
@@ -58,14 +58,14 @@ public class PopupChoiceHero : PopupBase
             return;
         }
         Hide();
-        PopupController.Instance.ShowPopupGamePlay(true);
+        PopupController.Instance.ShowPopup(TypePopup.PopupGamePlay);
         GameManager.Instance.StartLevelGame();
     }
     void OnClickButonBackHome()
     {
         _canPlay = false;
         Hide();
-        PopupController.Instance.ShowPopupHome(true);
+        PopupController.Instance.ShowPopup(TypePopup.PopupHome);
     }
     #endregion
     #region Slot Hero
@@ -131,7 +131,7 @@ public class PopupChoiceHero : PopupBase
 
     public void AddCardBattle(ButtonHeroUi card)
     {
-        if (_HeroChoiseBattle.Count >= PrefData.maxNumberHeroBattle)
+        if (_HeroChoiseBattle.Count >= UserData.maxNumberHeroBattle)
         {
             Debug.Log("remove card");
             ButtonHeroUi btnCard = _HeroChoiseBattle.Dequeue();

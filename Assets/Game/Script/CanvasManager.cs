@@ -17,8 +17,8 @@ public class CanvasManager : MonoBehaviour
     }
     public void LoadingGame()
     {
-        PopupController.Instance.ShowPopupLoading(true);
-       
+        PopupController.Instance.ShowPopup(TypePopup.PopupLoading);
+
     }
 
 

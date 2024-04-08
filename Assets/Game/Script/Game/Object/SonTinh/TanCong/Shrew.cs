@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shrew : ObjectCounterattack
+public class Shrew : ObjectCounterAttack
 {
     private float _nextUp;
     public GameObject Shrew_die;
