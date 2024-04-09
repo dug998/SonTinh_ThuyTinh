@@ -12,7 +12,7 @@ public class PopupInventory : PopupBase
     public GameObject _parentEquip;
     [ReadOnly]
     public List<EquipItem> _listEquipItem;
-
+    public List<ItemGame> _itemGames;
     [Header(" Info Item ")]
     public Image _icon;
     public TextMeshProUGUI _txtName;
@@ -33,10 +33,15 @@ public class PopupInventory : PopupBase
     }
     public override void Show(object data = null)
     {
+        Init();
         base.Show(data);
-
+         _itemGames = InventoreManager.Instance.GetListItemGame();
+        for (int i = 0; i < _itemGames.Count; i++)
+        {
+            _listEquipItem[i].Init(_itemGames[i].dataItem);
+        }
     }
-    public void SeeInformation(DataEquipItem dataEquip)
+    public void SeeInformation(EquipItemSO dataEquip)
     {
         _icon.sprite = dataEquip.Icon;
         _txtName.text = dataEquip.Names;

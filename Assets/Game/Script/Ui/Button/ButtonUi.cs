@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,9 +7,14 @@ using UnityEngine.UI;
 
 public class ButtonUi : ButtonBase
 {
+    public bool justClick = true;
+    [HideIf("justClick")]
     public GameObject _maskActiviy;
+    [HideIf("justClick")]
     public TextMeshProUGUI _txtDesc;
+    [HideIf("justClick")]
     public Image _icon;
+    [HideIf("justClick")]
     public Image _bg;
     //   public GameObject _BgActiviy;
     public override void Init(object data)

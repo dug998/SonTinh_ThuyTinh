@@ -12,7 +12,7 @@ public class HomeMenu : MonoBehaviour
     {
         _btnShop.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupShop));
         _btnHero.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupListHeros));
-        _btnInventory.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupShop));
+        _btnInventory.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupInventory));
 
     }
 }

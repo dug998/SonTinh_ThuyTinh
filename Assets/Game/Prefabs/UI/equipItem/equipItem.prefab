@@ -94,9 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2703e7a4a639c2844b443e10ebed80c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataEquip: {fileID: 11400000, guid: 8af7aa5aab87db2428fe7c5b26fc3a23, type: 2}
   _icon: {fileID: 523334797666186747}
-  _name: 
-  _values: 
+  _values: {fileID: 523334798244293713}
   _btn: {fileID: 2738215071361929086}
 --- !u!114 &5882766372152435867
 MonoBehaviour:
@@ -154,7 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2736e691740b7b644ac2fb594019574b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _btn: {fileID: 0}
+  _btn: {fileID: 5882766372152435867}
+  justClick: 1
   _maskActiviy: {fileID: 0}
   _txtDesc: {fileID: 0}
   _icon: {fileID: 0}
@@ -247,7 +248,6 @@ GameObject:
   - component: {fileID: 523334797666186745}
   - component: {fileID: 523334797666186746}
   - component: {fileID: 523334797666186747}
-  - component: {fileID: 523334797666186744}
   m_Layer: 5
   m_Name: ItemIcon
   m_TagString: Untagged
@@ -313,21 +313,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &523334797666186744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523334797666186742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.27450982}
-  m_EffectDistance: {x: 0, y: -6}
-  m_UseGraphicAlpha: 1
 --- !u!1 &523334798244293711
 GameObject:
   m_ObjectHideFlags: 0

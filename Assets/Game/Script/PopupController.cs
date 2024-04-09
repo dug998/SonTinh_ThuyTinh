@@ -93,6 +93,9 @@ public class PopupController : MonoBehaviour
             case TypePopup.PopupListHeros:
                 popup = _popupListHeros;
                 break;
+            case TypePopup.PopupInventory:
+                popup = _popupInventory;
+                break;
             default:
                 popup = _popupHome;
                 break;
