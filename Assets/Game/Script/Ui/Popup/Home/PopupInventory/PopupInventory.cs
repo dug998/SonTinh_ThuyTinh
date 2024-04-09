@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,14 +14,14 @@ public class PopupInventory : PopupBase
     [ReadOnly]
     public List<EquipItem> _listEquipItem;
     public List<ItemGame> _itemGames;
+    public GameObject _ObjFocus;
+    EquipItem _currSlotSee;
     [Header(" Info Item ")]
     public Image _icon;
     public TextMeshProUGUI _txtName;
-
     protected override void Awake()
     {
         base.Awake();
-        Init();
     }
     public void Init()
     {
@@ -33,16 +34,20 @@ public class PopupInventory : PopupBase
     }
     public override void Show(object data = null)
     {
-        Init();
         base.Show(data);
-         _itemGames = InventoreManager.Instance.GetListItemGame();
+        _ObjFocus.SetActive(false);
+        _itemGames = InventoreManager.Instance.GetListItemGame();
         for (int i = 0; i < _itemGames.Count; i++)
         {
             _listEquipItem[i].Init(_itemGames[i].dataItem);
         }
     }
-    public void SeeInformation(EquipItemSO dataEquip)
+    public void SeeInformation(EquipItem slot)
     {
+        _currSlotSee = slot;
+        _currSlotSee.SetFocus(_ObjFocus);
+
+        EquipItemSO dataEquip = slot._dataEquip;
         _icon.sprite = dataEquip.Icon;
         _txtName.text = dataEquip.Names;
     }

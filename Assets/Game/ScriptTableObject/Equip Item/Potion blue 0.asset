@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef6e9082667fa74098d7553a50adf35, type: 3}
   m_Name: Potion blue 0
   m_EditorClassIdentifier: 
-  Icon: {fileID: 2800000, guid: 3e1681850f8b54adc959a80bf8030d7b, type: 3}
+  Icon: {fileID: 21300000, guid: 3e1681850f8b54adc959a80bf8030d7b, type: 3}
   Names: Potion blue 0
-  Description: 'Ramblings of a mad man
-
-'
+  ColorBG: {r: 0, g: 0, b: 0, a: 0}
+  Description: 
   IconLevel:
-  - {fileID: 2800000, guid: 034dbee7d95344ef888c3f789bde1fcf, type: 3}
-  - {fileID: 2800000, guid: 942ba4ccd2163414b990fdaa435b9839, type: 3}
-  - {fileID: 2800000, guid: 82ed149bea55f49a08bbab6f8275a8c8, type: 3}
-  - {fileID: 2800000, guid: 8c50baa0223d4409098ccdb5cdca8041, type: 3}
-  - {fileID: 2800000, guid: f8b5dc5d004514f8da682d260f0519e1, type: 3}
+  - {fileID: 2800000, guid: 3e1681850f8b54adc959a80bf8030d7b, type: 3}
+  - {fileID: 2800000, guid: c6a58cd197bf04b269989dc1f213c593, type: 3}
+  - {fileID: 2800000, guid: ed4b7e9b7a8a34c7c9a62162f1158582, type: 3}
+  - {fileID: 2800000, guid: 71486d90591524ff68b704d7bde2b5a8, type: 3}
+  - {fileID: 2800000, guid: 3a3dc3fbe307547c8a1c3c55084bc815, type: 3}

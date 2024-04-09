@@ -1,4 +1,5 @@
 
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,15 +21,23 @@ public class EquipItem : MonoBehaviour
     public void Init(EquipItemSO dataEquip)
     {
         _dataEquip = dataEquip;
-        Debug.Log(" icon " + dataEquip.Icon.name);
-        _icon.sprite = dataEquip.Icon;
+        _icon.sprite = _dataEquip.Icon;
 
         _icon.gameObject.SetActive(true);
 
     }
     public void SeeEquip()
     {
-        PopupController.Instance._popupInventory.SeeInformation(_dataEquip);
+        PopupController.Instance._popupInventory.SeeInformation(this);
 
+    }
+    public void SetFocus(GameObject focus)
+    {
+        focus.transform.DOKill(true);
+        focus.SetActive(true);
+        focus.transform.DOMove(transform.position, 0.1f).OnComplete(() =>
+        {
+            focus.transform.SetParent(transform);
+        });
     }
 }

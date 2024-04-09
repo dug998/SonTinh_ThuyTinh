@@ -6,57 +6,171 @@ using UnityEngine;
 [System.Serializable]
 public class Pool
 {
-    public string _name;
-    public GameObject _obj;
-    public int _count;
-    public int _scale;
-    public List<GameObject> actives = new List<GameObject>();
-    public Queue<GameObject> deactives = new Queue<GameObject>();
+    public string name;
+    public GameObject go;
+    public int count;
+    public List<GameObject> actives;
+    public Queue<GameObject> deactives;
 
-    public void InitPool(Transform container, Dictionary<int, int> dicClones)
+    public Pool(string name, GameObject go, int count)
     {
-        for (int i = 0; i < _count; i++)
+        this.name = name;
+        this.go = go;
+        this.count = count;
+    }
+
+    public void InitaPool(Transform container, Dictionary<int, int> dicClones)
+    {
+        actives = new List<GameObject>();
+        deactives = new Queue<GameObject>();
+        for (int i = 0; i < count; i++)
         {
-            SpawnClone(container, dicClones);
+            spawnAClone(container, dicClones);
         }
     }
-    void SpawnClone(Transform container, Dictionary<int, int> dicClones)
+
+    void spawnAClone(Transform container, Dictionary<int, int> dicClones)
     {
-        GameObject clone = Object.Instantiate(_obj, container);
-        clone.transform.localScale = Vector3.one * _scale;
-        clone.gameObject.SetActive(false);
+        var clone = Object.Instantiate(go, container);
+        clone.transform.localScale = Vector3.one;
+        clone.name += (actives.Count + deactives.Count);
         deactives.Enqueue(clone);
         dicClones.Add(clone.GetHashCode(), GetHashCode());
+    }
 
-    }
-    public void Return(GameObject go)
+    public GameObject Get(Transform container, Dictionary<int, int> dicClones)
     {
-        go.SetActive(false);
-        actives.Remove(go);
-        deactives.Enqueue(go);
+        if (deactives.Count == 0)
+            spawnAClone(container, dicClones);
+        var clone = deactives.Dequeue();
+        actives.Add(clone);
+        return clone;
     }
+
+    public void Return(GameObject go, bool deactive)
+    {
+        if (deactive)
+        {
+            go.SetActive(false);
+        }
+        if (actives.Contains(go))
+            actives.Remove(go);
+        if (!deactives.Contains(go))
+            deactives.Enqueue(go);
+    }
+
     public void OnDestroy()
     {
+        foreach (var active in actives)
+        {
+            if (active != null)
+            {
+                active.transform.DOKill();
+            }
 
+        }
+
+        foreach (var deactive in deactives)
+        {
+            if (deactive != null)
+            {
+                deactive.transform.DOKill();
+            }
+        }
     }
 }
 public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool Instance;
+    public List<Pool> pools = new List<Pool>();
 
-    public Dictionary<int, int> dicClones = new Dictionary<int, int>();
-    private List<Pool> pools = new List<Pool>();
-
+    private Dictionary<int, int> dicClones = new Dictionary<int, int>();
+    public Pool Gold, Gem;
     private void Awake()
     {
-        Instance = this;
+        Instance= this;
     }
-    public void Start()
+    protected virtual void Start()
     {
-        
-        foreach(Pool pool in pools)
+        pools.Add(Gold);
+        pools.Add(Gem);
+        foreach (var pool in pools)
         {
-            pool.InitPool(transform, dicClones);
+            pool.InitaPool(transform, dicClones);
+        }
+    }
+
+    public void ReturnAllPool()
+    {
+        foreach (var p in pools)
+        {
+            while (p.actives.Count > 0)
+            {
+                p.Return(p.actives[p.actives.Count - 1], true);
+            }
+        }
+    }
+
+    public Pool TryAddPoolByScript(Pool p)
+    {
+        var existedPool = pools.Find(x => x.go == p.go);
+        if (existedPool != null)
+        {
+            Debug.LogWarning($"existed pool: {p.go.name}", p.go.transform);
+            return existedPool;
+        }
+        pools.Add(p);
+        p.InitaPool(transform, dicClones);
+        return p;
+    }
+
+#if UNITY_EDITOR
+    private void Update()
+    {
+        foreach (var p in pools)
+        {
+            var activeCount = p.actives.Count;
+            var deactiveCount = p.deactives.Count;
+            p.name = $"total: {activeCount + deactiveCount} | active: {activeCount} | deactive: {deactiveCount}";
+        }
+    }
+#endif
+
+    public GameObject Get(Pool p, bool active = false)
+    {
+        return p.Get(transform, dicClones);
+    }
+
+    public void Return(GameObject clone, bool deactive = true)
+    {
+        clone.transform.DOKill();
+        var hash = clone.GetHashCode();
+        if (dicClones.ContainsKey(hash))
+        {
+            var p = getPool(dicClones[hash]);
+            p.Return(clone, deactive);
+        }
+        else
+        {
+            Debug.LogError(clone.transform.name, clone.transform);
+        }
+    }
+    Pool getPool(int hash)
+    {
+        foreach (var pool in pools)
+        {
+            if (pool.GetHashCode() == hash)
+                return pool;
+        }
+
+        return null;
+    }
+
+    private void OnDestroy()
+    {
+        foreach (var pool in pools)
+        {
+            pool.OnDestroy();
         }
     }
 }

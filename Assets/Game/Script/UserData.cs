@@ -4,41 +4,70 @@ using UnityEngine;
 
 public static class UserData
 {
+    #region Currency
+    public static int GoldGame
+    {
+        get { return PlayerPrefs.GetInt("key_gold_game", 0); }
+        set
+        {
+            PlayerPrefs.SetInt("key_gold_game", value);
+            EventGame.UpdateCurrencyStatus.Invoke();
+        }
+    }
+    public static int GemGame
+    {
+        get { return PlayerPrefs.GetInt("key_gem_game", 0); }
+        set
+        {
+            PlayerPrefs.SetInt("key_gem_game", value);
+            EventGame.UpdateCurrencyStatus.Invoke();
+        }
+    }
+    public static int EnergyGame
+    {
+        get { return PlayerPrefs.GetInt("key_energy_game", 0); }
+        set
+        {
+            PlayerPrefs.SetInt("key_energy_game", value);
+            EventGame.UpdateCurrencyStatus.Invoke();
+        }
+    }
+    #endregion
     #region Setting
     public static float turnVolumeMusic
     {
         get
         {
-            return PlayerPrefs.GetFloat("KeyTurnOffMusic", 1);
+            return PlayerPrefs.GetFloat("key_turn_music", 1);
         }
         set
         {
 
-            PlayerPrefs.GetFloat("KeyTurnOffMusic", value);
+            PlayerPrefs.GetFloat("key_turn_music", value);
         }
     }
     public static float turnVolumeSound
     {
         get
         {
-            return PlayerPrefs.GetFloat("KeyTurnOffSound", 0f);
+            return PlayerPrefs.GetFloat("Key_turn_sound", 0f);
         }
         set
         {
 
-            PlayerPrefs.SetFloat("KeyTurnOffSound", value);
+            PlayerPrefs.SetFloat("Key_turn_sound", value);
         }
     }
     public static bool turnOffVibrate
     {
         get
         {
-            return PlayerPrefs.GetInt("KeyTurnOffVibrate", 1) == 1;
+            return PlayerPrefs.GetInt("key_turn_off_vibrate", 1) == 1;
         }
         set
         {
 
-            PlayerPrefs.SetInt("KeyTurnOffVibrate", value ? 1 : 0);
+            PlayerPrefs.SetInt("key_turn_off_vibrate", value ? 1 : 0);
         }
     }
     #endregion

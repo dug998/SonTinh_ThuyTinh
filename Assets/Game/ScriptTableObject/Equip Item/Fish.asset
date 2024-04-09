@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef6e9082667fa74098d7553a50adf35, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  Icon: {fileID: 2800000, guid: 7c232e7a3260743889344dc1f01242f9, type: 3}
+  Icon: {fileID: 21300000, guid: 7c232e7a3260743889344dc1f01242f9, type: 3}
   Names: Fish
-  Description: 'Ramblings of a mad man
-
-'
+  ColorBG: {r: 0, g: 0, b: 0, a: 0}
+  Description: 
   IconLevel: []
