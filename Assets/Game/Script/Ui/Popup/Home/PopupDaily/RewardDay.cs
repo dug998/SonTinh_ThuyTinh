@@ -20,7 +20,7 @@ public class RewardDay : MonoBehaviour
     public void Init(int index, DataRewardDay data)
     {
         _data = data;
-        _indexDay = index;
+        _indexDay = index + 1;
         _txtDay.text = _indexDay.ToString();
         _txtValues.text = _data.valuesRw.ToString();
 

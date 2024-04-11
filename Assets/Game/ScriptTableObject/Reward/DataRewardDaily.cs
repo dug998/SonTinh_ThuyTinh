@@ -10,11 +10,12 @@ public class DataRewardDaily : ScriptableObject
 [System.Serializable]
 public class DataRewardDay
 {
-    public TypeReward typeReward;   
+    public TypeReward typeReward;
     public int valuesRw;
 }
 public enum TypeReward
 {
-    coin,
+    gold,
+    gem,
 
 }

@@ -35,8 +35,7 @@ public abstract class ButtonBase : MonoBehaviour
     }
     public virtual void Activity(bool values)
     {
-
-        _btn.enabled = values;
+     
     }
 
     public abstract void Init(object data);

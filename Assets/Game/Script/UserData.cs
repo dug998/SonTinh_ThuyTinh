@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public static class UserData
@@ -68,6 +69,30 @@ public static class UserData
         {
 
             PlayerPrefs.SetInt("key_turn_off_vibrate", value ? 1 : 0);
+        }
+    }
+    #endregion
+    #region Daily
+    /// <summary>
+    /// Daily Prize Position
+    /// </summary>
+    public static int DailyPrizePosition
+    {
+        get { return PlayerPrefs.GetInt("DailyPrizePosition", 0); }
+        set
+        {
+            PlayerPrefs.SetInt("DailyPrizePosition", value);
+        }
+    }
+    /// <summary>
+    /// Received prize today
+    /// </summary>
+    public static bool ReceivedDailyPrize
+    {
+        get { return PlayerPrefs.GetInt("ReceivedDailyPrize", 0) == 1; }
+        set
+        {
+            PlayerPrefs.SetInt("ReceivedDailyPrize", value ? 1 : 0);
         }
     }
     #endregion
