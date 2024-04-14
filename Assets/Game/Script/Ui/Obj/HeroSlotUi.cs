@@ -18,7 +18,7 @@ public class HeroSlotUi : MonoBehaviour
 
         _txtName.text = "";
         _txtPrice.text = "";
-        // _icon.sprite = null;
+        // _spIcon.sprite = null;
     }
     public void Show()
     {

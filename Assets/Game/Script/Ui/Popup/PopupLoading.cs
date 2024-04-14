@@ -21,7 +21,7 @@ public class PopupLoading : PopupBase
         _sliderLoadingBar.value = currentValues;
         while (currentValues < 100)
         {
-            yield return new WaitForSeconds(Random.value / 4);
+            yield return new WaitForSeconds(Random.value / 10);
             currentValues++;
             _txt_LoadingValue.text = $"Loading... {currentValues}%";
             _sliderLoadingBar.value = currentValues;

@@ -13,6 +13,7 @@ public static class UserData
         {
             PlayerPrefs.SetInt("key_gold_game", value);
             EventGame.UpdateCurrencyStatus.Invoke();
+
         }
     }
     public static int GemGame

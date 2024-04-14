@@ -15,6 +15,7 @@ public class PopupMission : PopupBase
     public ButtonUi _btnTabAcheivement;
     public GameObject ObjDaily, ObjAcheivement;
 
+    public List<QuestTapUi> questTapUiList;
     protected override void Awake()
     {
         base.Awake();
@@ -43,5 +44,19 @@ public class PopupMission : PopupBase
         _tabFocusLine.transform.DOMoveY(_currBtnTap.transform.position.y, .3f);
 
 
+    }
+    public override void Show(object data = null)
+    {
+        base.Show(data);
+        Dictionary<string, Quest> questMap = QuestGameManager.instance.questMap;
+        int index = 0;
+        foreach (var quest in questMap.Values)
+        {
+            if (index > questTapUiList.Count)
+                break;
+
+            questTapUiList[index].Init(quest);
+            index++;
+        }
     }
 }

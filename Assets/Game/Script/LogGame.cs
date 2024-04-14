@@ -27,4 +27,18 @@ public static class LogGame
             }
         }
     }
+    public static void LogError(object info, String color = "#FD4242")
+    {
+        if (EnableLog)
+        {
+            if (color != null)
+            {
+                Debug.Log(string.Format("<color={0}> {1} </color>", color, info));
+            }
+            else
+            {
+                Debug.Log(info);
+            }
+        }
+    }
 }

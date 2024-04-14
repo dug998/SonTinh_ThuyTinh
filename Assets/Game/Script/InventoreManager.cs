@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Timeline.Actions.MenuPriority;
 
 [System.Serializable]
 public class ItemGame
