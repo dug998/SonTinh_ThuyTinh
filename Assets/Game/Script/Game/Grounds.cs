@@ -11,7 +11,7 @@ public class Grounds : MonoBehaviour
     public List<BlockLand> Blocks = new List<BlockLand>();
     int _Width = 5;
     int _Height = 9;
-    Vector2 _sizeBlock = new Vector2(1.92f, 1.36f);
+    Vector2 _sizeBlock = new Vector2(1.32f, 1.56f);
     [SerializeField] Sprite _block1, _block2;
     public static List<Vector2> _rowLocation = new List<Vector2>();
     public void SpawnBlocks()

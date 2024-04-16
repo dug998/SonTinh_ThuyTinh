@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonHeroUi : ButtonBase
 {
     [SerializeField] int _id;
-    [SerializeField] Text _textTitle;
+    [SerializeField] TextMeshProUGUI _textTitle;
     [SerializeField] Image _spriteIcon;
     [HideInInspector] public DataHero _data;
     protected bool _selected = true;

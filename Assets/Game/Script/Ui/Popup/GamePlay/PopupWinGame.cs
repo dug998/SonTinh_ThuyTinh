@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,6 +48,7 @@ public class PopupWinGame : PopupBase
             return;
         }
         Hide();
+        // lấy level tiếp theo
         GameManager._dataCurLevel = GameManager.Instance._dataLevels.GetLevel(GameManager._dataCurLevel._id);
         PopupController.Instance.ShowPopup(TypePopup.PopupGamePlay);
         GameManager.Instance.StartLevelGame();

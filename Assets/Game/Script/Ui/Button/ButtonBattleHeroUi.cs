@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +17,7 @@ public class ButtonBattleHeroUi : ButtonBase
     [SerializeField] Image _iconCard;
     [SerializeField] Image _activeImgFill;
     [SerializeField] Image _ImgOff;
-    [SerializeField] Text _txtPrice;
+    [SerializeField] TextMeshProUGUI _txtPrice;
     protected override void Awake()
     {
         AddEvent(OnClick);
@@ -33,11 +34,11 @@ public class ButtonBattleHeroUi : ButtonBase
     }
     private void OnEnable()
     {
-        GameEvent.changeCoin += UpdateStatusCard;
+        EventGame.changeCoin += UpdateStatusCard;
     }
     private void OnDisable()
     {
-        GameEvent.changeCoin -= UpdateStatusCard;
+        EventGame.changeCoin -= UpdateStatusCard;
     }
     public void UpdateStatusCard(int CurCoin)
     {
@@ -64,6 +65,16 @@ public class ButtonBattleHeroUi : ButtonBase
         }
         print(_data._id + " : " + _data._title);
         PopupGamePlay._curBattleCard = this;
+        PopupController.Instance._popupGamePlay.SetFocus();
+    }
+    public void SetFocus(GameObject _focus)
+    {
+        _focus.transform.DOKill(true);
+        _focus.SetActive(true);
+        _focus.transform.DOMove(transform.position, 0.1f).OnComplete(() =>
+        {
+            _focus.transform.SetParent(transform);
+        });
     }
     public void UsingCard()
     {

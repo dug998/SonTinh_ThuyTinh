@@ -5,17 +5,16 @@ using UnityEngine;
 public abstract class QuestStep : MonoBehaviour
 {
     private bool isFinished = false;
-    private Quest quest;
+    protected Quest quest;
+
+    protected TypeTask _typeTask;
     private int stepIndex;
 
-    public void InitQuestStep(Quest quest, int stepIndex, string questStepState = null)
+    public virtual void InitQuestStep(Quest quest, int stepIndex, string questStepState = null)
     {
+        isFinished = false;
         this.quest = quest;
         this.stepIndex = stepIndex;
-        if (questStepState != null && questStepState != "")
-        {
-            SetQuestStepState(questStepState);
-        }
         StartStep();
 
     }
@@ -24,13 +23,14 @@ public abstract class QuestStep : MonoBehaviour
 
     protected void FinishQuestStep()
     {
-        if (!isFinished)
+        if (isFinished)
         {
-            isFinished = true;
-            QuestEvents.onAdvanceQuest.Invoke(quest);
-            EndStep();
-            Destroy(this);
+            return;
         }
+        isFinished = true;
+        QuestEvents.onAdvanceQuest.Invoke(quest);
+        EndStep();
+        Destroy(this);
     }
     protected void ChangeState(string newState, string newStatus)
     {

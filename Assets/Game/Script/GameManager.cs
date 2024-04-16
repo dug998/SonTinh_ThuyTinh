@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public void EndGame(GameState state)
     {
         _gameState = state;
-        PopupController.Instance.HidePopup(TypePopup.PopupWinGame);
+        
         if (state == GameState.WIN_GAME)
         {
 

@@ -48,6 +48,8 @@ public class PopupMission : PopupBase
     public override void Show(object data = null)
     {
         base.Show(data);
+
+        OnClickTab(ObjDaily, _btnTabDaily);
         Dictionary<string, Quest> questMap = QuestGameManager.instance.questMap;
         int index = 0;
         foreach (var quest in questMap.Values)

@@ -76,7 +76,7 @@ public class SpawnThuyTinh : MonoBehaviour
     public void SpawnObj(GameObject mob1)
     {
         int check = Random.Range(0, 5);
-        GameObject obj = Instantiate(mob1, new Vector2(_location[check].x, _location[check].y + .5f), Quaternion.identity, _parrent.transform);
+        GameObject obj = Instantiate(mob1, new Vector2(_location[check].x + 2, _location[check].y + .5f), Quaternion.identity, _parrent.transform);
         obj.GetComponent<ObjectThuyTinh>().Born();
         _listMonter.Add(obj.GetComponent<ObjectBase>());
     }

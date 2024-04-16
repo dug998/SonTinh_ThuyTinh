@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class QuestGameManager : MonoBehaviour
 {
+
     public static QuestGameManager instance;
     [SerializeField] private bool loadQuestState = true;
 
@@ -13,7 +14,7 @@ public class QuestGameManager : MonoBehaviour
     [Button]
     public void UpdateCollect()
     {
-        QuestEvents.UpdateCollected(3, TypeCollect.Gold);
+        QuestEvents.UpdateCollected(3, TypeCollectOrUse.Gold);
     }
     private void Awake()
     {
@@ -64,6 +65,7 @@ public class QuestGameManager : MonoBehaviour
     {
         quest._questState = state;
         QuestEvents.onQuestStateChange?.Invoke(quest);
+        NotifyQuestCanFinish();
     }
 
     private void StartQuest(Quest quest)
@@ -83,6 +85,7 @@ public class QuestGameManager : MonoBehaviour
         {
             ChangeQuestState(quest, QuestState.CAN_FINISH);
         }
+
     }
 
     private void FinishQuest(Quest quest)
@@ -90,6 +93,19 @@ public class QuestGameManager : MonoBehaviour
         LogGame.Log(" Finish " + quest._questInfoData.displayName);
         ChangeQuestState(quest, QuestState.FINISHED);
     }
+    public void NotifyQuestCanFinish()
+    {
+        foreach (var quest in questMap.Values)
+        {
+            if (quest._questState == QuestState.CAN_FINISH)
+            {
+                EventGame.OnNotifyQuest.Invoke(true);
+                return;
+            }
+        }
+        EventGame.OnNotifyQuest.Invoke(false);
+    }
+
     private void QuestStepStateChange(Quest quest, int stepIndex, QuestStepState questStepState)
     {
         quest.StoreQuestStepState(questStepState, stepIndex);

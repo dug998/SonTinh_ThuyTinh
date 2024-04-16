@@ -20,19 +20,21 @@ public static class QuestsToJson
 {
     public static Quest LoadQuest(QuestInfoSO questInfo)
     {
-        Quest quest = null;
+        GameObject newGameObject = new GameObject("Quest");
+
+        Quest quest = newGameObject.AddComponent<Quest>();
         try
         {
             if (PlayerPrefs.HasKey(questInfo.id))
             {
                 string serializedData = PlayerPrefs.GetString(questInfo.id);
                 QuestJson questData = JsonUtility.FromJson<QuestJson>(serializedData);
-                quest = new Quest(questInfo, questData.state, questData.questStepIndex, questData.questStepStates);
+                quest.NewQuest(questInfo, questData.state, questData.questStepIndex, questData.questStepStates);
             }
             // otherwise, initialize a new quest
             else
             {
-                quest = new Quest(questInfo);
+                quest.NewQuest(questInfo);
             }
         }
         catch (System.Exception e)

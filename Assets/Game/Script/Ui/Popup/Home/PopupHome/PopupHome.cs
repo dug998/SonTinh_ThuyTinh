@@ -28,4 +28,14 @@ public class PopupHome : PopupBase
         Hide();
         PopupController.Instance.ShowPopup(TypePopup.PopupChoiceLevel);
     }
+    public override void Show(object data = null)
+    {
+        base.Show(data);
+        PopupCurrencyStatus.Instance.Show();
+    }
+    public override void Hide()
+    {
+        PopupCurrencyStatus.Instance.Hide();
+        base.Hide();
+    }
 }

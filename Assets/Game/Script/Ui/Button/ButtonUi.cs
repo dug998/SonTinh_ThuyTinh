@@ -10,17 +10,20 @@ public class ButtonUi : ButtonBase
     public bool justClick = true;
     [HideIf("justClick")]
     public Image _imgBg;
+    [HideIf("justClick")]
     public Sprite _spBgSelect, _spBgUnSelect;
-
+    [HideIf("justClick")]
     public TextMeshProUGUI _txtName;
+    [HideIf("justClick")]
     public Color _colorNameSelect, _colorNameUnSelect;
-
+    [HideIf("justClick")]
     public Image _icon;
+    [HideIf("justClick")]
     public Sprite _spIconSelect, _spIconUnSelect;
     [HideIf("justClick")]
     public TextMeshProUGUI _txtDesc;
-    [HideIf("justClick")]
-    public Image _bg;
+
+    public GameObject _objNotify;
     //   public GameObject _BgActiviy;
     public override void Init(object data)
     {

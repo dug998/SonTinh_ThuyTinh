@@ -15,11 +15,17 @@ public class QuestInfoSO : ScriptableObject
     public QuestInfoSO[] questPrerequisites;
 
     [Header("Steps")]
-   public List<QuestStepSO> questStepPrefabs;
+    public List<QuestStepSO> questStepPrefabs;
 
     [Header("Rewards")]
     public int goldReward;
     public int experienceReward;
-
-
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        string name = "Quest_" + id;
+        string path = UnityEditor.AssetDatabase.GetAssetPath(this);
+        UnityEditor.AssetDatabase.RenameAsset(path, name);
+    }
+#endif
 }

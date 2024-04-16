@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RewardDay : MonoBehaviour
 {
     [Header(" --- data --- ")]
-    DataRewardDay _data;
+    Reward _data;
     int _indexDay;
     public Image _imgIcon;
     public TextMeshProUGUI _txtDay;
@@ -17,10 +17,12 @@ public class RewardDay : MonoBehaviour
     public Sprite _bgClam, _bgAvailable;
     public GameObject _objClaim;
     public GameObject _objAvailable;
-    public void Init(int index, DataRewardDay data)
+    public void Init(int index, Reward data)
     {
         _data = data;
         _indexDay = index + 1;
+        _imgIcon.sprite = data._spIcon;
+        _imgIcon.SetNativeSize();
         _txtDay.text = _indexDay.ToString();
         _txtValues.text = _data.valuesRw.ToString();
 
@@ -41,11 +43,16 @@ public class RewardDay : MonoBehaviour
                 break;
         }
     }
+    public void GetReward()
+    {
+        PopupController.Instance._popupReward.GetReward(_data);
+    }
     void Claimed()
     {
         _imgBg.sprite = _bgClam;
         _objClaim.SetActive(true);
         _objAvailable.SetActive(false);
+
     }
     void Available()
     {

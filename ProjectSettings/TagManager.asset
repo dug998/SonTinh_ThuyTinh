@@ -13,11 +13,12 @@ TagManager:
   - Trap
   - Enemy_Ball
   - DeadZone
+  - Tile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Gold
   - Water
   - UI
   - 

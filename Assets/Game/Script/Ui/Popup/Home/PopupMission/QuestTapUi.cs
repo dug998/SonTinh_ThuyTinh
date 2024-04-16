@@ -32,11 +32,6 @@ public class QuestTapUi : MonoBehaviour
         QuestEvents.onQuestStateChange += ChangeQuestState;
         QuestEvents.onQuestStepStateChange += ChangeQuestStep;
     }
-    private void OnDisable()
-    {
-        QuestEvents.onQuestStateChange -= ChangeQuestState;
-        QuestEvents.onQuestStepStateChange -= ChangeQuestStep;
-    }
     public void ChangeQuestState(Quest quest)
     {
         if (_quest != quest)
@@ -56,8 +51,11 @@ public class QuestTapUi : MonoBehaviour
             _btnClam.gameObject.SetActive(true);
 
         }
-        LogGame.Log(" Quest state " + _quest._questState);
-       if(quest._currQuestStep) UpdateProgress(quest._currQuestStep);
+        else if (_quest._questState == QuestState.FINISHED)
+        {
+        }
+        _txtDescription.text = quest.GetFullStatusText();
+        UpdateProgress(_quest._currQuestStep);
     }
     public void ChangeQuestStep(Quest quest, int stepIndex, QuestStepState questStepState)
     {
@@ -77,9 +75,15 @@ public class QuestTapUi : MonoBehaviour
         ChangeQuestState(_quest);
 
     }
-    public void UpdateProgress(CollectQuestStep collectQuestStep)
+    public void UpdateProgress(CollectOrUseQuestStep collectQuestStep)
     {
-
+        bool isNullStep = collectQuestStep == null;
+        _sliderProgress.gameObject.SetActive(!isNullStep);
+        _txtProgress.gameObject.SetActive(!isNullStep);
+        if (isNullStep)
+        {
+            return;
+        }
         DOTween.To(() => _sliderProgress.value, x => x = _sliderProgress.value, (float)collectQuestStep._currCollect / collectQuestStep._targetCollect, .5f);
         _txtProgress.text = collectQuestStep._currCollect + "/" + collectQuestStep._targetCollect;
 

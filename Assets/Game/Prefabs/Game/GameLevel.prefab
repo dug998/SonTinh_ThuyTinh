@@ -460,6 +460,10 @@ MonoBehaviour:
   _grounds: {fileID: 6423207015082984163}
   _factoryCoin: {fileID: 6423207015324556099}
   _pawnThuyTinh: {fileID: 6423207015899690880}
+  _camera: {fileID: 0}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &6423207016139194363
 GameObject:
   m_ObjectHideFlags: 0

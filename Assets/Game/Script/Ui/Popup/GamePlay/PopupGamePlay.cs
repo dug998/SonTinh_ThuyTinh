@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,10 @@ public class PopupGamePlay : PopupBase
 
     public static Vector2 _posCoin = Vector2.zero;
     public static ButtonBattleHeroUi _curBattleCard;
+    public GameObject _objFocus;
     [Header(" ____ Coin ____ ")]
 
-    public Text _txtCoin;
+    public TextMeshProUGUI _txtCoin;
     public static int _curCoins;
     [SerializeField] GameObject _parentCoin;
 
@@ -32,7 +34,8 @@ public class PopupGamePlay : PopupBase
         CanvasManager.Instance._Bg.SetActive(false);
         base.Show(data);
         _curCoins = 0;
-
+        _curBattleCard = null;
+        SetFocus();
         // GameManager._targetCoin = _parentCoin.transform;
         LoadBattleCard();
         HomeTower.Instance.Born();
@@ -44,24 +47,20 @@ public class PopupGamePlay : PopupBase
     }
     public void OnEnable()
     {
-        GameEvent.changeCoin += UpdateTextCoin;
+        EventGame.changeCoin += UpdateTextCoin;
     }
     public void OnDisable()
     {
-        GameEvent.changeCoin -= UpdateTextCoin;
+        EventGame.changeCoin -= UpdateTextCoin;
     }
-    void Update()
+   
+    public void SetFocus()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-        if (hit.collider != null && hit.collider.CompareTag("Gold"))
+        _objFocus.SetActive(_curBattleCard != null);
+        if (_curBattleCard != null)
         {
-            hit.collider.GetComponent<Coin>()?.TakeCoin(_posCoin);
+            _curBattleCard.SetFocus(_objFocus);
         }
-
-
-
 
     }
     public void UpdateTextCoin(int values)
@@ -72,7 +71,7 @@ public class PopupGamePlay : PopupBase
     {
         _curCoins += values;
 
-        GameEvent.changeCoin?.Invoke(_curCoins);
+        EventGame.changeCoin?.Invoke(_curCoins);
     }
     public static bool CheckEnoughCoin(int values)
     {

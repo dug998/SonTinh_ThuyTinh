@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PopupChoiceLevel : PopupBase
 {
-
+    public static ButtonLevelUi _currBtnLevelUi;
     [Header(" ____ Button ___ "), Space(20)]
 
     public ButtonBase _btnBackHome;
@@ -67,19 +67,25 @@ public class PopupChoiceLevel : PopupBase
             DataLevel data = dataLevel[i];
             ui.Show();
             ui.Init(data);
-            ui.AddEvent(() => ChooseLevel(data));
+            ui.AddEvent(() => ChooseLevel(ui));
 
         }
 
     }
-    public void ChooseLevel(DataLevel Data)
+    public void ChooseLevel(ButtonLevelUi ui)
     {
+        if (_currBtnLevelUi != null)
+        {
+            _currBtnLevelUi.onSelect(false);
+        }
+        _currBtnLevelUi = ui;
+        _currBtnLevelUi.onSelect(true);
         Debug.Log(" chọn level ");
         _canPlay = true;
         _btnPlay.Activity(_canPlay);
-        GameManager._dataCurLevel = Data;
+        GameManager._dataCurLevel = ui._data;
         //  _backButton.SetActive(true);
-        Debug.Log("Level: " + Data._id);
+        Debug.Log("Level: " + ui._data._id);
     }
     #endregion
 }

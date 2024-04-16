@@ -31,7 +31,7 @@ public class EquipItem : MonoBehaviour
         PopupController.Instance._popupInventory.SeeInformation(this);
 
     }
-    public void SetFocus(GameObject focus)
+    public void SetFocusDoMove(GameObject focus)
     {
         focus.transform.DOKill(true);
         focus.SetActive(true);
@@ -39,5 +39,13 @@ public class EquipItem : MonoBehaviour
         {
             focus.transform.SetParent(transform);
         });
+    }
+    public void SetFocus(GameObject focus)
+    {
+        focus.transform.DOKill(true);
+        focus.SetActive(true);
+        focus.transform.position = transform.position;
+        focus.transform.SetParent(transform);
+       
     }
 }

@@ -17,6 +17,7 @@ public class PopupInventory : PopupBase
     public GameObject _ObjFocus;
     EquipItem _currSlotSee;
     [Header(" Info Item ")]
+    public GameObject _objItemInfo;
     public Image _icon;
     public TextMeshProUGUI _txtName;
     protected override void Awake()
@@ -35,6 +36,9 @@ public class PopupInventory : PopupBase
     public override void Show(object data = null)
     {
         base.Show(data);
+        _currSlotSee = null;
+        _objItemInfo.SetActive(false);
+
         _ObjFocus.SetActive(false);
         _itemGames = InventoreManager.Instance.GetListItemGame();
         for (int i = 0; i < _itemGames.Count; i++)
@@ -44,8 +48,19 @@ public class PopupInventory : PopupBase
     }
     public void SeeInformation(EquipItem slot)
     {
-        _currSlotSee = slot;
-        _currSlotSee.SetFocus(_ObjFocus);
+        if (_currSlotSee == null)
+        {
+            _currSlotSee = slot;
+            _objItemInfo.SetActive(true);
+            _currSlotSee.SetFocus(_ObjFocus);
+
+        }
+        else
+        {
+            _currSlotSee = slot;
+            _currSlotSee.SetFocusDoMove(_ObjFocus);
+
+        }
 
         EquipItemSO dataEquip = slot._dataEquip;
         _icon.sprite = dataEquip.Icon;

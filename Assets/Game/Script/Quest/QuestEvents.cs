@@ -22,8 +22,8 @@ public static class QuestEvents
     public static Action<int> onPlayerLevelChange;
 
     // set amount
-    public  static Action<int, TypeCollect> onCollect;
-    public static void UpdateCollected(int amount, TypeCollect typeTask)
+    public static Action<int, TypeCollectOrUse> onCollect;
+    public static void UpdateCollected(int amount, TypeCollectOrUse typeTask)
     {
         if (onCollect != null)
         {

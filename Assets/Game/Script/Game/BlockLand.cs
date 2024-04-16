@@ -28,7 +28,7 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
         }
         _timeClick = Time.time;
         //   Debug.Log(_isFull + " -- " + _children.activeSelf);
-        if (_isFull && !_children.activeSelf && _children != null)
+        if (_isFull && !_children.activeInHierarchy && _children != null)
         {
             Destroy(_children);
             _isFull = false;
@@ -36,7 +36,7 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
     }
     public void OnMouseUp()
     {
-        if (Time.time - _timeClick < .4f)
+        if (Time.time - _timeClick < .2f)
         {
             return;
         }

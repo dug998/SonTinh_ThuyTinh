@@ -5,16 +5,33 @@ using UnityEngine.UI;
 
 public class HomeSubMenu : MonoBehaviour
 {
-    public Button _btnRanking;
-    public Button _btnMission;
-    public Button _btnReward;
-    public Button _btnDaily;
+    public ButtonUi _btnRanking;
+    public ButtonUi _btnMission;
+    public ButtonUi _btnReward;
+    public ButtonUi _btnDaily;
     private void Awake()
     {
-        _btnRanking.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupShop));
-        _btnMission.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupMission));
-        _btnReward.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupShop));
-        _btnDaily.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupDailyMonth));
+        _btnRanking.AddEvent(() => InventoreManager.Instance.AddItemsRandom());
+        _btnMission.AddEvent(() => PopupController.Instance.ShowPopup(TypePopup.PopupMission));
+        _btnReward.AddEvent(() => PopupController.Instance.ShowPopup(TypePopup.PopupShop));
+        _btnDaily.AddEvent(() => PopupController.Instance.ShowPopup(TypePopup.PopupDailyMonth));
 
+    }
+    public void OnEnable()
+    {
+        EventGame.OnNotifyQuest += NotifyMission;
+        EventGame.OnNotifyDaily += NotifyDaily;
+    }
+    private void OnDisable()
+    {
+
+    }
+    public void NotifyMission(bool values)
+    {
+        _btnMission._objNotify.gameObject.SetActive(values);
+    }
+    public void NotifyDaily(bool values)
+    {
+        _btnDaily._objNotify.gameObject.SetActive(values);
     }
 }

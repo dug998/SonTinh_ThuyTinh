@@ -30,8 +30,8 @@ public class TT_BulletRegular : ObjectBase
     }
     public virtual void CollideWithMonsters(GameObject obj)
     {
-        ObjectBase monsterHealth = obj.GetComponent<ObjectBase>();
-        monsterHealth.UpdateHealth(-dame);
+        ObjectBase Health = obj.GetComponent<ObjectBase>();
+        Health.UpdateHealth(-dame);
 
     }
     public override void Move()

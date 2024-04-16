@@ -117,7 +117,7 @@ public class InventoreManager : MonoBehaviour
         return _itemGames.Find(x => x.itemJson.keyEquip == keyEquip);
     }
     [Button]
-    public void AddItems()
+    public void AddItemsRandom()
     {
         AddItem(_dataEquipItems[Random.Range(0, _dataEquipItems.Count)]);
     }

@@ -87,6 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 7630520555544378082}
   _maxHealth: 0
+  _currentHealth: 0
 --- !u!114 &7630520555544378082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,8 +104,7 @@ MonoBehaviour:
   _Dead: {fileID: 5836175160471520990}
   _isDead: 0
   speed: 0
-  move: 0
-  dame: 20
+  dame: 50
   ballHit: {fileID: 0}
 --- !u!114 &5836175160471520990
 MonoBehaviour:

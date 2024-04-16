@@ -20,6 +20,7 @@ public class PopupController : MonoBehaviour
     public PopupMission _popupMission;
     public PopupSetting _popupSetting;
     public PopupInventory _popupInventory;
+    public PopupReward _popupReward;
 
     [Header(" --- Game Play --- "), Space(20)]
 

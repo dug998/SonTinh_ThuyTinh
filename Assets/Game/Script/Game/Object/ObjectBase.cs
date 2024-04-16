@@ -30,7 +30,7 @@ public abstract class ObjectBase : MonoBehaviour
     }
     public virtual void Born(Object data = null)
     {
-        Debug.Log("object");
+       
         _isDead = false;
         _health.Init();
     }

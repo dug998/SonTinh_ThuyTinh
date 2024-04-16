@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd090c138706b84b8515092f1cd0e7d, type: 3}
+  m_Name: DailyRewardSO
+  m_EditorClassIdentifier: 
+  _dataRewardDays:
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 100
+  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
+    typeReward: 1
+    valuesRw: 100
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 120
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 200
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+    typeReward: 0
+    valuesRw: 0
+  _iconGold: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
+  _iconGem: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Quest : MonoBehaviour
 {
     public Sprite _spIcon;
-    public CollectQuestStep _currQuestStep;
+    public CollectOrUseQuestStep _currQuestStep;
 
     public QuestInfoSO _questInfoData;
 
@@ -16,7 +16,7 @@ public class Quest : MonoBehaviour
 
     public QuestStepState[] _questStepStates;
 
-    public Quest(QuestInfoSO questInfoData)
+    public void NewQuest(QuestInfoSO questInfoData)
     {
         _questInfoData = questInfoData;
         _questState = QuestState.REQUIREMENTS_NOT_MET;
@@ -29,7 +29,7 @@ public class Quest : MonoBehaviour
             _questStepStates[i] = new QuestStepState();
         }
     }
-    public Quest(QuestInfoSO questInfo, QuestState questState, int currentQuestStepIndex, QuestStepState[] questStepStates)
+    public void NewQuest(QuestInfoSO questInfo, QuestState questState, int currentQuestStepIndex, QuestStepState[] questStepStates)
     {
         _questInfoData = questInfo;
         _questState = questState;
@@ -58,10 +58,11 @@ public class Quest : MonoBehaviour
 
         if (questStepSO.typeTask == TypeTask.CollectData)
         {
-            _currQuestStep = new CollectQuestStep();
-           _currQuestStep.SetQuestStepCollectSO(questStepSO.questStepCollectSO);
+            gameObject.AddComponent<CollectOrUseQuestStep>();
+            _currQuestStep = gameObject.GetComponent<CollectOrUseQuestStep>();
+            _currQuestStep.SetQuestStepCollectSO(questStepSO.typeTask, questStepSO.questStepCollectSO);
         }
-      
+
         _spIcon = questStepSO._spIcon;
         _currQuestStep.InitQuestStep(this, _currQuestStepIndex, _questStepStates[_currQuestStepIndex].state);
     }
@@ -73,6 +74,14 @@ public class Quest : MonoBehaviour
             _questStepStates[stepIndex].status = questStepState.status;
         }
 
+    }
+    public void GetQuestStepState()
+    {
+        QuestEvents.onQuestStepStateChange.Invoke(
+            this,
+            _currQuestStepIndex,
+            new QuestStepState(_questStepStates[_currQuestStepIndex].state, _questStepStates[_currQuestStepIndex].status)
+        );
     }
     public string GetFullStatusText()
     {
@@ -101,11 +110,11 @@ public class Quest : MonoBehaviour
             // when the quest is completed or turned in
             if (_questState == QuestState.CAN_FINISH)
             {
-                fullStatus += "The quest is ready to be turned in.";
+                fullStatus += " The quest is ready to be turned in.";
             }
             else if (_questState == QuestState.FINISHED)
             {
-                fullStatus += "The quest has been completed!";
+                fullStatus += " The quest has been completed!";
             }
         }
 

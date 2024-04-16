@@ -18,12 +18,12 @@ public class PopupCurrencyStatus : PopupBase
     public TextMeshProUGUI _txtValuesGem;
     public Button _btnAddGem;
     public GameObject _iconGem;
-    int _currValuesGem;
+    public int _currValuesGem;
     [TitleGroup("Gold", "Optional subtitle", alignment: TitleAlignments.Centered, horizontalLine: true, boldTitle: true, indent: false)]
     public TextMeshProUGUI _txtValuesGold;
     public Button _btnAddGold;
     public GameObject _iconGold;
-    int _currValuesGold;
+    public int _currValuesGold;
     protected override void Awake()
     {
         Instance = this;
@@ -45,14 +45,14 @@ public class PopupCurrencyStatus : PopupBase
     }
     public void UpdateCurrencyStatus()
     {
-        if (UserData.GoldGame - _currValuesGold > 0)
+        if (UserData.GoldGame - _currValuesGold != 0)
         {
-            QuestEvents.UpdateCollected(UserData.GoldGame - _currValuesGold, TypeCollect.Gold);
+            QuestEvents.UpdateCollected(UserData.GoldGame - _currValuesGold, TypeCollectOrUse.Gold);
         }
-        if (UserData.GemGame - _currValuesGem > 0)
+        if (UserData.GemGame - _currValuesGem != 0)
         {
-            QuestEvents.UpdateCollected(UserData.GemGame - _currValuesGem, TypeCollect.Gem);
-            
+            QuestEvents.UpdateCollected(UserData.GemGame - _currValuesGem, TypeCollectOrUse.Gem);
+
         }
 
         _currValuesGold = UserData.GoldGame;
