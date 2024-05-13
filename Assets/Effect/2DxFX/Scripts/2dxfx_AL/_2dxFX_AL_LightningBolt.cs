@@ -442,7 +442,7 @@ public class _2dxFX_AL_LightningBolt_Editor : Editor
 
 
             Texture2D icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_Value1"), new GUIContent("Lightning Bolt Speed", icone, "Change the fire speed"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_Value1"), new GUIContent("Lightning Bolt Speed", icone, "Change the fire currSpeed"));
 
             icone = Resources.Load("2dxfx-icon-brightness") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("_Value2"), new GUIContent("Lightning Bolt Intensity", icone, "Change the fire light intensity"));

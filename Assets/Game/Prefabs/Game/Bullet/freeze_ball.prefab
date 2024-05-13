@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 212664703482509058}
   - component: {fileID: 50363269453832238}
   - component: {fileID: 58719564734829234}
+  - component: {fileID: 646530547686413219}
+  - component: {fileID: 3179287573485102866}
+  - component: {fileID: 6292641580964946415}
   m_Layer: 0
   m_Name: freeze_ball
   m_TagString: Ball
@@ -72,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingLayerID: -1066351805
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 315945045041d6f4eba2729e903188f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -123,3 +126,51 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &646530547686413219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616963858812800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b2aa41eb4c3834d8f5d320a06c8fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectBase: {fileID: 6292641580964946415}
+  _maxHealth: 0
+  _currentHealth: 0
+--- !u!114 &3179287573485102866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616963858812800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 0}
+  _material: {fileID: 0}
+--- !u!114 &6292641580964946415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616963858812800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ce08de7c03b2041bd9e80727d5642b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 646530547686413219}
+  _Dead: {fileID: 3179287573485102866}
+  _isDead: 0
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 10, y: 0}
+  dame: 20
+  _effect: {fileID: 0}

@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 95403244748505998}
   - component: {fileID: 5980479241668054747}
   - component: {fileID: 1802295452148575730}
+  - component: {fileID: 4065488111806447585}
   m_Layer: 12
   m_Name: fast
   m_TagString: Enemy
@@ -62,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 1988066160748866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4741919478106196}
@@ -202,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 1802295452148575730}
   _maxHealth: 400
+  _currentHealth: 0
 --- !u!114 &1802295452148575730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,8 +217,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 5980479241668054747}
-  speed: 0.5
-  move: 1
+  _Dead: {fileID: 4065488111806447585}
+  _isDead: 0
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 1, y: 0}
   _bulletPref: {fileID: 1074870381605142, guid: 2183003d329f46346b2ceb276b42254e, type: 3}
   _locationAppears: {fileID: 4741919478106196}
   _nextHitting: 2
+  canBeFreeze: 1
+  dieFrozenFX: {fileID: 0}
+--- !u!114 &4065488111806447585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988066160748866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 212507352500497402}
+  _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}

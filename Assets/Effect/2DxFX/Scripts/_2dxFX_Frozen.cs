@@ -326,7 +326,7 @@ public class _2dxFX_Frozen_Editor : Editor
 
 
             Texture2D icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_Value1"), new GUIContent("Frozen Speed", icone, "Change the Frozen speed"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_Value1"), new GUIContent("Frozen Speed", icone, "Change the Frozen currSpeed"));
 
             icone = Resources.Load("2dxfx-icon-brightness") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("_Value2"), new GUIContent("Frozen Intensity", icone, "Change the Frozen light intensity"));

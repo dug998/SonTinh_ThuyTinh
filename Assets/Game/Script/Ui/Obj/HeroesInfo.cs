@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class HeroesInfo : MonoBehaviour
 {
+    public static DataHero _curData;
     public Image _avatarHero;
     public TextMeshProUGUI _txtName;
     [Header(" -- stat --")]
@@ -16,6 +17,11 @@ public class HeroesInfo : MonoBehaviour
     public Slider _sliderStatDefense;
     public void Init(DataHero dataHero)
     {
+        if (_curData == dataHero)
+        {
+            return;
+        }
+        _curData = dataHero;
         _avatarHero.sprite = dataHero._spriteAvatar;
         _avatarHero.SetNativeSize();
         _txtName.text = dataHero._name;

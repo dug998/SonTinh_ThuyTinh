@@ -14,11 +14,13 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
     public bool _isFull;
     public int row, col;
     float _timeClick;
-    public void Init(int row, int col, Sprite sprite)
+    public int _sortingOrderChild;
+    public void Init(int row, int col, Sprite sprite, int __sortingOrder)
     {
         this.row = row;
         this.col = col;
         _spriteIcon.sprite = sprite;
+        _sortingOrderChild = __sortingOrder;
     }
     private void OnMouseDown()
     {
@@ -27,7 +29,6 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
             _curBlock = this;
         }
         _timeClick = Time.time;
-        //   Debug.Log(_isFull + " -- " + _children.activeSelf);
         if (_isFull && !_children.activeInHierarchy && _children != null)
         {
             Destroy(_children);
@@ -58,13 +59,14 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
             _children = Instantiate(card._ObjPref, transform);
             PopupGamePlay.UpdateCoin(-card._price);
             ObjectSonTinh objectBase = _children.GetComponent<ObjectSonTinh>();
-            Debug.Log(objectBase.name + " -- " + card._name);
+            LogGame.Log(objectBase.name + " -- " + card._name);
             objectBase.Born(card);
-            _children.transform.localPosition = new Vector3(0, .3f);
+            objectBase.SetSortingOrder(_sortingOrderChild);
+            _children.transform.localPosition = new Vector3(0, .2f);
         }
         else
         {
-            Debug.Log("not enough coins");
+            LogGame.LogError(" Not enough coins");
         }
     }
 

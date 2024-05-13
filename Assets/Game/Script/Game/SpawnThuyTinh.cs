@@ -32,6 +32,7 @@ public class SpawnThuyTinh : MonoBehaviour
         _location = Grounds._rowLocation;
         _dataLevel = dataLevel;
         _stageInfoCurrent.Init(dataLevel._dataStageInfos);
+        _stageInfoCurrent.StartLevelNew();
         yield return new WaitForSeconds(_dataLevel._timeWait);
 
         DataOneStageAttack _dataStage;
@@ -43,7 +44,7 @@ public class SpawnThuyTinh : MonoBehaviour
         while (_indexTurn < _dataLevel._numberStageAttack)
         {
             _stageInfoCurrent.StartOneStage(_indexTurn);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(4);
             _completeOneStage = false;
             _dataStage = _dataLevel._dataLevelAttacks[_indexTurn];
             StartCoroutine(OneStageAttack(_dataStage, _dataLevel._numberMaxObj));
@@ -53,7 +54,7 @@ public class SpawnThuyTinh : MonoBehaviour
 
             _indexTurn++;
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(4);
         }
         CompleteLevel();
 
@@ -66,7 +67,7 @@ public class SpawnThuyTinh : MonoBehaviour
             SpawnObj(data.GetTypeObjRandom());
             _numberCurObj++;
             _stageInfoCurrent.OnChangeValuesSliderBar((float)_numberCurObj / _numberMaxObj);
-            Debug.Log("SpawnObj");
+            Debug.Log(" Spawn Obj ");
             yield return new WaitForSeconds(data._nextTime + Random.Range(3, 7));
         }
         yield return new WaitUntil(() => CheckNumberMonterOneStage());
@@ -76,7 +77,13 @@ public class SpawnThuyTinh : MonoBehaviour
     public void SpawnObj(GameObject mob1)
     {
         int check = Random.Range(0, 5);
-        GameObject obj = Instantiate(mob1, new Vector2(_location[check].x + 2, _location[check].y + .5f), Quaternion.identity, _parrent.transform);
+        GameObject obj = Instantiate(mob1, new Vector2(_location[check].x + 2, _location[check].y + .2f), Quaternion.identity, _parrent.transform);
+        obj.GetComponent<ObjectThuyTinh>().Born();
+        _listMonter.Add(obj.GetComponent<ObjectBase>());
+    }
+    public void SpawnObj(GameObject mob1, Vector2 pos)
+    {
+        GameObject obj = Instantiate(mob1, pos, Quaternion.identity, _parrent.transform);
         obj.GetComponent<ObjectThuyTinh>().Born();
         _listMonter.Add(obj.GetComponent<ObjectBase>());
     }

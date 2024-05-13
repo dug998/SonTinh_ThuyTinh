@@ -103,8 +103,9 @@ MonoBehaviour:
   _health: {fileID: 2766830212986726580}
   _Dead: {fileID: 5836175160471520990}
   _isDead: 0
-  speed: 0
-  dame: 50
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 6, y: 0}
+  dame: 30
   ballHit: {fileID: 0}
 --- !u!114 &5836175160471520990
 MonoBehaviour:

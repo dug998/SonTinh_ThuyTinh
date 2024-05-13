@@ -293,7 +293,7 @@ public class _2dxFX_PlasmaRainbow_Editor : Editor
             EditorGUILayout.PropertyField(m_object.FindProperty("_Offset"), new GUIContent("Change the offset", icone, "Change the plasma colors"));
 
             icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Speed Value", icone, "Change the speed value"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Speed Value", icone, "Change the currSpeed value"));
 
 
             EditorGUILayout.BeginVertical("Box");

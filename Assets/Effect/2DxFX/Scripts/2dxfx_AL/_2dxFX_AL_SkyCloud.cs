@@ -514,7 +514,7 @@ public class _2dxFX_AL_SkyCloud_Editor : Editor
             if (_2dxScript._AutoScrollX)
             {
                 icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedX"), new GUIContent("Auto Scroll Speed X", icone, "Change the speed of the shadow"));
+                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedX"), new GUIContent("Auto Scroll Speed X", icone, "Change the currSpeed of the shadow"));
             }
 
             icone = Resources.Load("2dxfx-icon-value") as Texture2D;
@@ -523,7 +523,7 @@ public class _2dxFX_AL_SkyCloud_Editor : Editor
             if (_2dxScript._AutoScrollY)
             {
                 icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedY"), new GUIContent("Auto Scroll Speed Y", icone, "Change the speed of the shadow"));
+                EditorGUILayout.PropertyField(m_object.FindProperty("_AutoScrollSpeedY"), new GUIContent("Auto Scroll Speed Y", icone, "Change the currSpeed of the shadow"));
             }
             EditorGUILayout.EndVertical();
             EditorGUILayout.BeginVertical("Box");

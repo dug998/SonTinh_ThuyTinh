@@ -31,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490517349983274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4132753297312926}
@@ -183,7 +183,9 @@ MonoBehaviour:
   _health: {fileID: 7126940028432375326}
   _Dead: {fileID: 4073294522534304694}
   _isDead: 0
-  speed: 0
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 6, y: 0}
+  _iconObj: {fileID: 212530979059714130}
   _dataHero: {fileID: 0}
   _bulletPref: {fileID: 1801618092695052, guid: 13841f7dae2a7a7459add8041a98daf0, type: 3}
   _locationAppears: {fileID: 4132753297312926}

@@ -1,4 +1,6 @@
+using Sirenix.OdinInspector;
 using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 
 [RequireComponent(typeof(HealthBase))]
@@ -18,9 +20,15 @@ public abstract class ObjectBase : MonoBehaviour
     [Header(" ___ Properties ____"), Space(30)]
 
     [SerializeField] protected bool _isDead;
-    [SerializeField] protected float speed;
+    [SerializeField] protected Vector2 currSpeed;
+    [SerializeField] protected Vector2 orginSpeed = new Vector2(6, 0);
 
     float _maxSpeed = 1, _minSpeed = 0.1f;
+    private void Reset()
+    {
+        _health = GetComponent<HealthBase>();
+        _Dead = GetComponent<Dead>();
+    }
     public virtual void Start()
     {
         _myAnim = GetComponent<Animator>();
@@ -30,7 +38,7 @@ public abstract class ObjectBase : MonoBehaviour
     }
     public virtual void Born(Object data = null)
     {
-       
+        currSpeed = orginSpeed;
         _isDead = false;
         _health.Init();
     }
@@ -41,6 +49,10 @@ public abstract class ObjectBase : MonoBehaviour
     {
         StartCoroutine(EffectDie());
     }
+    public virtual void DiedImmediate()
+    {
+        gameObject.SetActive(false);
+    }
     public virtual void UpdateHealth(int values)
     {
         if (values < 0)
@@ -50,8 +62,12 @@ public abstract class ObjectBase : MonoBehaviour
     }
     public virtual void ChangeSpeed(float values)
     {
-        speed *= values;
-        speed = Mathf.Clamp(speed, _minSpeed, _maxSpeed);
+        currSpeed *= values;
+        currSpeed.x = Mathf.Clamp(currSpeed.x, _minSpeed, _maxSpeed);
+    }
+    public void SetSpeed(Vector2 values)
+    {
+        currSpeed = values;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -65,4 +81,13 @@ public abstract class ObjectBase : MonoBehaviour
     {
         return _health;
     }
+}
+public enum ObjEFFECT
+{
+    NONE,
+    BURNING,
+    FREEZE,
+    SHOKING,
+    POISON,
+    EXPLOSION
 }

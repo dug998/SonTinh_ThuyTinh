@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598944560447584}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5988475895461269868}
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 5960005822627243466}
   _maxHealth: 100
+  _currentHealth: 0
 --- !u!114 &5960005822627243466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,8 +155,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 1169558089335066662}
   _Dead: {fileID: 3897292516076491345}
-  speed: 0
-  move: 0
+  _isDead: 0
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 6, y: 0}
+  _iconObj: {fileID: 212968696152483376}
+  _dataHero: {fileID: 0}
   _resourcesPref: {fileID: 1985855474967314, guid: 96cabfe1124903c4fa14ea72eb759396, type: 3}
   _locationAppears: {fileID: 5988475895461269868}
   _canHarvert: 0

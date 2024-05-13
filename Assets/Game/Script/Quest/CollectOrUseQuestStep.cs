@@ -54,7 +54,7 @@ public class CollectOrUseQuestStep : QuestStep
         this._currCollect = System.Int32.Parse(state);
         UpdateState();
     }
-    public void SetQuestStepCollectSO(TypeTask typeTask, QuestStepCollectSO data)
+    public override void SetQuestStepCollectSO(TypeTask typeTask, QuestStepCollectSO data)
     {
         _targetCollect = data.target;
         _typeCollect = data._typeCollect;

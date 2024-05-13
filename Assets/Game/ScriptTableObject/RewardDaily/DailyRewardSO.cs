@@ -9,6 +9,7 @@ public class DailyRewardSO : ScriptableObject
     public Sprite _iconGold, _iconGem;
     private void OnValidate()
     {
+        int dem = 5;
         foreach (Reward reward in _dataRewardDays)
         {
             if (reward.typeReward == TypeReward.gold)
@@ -19,7 +20,8 @@ public class DailyRewardSO : ScriptableObject
             {
                 reward._spIcon = _iconGem;
             }
-
+            reward.valuesRw = 40 + dem;
+            dem += 5;
         }
     }
 }

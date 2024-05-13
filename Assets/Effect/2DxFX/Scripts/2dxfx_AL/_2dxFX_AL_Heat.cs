@@ -389,7 +389,7 @@ public class _2dxFX_AL_Heat_Editor : Editor
             Texture2D icone = Resources.Load("2dxfx-icon-distortion") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("Heat"), new GUIContent("Heat Distortion", icone, "Change the distortion of the heat"));
             icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Time Speed", icone, "Change the time speed"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Time Speed", icone, "Change the time currSpeed"));
 
             EditorGUILayout.BeginVertical("Box");
 

@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 1349564075571516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4620668594812566}
@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 1459768524062086565}
   _maxHealth: 100
+  _currentHealth: 0
 --- !u!114 &1459768524062086565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,8 +213,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 5237085631285248001}
   _Dead: {fileID: 4332088190796963869}
-  speed: 0
-  move: 0
+  _isDead: 0
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 6, y: 0}
+  _iconObj: {fileID: 212493659118899036}
+  _dataHero: {fileID: 0}
   _bulletPref: {fileID: 1074870381605142, guid: 694bc24796303794897dc5e4e83cada2, type: 3}
   _locationAppears: {fileID: 4620668594812566}
   _nextHitting: 2

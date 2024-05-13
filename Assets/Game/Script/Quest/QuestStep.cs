@@ -41,4 +41,5 @@ public abstract class QuestStep : MonoBehaviour
          );
     }
     protected abstract void SetQuestStepState(string state);
+    public abstract void SetQuestStepCollectSO(TypeTask typeTask, QuestStepCollectSO data);
 }

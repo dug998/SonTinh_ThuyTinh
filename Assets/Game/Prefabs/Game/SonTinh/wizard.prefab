@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 1577274731438658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2, y: 0.5, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4080807653400092}
@@ -163,7 +163,9 @@ MonoBehaviour:
   _health: {fileID: 3410896581218263374}
   _Dead: {fileID: 2836653638754235961}
   _isDead: 0
-  speed: 0
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 6, y: 0}
+  _iconObj: {fileID: 212839655616533894}
   _dataHero: {fileID: 0}
   _bulletPref: {fileID: 1689738209267954, guid: 41b538d8fb02d494fad83947d94c848d, type: 3}
   _locationAppears: {fileID: 4080807653400092}

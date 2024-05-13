@@ -8,7 +8,7 @@ public class FactoryCoin : MonoBehaviour
 {
 
     public GameObject _coinPref;
-    float _minNextSpawn = 3;
+    float _minNextSpawn = 6;
     int _maxNumber = 3;
     [SerializeField] DOTweenPath _pathFrom;
     [SerializeField] DOTweenPath _pathTo;
@@ -19,12 +19,10 @@ public class FactoryCoin : MonoBehaviour
         _numberFrom = _pathFrom.wps.Count;
         _numberTo = _pathTo.wps.Count;
     }
-    public void SpawnCoins(float _nextSpawn = 4)
+    public void SpawnCoins(float _nextSpawn = 6)
     {
-        if (_nextSpawn < _minNextSpawn)
-        {
-            _nextSpawn = _minNextSpawn;
-        }
+
+        _nextSpawn = Mathf.Clamp(_nextSpawn, _minNextSpawn, Mathf.Infinity);
         StartCoroutine(FastAction(_nextSpawn));
 
     }

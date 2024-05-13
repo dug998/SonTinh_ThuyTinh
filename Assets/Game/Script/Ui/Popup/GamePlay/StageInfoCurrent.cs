@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,7 +42,11 @@ public class StageInfoCurrent : MonoBehaviour
         DOTween.To(() => _sliderBar_Stage.value, x => _sliderBar_Stage.value = x, values, .5f);
     }
 
-
+    public void StartLevelNew()
+    {
+        // resset thanh tiến trình
+        DOTween.To(() => _sliderBar_Stage.value, x => _sliderBar_Stage.value = x, 0, .2f);
+    }
     public void StartOneStage(int index)
     {
         Debug.Log("start turn :" + index);

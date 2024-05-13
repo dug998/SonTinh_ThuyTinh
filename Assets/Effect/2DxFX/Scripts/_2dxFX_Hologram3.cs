@@ -289,7 +289,7 @@ public class _2dxFX_Hologram3_Editor : Editor
             EditorGUILayout.BeginVertical("Box");
 
             Texture2D icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Time Speed", icone, "Change the time speed"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Time Speed", icone, "Change the time currSpeed"));
             icone = Resources.Load("2dxfx-icon-distortion") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("Distortion"), new GUIContent("Distortion", icone, "Change the distortion"));
             icone = Resources.Load("2dxfx-icon-color") as Texture2D;

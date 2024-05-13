@@ -12,7 +12,7 @@ public abstract class ObjectCounterAttack : ObjectSonTinh
     [SerializeField] protected GameObject _bulletPref;
     [SerializeField] protected Transform _locationAppears;
     protected bool _isHitting;
-    [SerializeField] protected float _nextHitting;
+    [SerializeField] protected float _nextHitting = 1;
     public override void Born(Object data = null)
     {
         base.Born(data);

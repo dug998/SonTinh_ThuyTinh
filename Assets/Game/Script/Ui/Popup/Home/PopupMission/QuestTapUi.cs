@@ -55,7 +55,7 @@ public class QuestTapUi : MonoBehaviour
         {
         }
         _txtDescription.text = quest.GetFullStatusText();
-        UpdateProgress(_quest._currQuestStep);
+        UpdateProgress((CollectOrUseQuestStep)_quest._currQuestStep);
     }
     public void ChangeQuestStep(Quest quest, int stepIndex, QuestStepState questStepState)
     {
@@ -64,7 +64,7 @@ public class QuestTapUi : MonoBehaviour
             return;
         }
         _txtDescription.text = quest.GetFullStatusText();
-        UpdateProgress(quest._currQuestStep);
+        UpdateProgress((CollectOrUseQuestStep)quest._currQuestStep);
     }
     public void Init(Quest quest)
     {

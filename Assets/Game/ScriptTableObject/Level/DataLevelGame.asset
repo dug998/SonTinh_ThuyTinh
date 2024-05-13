@@ -32,14 +32,14 @@ MonoBehaviour:
     _spriteiIcon: {fileID: 21300000, guid: ae79c928708081547aefe66c5b41b1cf, type: 3}
     _timeWait: 11
     _numberStageAttack: 3
-    _numberMaxObj: 12
+    _numberMaxObj: 13
     _dataLevelAttacks:
     - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
     - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
-    - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
+    - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
     _dataStageInfos:
-    - 0.33333334
-    - 0.6666667
+    - 0.30769232
+    - 0.61538464
     - 1
   - _id: 3
     _title: 3
@@ -81,16 +81,16 @@ MonoBehaviour:
     _spriteiIcon: {fileID: 21300000, guid: 22da54feb11a76f4b9ede7d1e5f45807, type: 3}
     _timeWait: 15
     _numberStageAttack: 4
-    _numberMaxObj: 18
+    _numberMaxObj: 19
     _dataLevelAttacks:
     - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
-    - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
+    - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
     - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
     - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
     _dataStageInfos:
-    - 0.22222222
-    - 0.44444445
-    - 0.7222222
+    - 0.21052632
+    - 0.47368422
+    - 0.7368421
     - 1
   - _id: 6
     _title: 6
@@ -98,18 +98,18 @@ MonoBehaviour:
     _spriteiIcon: {fileID: 21300000, guid: 0001fd4e23c95bd4081fd4a8d40a6ff3, type: 3}
     _timeWait: 15
     _numberStageAttack: 5
-    _numberMaxObj: 22
+    _numberMaxObj: 25
     _dataLevelAttacks:
-    - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
-    - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
-    - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
     - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
     - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
+    - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
+    - {fileID: 11400000, guid: 567a80dd75922b24da87c4945651f4a4, type: 2}
+    - {fileID: 11400000, guid: 567a80dd75922b24da87c4945651f4a4, type: 2}
     _dataStageInfos:
-    - 0.18181819
-    - 0.36363637
-    - 0.54545456
-    - 0.7727273
+    - 0.2
+    - 0.4
+    - 0.6
+    - 0.8
     - 1
   - _id: 7
     _title: 7
@@ -117,18 +117,18 @@ MonoBehaviour:
     _spriteiIcon: {fileID: 21300000, guid: e87082c4cd9ba97418f6c02bd9b2e98e, type: 3}
     _timeWait: 15
     _numberStageAttack: 5
-    _numberMaxObj: 23
+    _numberMaxObj: 25
     _dataLevelAttacks:
-    - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
-    - {fileID: 11400000, guid: eda11f34ed0316240a5e7aa503937cc9, type: 2}
     - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
     - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
-    - {fileID: 11400000, guid: 99e0cb0d3192406469b380b5d0671311, type: 2}
+    - {fileID: 11400000, guid: 567a80dd75922b24da87c4945651f4a4, type: 2}
+    - {fileID: 11400000, guid: 567a80dd75922b24da87c4945651f4a4, type: 2}
+    - {fileID: 11400000, guid: 2fb1edc5fd7176e43b9c773a3c350ea1, type: 2}
     _dataStageInfos:
-    - 0.17391305
-    - 0.3478261
-    - 0.5652174
-    - 0.7826087
+    - 0.2
+    - 0.4
+    - 0.6
+    - 0.8
     - 1
   - _id: 8
     _title: 8

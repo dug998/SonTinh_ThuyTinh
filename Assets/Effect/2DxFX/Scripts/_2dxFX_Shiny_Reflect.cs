@@ -393,7 +393,7 @@ public class _2dxFX_Shiny_Reflect_Editor : Editor
             {
                 EditorGUILayout.PropertyField(m_object.FindProperty("ShinyLightCurve"), new GUIContent("Shiny Light Curve", icone, "Use Curve"));
                 icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-                EditorGUILayout.PropertyField(m_object.FindProperty("AnimationSpeedReduction"), new GUIContent("Animation Speed Reduction", icone, "Change the speed of the animation based on the curve timeline"));
+                EditorGUILayout.PropertyField(m_object.FindProperty("AnimationSpeedReduction"), new GUIContent("Animation Speed Reduction", icone, "Change the currSpeed of the animation based on the curve timeline"));
             }
             else
             {

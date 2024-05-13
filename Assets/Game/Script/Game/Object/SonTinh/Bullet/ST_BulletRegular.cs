@@ -1,14 +1,25 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///  ĐẠN CƠ BẢN
+/// </summary>
 public class ST_BulletRegular : ObjectBase
 {
-    [SerializeField] int dame;
-    public GameObject _effect;
 
+    [SerializeField] protected int dame = 10;
+    public GameObject _effect;
+    public bool canFire;
+    private void OnEnable()
+    {
+        Born(null);
+
+
+    }
     public override void Born(Object data = null)
     {
+        currSpeed = orginSpeed;
     }
     public override void UpdateHealth(int values)
     {
@@ -24,7 +35,7 @@ public class ST_BulletRegular : ObjectBase
         if (collision.gameObject.CompareTag(ObjTag.thuyTinh))
         {
             CollideWithMonsters(collision.gameObject);
-            Died();
+
         }
 
     }
@@ -32,17 +43,21 @@ public class ST_BulletRegular : ObjectBase
     {
         ObjectBase monsterHealth = obj.GetComponent<ObjectBase>();
         monsterHealth.UpdateHealth(-dame);
-        Instantiate(_effect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+        if (_effect != null)
+        {
+            Instantiate(_effect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+        }
         _effect.transform.localScale = Vector2.one * 0.5f;
+        Died();
     }
     public override void Move()
     {
-        _myBody.velocity = new Vector2(speed, _myBody.velocity.y);
+        _myBody.velocity = currSpeed;
     }
 
     public override IEnumerator EffectDie()
     {
-        gameObject.SetActive(false);
         yield return null;
+        gameObject.SetActive(false);
     }
 }

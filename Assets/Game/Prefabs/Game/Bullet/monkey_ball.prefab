@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1074870381605142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -141,9 +141,11 @@ MonoBehaviour:
   _health: {fileID: 1844438614278995998}
   _Dead: {fileID: 5836175160471520990}
   _isDead: 0
-  speed: 12
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 10, y: 0}
   dame: 30
   _effect: {fileID: 4224561887848955622, guid: d1ea2e95e7b40124dab07761091ef2bf, type: 3}
+  canFire: 1
 --- !u!114 &1844438614278995998
 MonoBehaviour:
   m_ObjectHideFlags: 0

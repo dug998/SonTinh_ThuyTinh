@@ -17,4 +17,5 @@ MonoBehaviour:
   _nextTime: 15
   _typeMonsters:
   - {fileID: 4358261425712808292, guid: b7a4f5bd442dfdf4abb89cd2c152908b, type: 3}
+  - {fileID: 1802295452148575730, guid: ae6df30a0aecc2a48abf583a5de9ede0, type: 3}
   - {fileID: 5665748143918750226, guid: 2e7efef6478de01419e23f81be419254, type: 3}

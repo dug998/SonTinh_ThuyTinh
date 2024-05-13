@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 50850230582750780}
   - component: {fileID: 61356730135785096}
   - component: {fileID: 2314708586887127211}
-  - component: {fileID: 9108618922146999195}
   - component: {fileID: 645602487677867895}
+  - component: {fileID: 50651812832807156}
   m_Layer: 8
   m_Name: horse
-  m_TagString: Enemy
+  m_TagString: thuyTinh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1245526448215722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4267369442374860}
@@ -170,27 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b2aa41eb4c3834d8f5d320a06c8fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectBase: {fileID: 9108618922146999195}
+  _objectBase: {fileID: 50651812832807156}
   _maxHealth: 400
---- !u!114 &9108618922146999195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245526448215722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c4ec36e244a9449b372a7ce6e21c3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: {fileID: 2314708586887127211}
-  _Dead: {fileID: 645602487677867895}
-  speed: 0.4
-  move: 1
-  _bulletPref: {fileID: 1245526448215722}
-  _locationAppears: {fileID: 4267369442374860}
-  _nextHitting: 2
+  _currentHealth: 0
 --- !u!114 &645602487677867895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +187,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 212475239383346144}
   _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}
+--- !u!114 &50651812832807156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245526448215722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b60aea4afbee9f40bfbef0489eae6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 2314708586887127211}
+  _Dead: {fileID: 645602487677867895}
+  _isDead: 0
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 0.4, y: 0}
+  _bulletPref: {fileID: 1074870381605142, guid: 2183003d329f46346b2ceb276b42254e, type: 3}
+  _locationAppears: {fileID: 4267369442374860}
+  _nextHitting: 1
+  canBeFreeze: 1
+  dieFrozenFX: {fileID: 0}
 --- !u!1 &1945933516923930
 GameObject:
   m_ObjectHideFlags: 0

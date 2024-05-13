@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ObjectSonTinh : ObjectBase
 {
-    public DataHero _dataHero;
+    //  public bool _jumpable = true;
+    public SpriteRenderer _iconObj;
+    [HideInInspector] public DataHero _dataHero;
     public override void Born(Object data = null)
     {
-
+        orginSpeed = Vector2.zero;
         _dataHero = (DataHero)data;
         Debug.LogError(_dataHero._name);
         _health.SetMaxHealth((int)_dataHero._statHp);
@@ -23,6 +25,12 @@ public class ObjectSonTinh : ObjectBase
     {
         throw new System.NotImplementedException();
     }
-
-
+    private void Reset()
+    {
+        currSpeed = Vector2.zero;
+    }
+    public void SetSortingOrder(int order)
+    {
+        _iconObj.sortingOrder = order;
+    }
 }

@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1558818587510542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 0}
-  _material: {fileID: 0}
+  _icon: {fileID: 212760607727698990}
+  _material: {fileID: 2100000, guid: 3d5a7f32af9fdaa4585cd1092d6e1a8b, type: 2}
 --- !u!114 &2944984232551516487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +179,9 @@ MonoBehaviour:
   _health: {fileID: 5820295094264789793}
   _Dead: {fileID: 6333219767374672743}
   _isDead: 0
-  speed: 0
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 0, y: 0}
+  _iconObj: {fileID: 212760607727698990}
   _dataHero: {fileID: 0}
   _bulletPref: {fileID: 0}
   _locationAppears: {fileID: 0}

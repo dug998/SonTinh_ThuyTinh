@@ -36,7 +36,7 @@ public class TT_BulletRegular : ObjectBase
     }
     public override void Move()
     {
-        _myBody.velocity = new Vector2(speed, _myBody.velocity.y);
+        _myBody.velocity = currSpeed;
     }
 
     public override IEnumerator EffectDie()

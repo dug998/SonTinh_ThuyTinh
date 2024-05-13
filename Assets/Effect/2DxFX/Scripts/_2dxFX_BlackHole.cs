@@ -299,7 +299,7 @@ public class _2dxFX_BlackHole_Editor : Editor
             EditorGUILayout.PropertyField(m_object.FindProperty("_Hole"), new GUIContent("Hole", icone, "Change the size of the hole"));
 
             icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Speed", icone, "Change the speed of the hole"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Speed", icone, "Change the currSpeed of the hole"));
 
             icone = Resources.Load("2dxfx-icon-color") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("_Color"), new GUIContent("Color", icone, "Change the color of the black hole"));

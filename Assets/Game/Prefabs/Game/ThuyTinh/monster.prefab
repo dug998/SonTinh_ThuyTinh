@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1363261665061106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4801058324159018}
@@ -188,10 +188,13 @@ MonoBehaviour:
   _health: {fileID: 5643882496692992158}
   _Dead: {fileID: 6461152052721522188}
   _isDead: 0
-  speed: 0.3
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 0.3, y: 0}
   _bulletPref: {fileID: 1074870381605142, guid: 2183003d329f46346b2ceb276b42254e, type: 3}
   _locationAppears: {fileID: 4801058324159018}
-  _nextHitting: 0
+  _nextHitting: 1
+  canBeFreeze: 1
+  dieFrozenFX: {fileID: 0}
 --- !u!114 &6461152052721522188
 MonoBehaviour:
   m_ObjectHideFlags: 0

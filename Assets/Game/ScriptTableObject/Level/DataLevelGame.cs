@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -45,7 +46,7 @@ public class DataLevel
     [HideInInspector] public int _numberMaxObj;
     public List<DataOneStageAttack> _dataLevelAttacks;
 
-    public List<float> _dataStageInfos;
+    [ReadOnly] public List<float> _dataStageInfos;
 
     public void OnValuesChange()
     {

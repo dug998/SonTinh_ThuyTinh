@@ -306,9 +306,9 @@ public class _2dxFX_JellyAutoMove_Editor : Editor
             //	icone = Resources.Load ("2dxfx-icon-distortion") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("Inside"), new GUIContent("Jelly Inside", icone, "Change the inside distortion of the Jelly FX"));
             icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Time Speed", icone, "Change the time speed"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Time Speed", icone, "Change the time currSpeed"));
             icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Stabilisation"), new GUIContent("Stabilisation Speed", icone, "Change the Stabilisation speed"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Stabilisation"), new GUIContent("Stabilisation Speed", icone, "Change the Stabilisation currSpeed"));
 
             EditorGUILayout.BeginVertical("Box");
 

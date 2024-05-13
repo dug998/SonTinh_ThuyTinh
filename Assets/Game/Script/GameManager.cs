@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     [Header(" ___ Pref __ "), Space(20)]
     public GameObject _prefLeveGame;
-    public GameLevel _curLevelGame;
+    [ReadOnly] public GameLevel _curLevelGame;
     public void Awake()
     {
         Instance = this;
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
     public void EndGame(GameState state)
     {
         _gameState = state;
-        
+
         if (state == GameState.WIN_GAME)
         {
 

@@ -310,9 +310,9 @@ public class _2dxFX_Flame_Editor : Editor
             EditorGUILayout.BeginVertical("Box");
 
             Texture2D icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_Speed"), new GUIContent("Speed", icone, "Change the speed of the flame"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_Speed"), new GUIContent("Speed", icone, "Change the currSpeed of the flame"));
             icone = Resources.Load("2dxfx-icon-value") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("_Intensity"), new GUIContent("_Intensity", icone, "Change the speed of the flame"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("_Intensity"), new GUIContent("_Intensity", icone, "Change the currSpeed of the flame"));
 
 
             EditorGUILayout.BeginVertical("Box");

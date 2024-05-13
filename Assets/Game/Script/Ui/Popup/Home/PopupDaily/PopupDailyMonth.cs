@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,6 +28,12 @@ public class PopupDailyMonth : PopupBase
         base.Show(data);
         _btnClaim.Activity(!DailyGameManager.ReceivedDailyPrize);
         UpdateDataReward();
+        PopupCurrencyStatus.Instance.Hide();
+    }
+    public override void Hide()
+    {
+        PopupCurrencyStatus.Instance.Show();
+        base.Hide();
     }
     public void LoadData()
     {
@@ -54,7 +60,8 @@ public class PopupDailyMonth : PopupBase
             }
             else if (i == pos)
             {
-                day.UpdateStatus(statusReward.Available);
+                // nếu đã nhận ngày hôm này thì hiện thị clam 
+                day.UpdateStatus(DailyGameManager.ReceivedDailyPrize ? statusReward.Claimed : statusReward.Available);
                 _currRewardDay = day;
             }
             else

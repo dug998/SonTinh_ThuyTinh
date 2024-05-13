@@ -6,7 +6,7 @@ using UnityEngine;
 public class Quest : MonoBehaviour
 {
     public Sprite _spIcon;
-    public CollectOrUseQuestStep _currQuestStep;
+    public QuestStep _currQuestStep;
 
     public QuestInfoSO _questInfoData;
 
@@ -56,7 +56,7 @@ public class Quest : MonoBehaviour
 
         QuestStepSO questStepSO = _questInfoData.questStepPrefabs[_currQuestStepIndex];
 
-        if (questStepSO.typeTask == TypeTask.CollectData)
+        if (questStepSO.typeTask == TypeTask.CollectData || questStepSO.typeTask == TypeTask.UseData)
         {
             gameObject.AddComponent<CollectOrUseQuestStep>();
             _currQuestStep = gameObject.GetComponent<CollectOrUseQuestStep>();

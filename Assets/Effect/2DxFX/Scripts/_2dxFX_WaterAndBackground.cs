@@ -290,7 +290,7 @@ public class _2dxFX_WaterAndBackground_Editor : Editor
             Texture2D icone = Resources.Load("2dxfx-icon-distortion") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("Heat"), new GUIContent("Liquid Distortion", icone, "Change the distortion of the liquid"));
             icone = Resources.Load("2dxfx-icon-time") as Texture2D;
-            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Time Speed", icone, "Change the time speed"));
+            EditorGUILayout.PropertyField(m_object.FindProperty("Speed"), new GUIContent("Time Speed", icone, "Change the time currSpeed"));
             icone = Resources.Load("2dxfx-icon-brightness") as Texture2D;
             EditorGUILayout.PropertyField(m_object.FindProperty("Light"), new GUIContent("Light Intensity", icone, "Change the intensity of the light"));
             icone = Resources.Load("2dxfx-icon-fade") as Texture2D;

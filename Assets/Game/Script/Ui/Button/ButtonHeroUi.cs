@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ButtonHeroUi : ButtonBase
 {
+
     [SerializeField] int _id;
     [SerializeField] TextMeshProUGUI _textTitle;
     [SerializeField] Image _spriteIcon;
