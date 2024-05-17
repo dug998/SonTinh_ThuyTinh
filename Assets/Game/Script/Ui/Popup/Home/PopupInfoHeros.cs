@@ -1,6 +1,3 @@
-using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,25 +19,26 @@ public class PopupInfoHeros : PopupBase
     public TextMeshProUGUI _txtLevelNum, _txtExp;
 
     [Header(" Stat "), Space(20)]
-    public Slider _sliderStatHp;
-    public Slider _sliderStatDamage;
-    public Slider _sliderStatDefense;
+    public StatHeroUi _StatHeroHp;
+    public StatHeroUi _StatHeroDamage;
+    public StatHeroUi _StatHeroDefense;
     public override void Show(object data = null)
     {
         base.Show(data);
-        Init((DataHero)data);
+        Init((HeroProfile)data);
     }
-    public void Init(DataHero dataHero)
+    public void Init(HeroProfile _heroProfile)
     {
-        _txtName.text = dataHero._name;
-        _iconAvatarHero.sprite = dataHero._spriteAvatar;
+        DataHeroSo dataHero = _heroProfile.dataHero;
+        _txtName.text = dataHero.so_name;
+        _iconAvatarHero.sprite = dataHero.so_spriteAvatar;
         _iconAvatarHero.SetNativeSize();
 
-        _txtDesc.text = dataHero._description;
+        _txtDesc.text = dataHero.so_description;
 
-        DOTween.To(() => 0, x => _sliderStatHp.value = x, ValuesSlider(dataHero._statHp, ConstStatHero._maxHp), 0.5f);
-        DOTween.To(() => 0, x => _sliderStatDamage.value = x, ValuesSlider(dataHero._statDamage, ConstStatHero._maxDamage), 0.5f);
-        DOTween.To(() => 0, x => _sliderStatDefense.value = x, ValuesSlider(dataHero._statDefense, ConstStatHero._maxDefense), 0.5f);
+        _StatHeroHp.UpdateStat(_heroProfile._currentHp, _heroProfile._MaxtHp);
+        _StatHeroDamage.UpdateStat(_heroProfile._currentDame, _heroProfile._MaxtDame);
+        _StatHeroDefense.UpdateStat(_heroProfile._currentDefense, _heroProfile._MaxtDefense);
     }
     float ValuesSlider(float cur, float max)
     {

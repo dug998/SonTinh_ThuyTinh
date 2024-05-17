@@ -41,4 +41,18 @@ public static class LogGame
             }
         }
     }
+    public static void LogWarning(object info, String color = "#E0BA32")
+    {
+        if (EnableLog)
+        {
+            if (color != null)
+            {
+                Debug.Log(string.Format("<color={0}> {1} </color>", color, info));
+            }
+            else
+            {
+                Debug.Log(info);
+            }
+        }
+    }
 }

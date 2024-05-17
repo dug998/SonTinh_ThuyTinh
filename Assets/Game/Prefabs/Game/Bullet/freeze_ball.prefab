@@ -174,3 +174,4 @@ MonoBehaviour:
   orginSpeed: {x: 10, y: 0}
   dame: 20
   _effect: {fileID: 0}
+  canFire: 0

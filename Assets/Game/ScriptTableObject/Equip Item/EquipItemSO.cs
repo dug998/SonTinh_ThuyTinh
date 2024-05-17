@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 [CreateAssetMenu(fileName = "EquipSO", menuName = "Game/EquipSO")]
 public class EquipItemSO : ScriptableObject
 {
-    [HideInInlineEditors]string KeyEquip;
+    [HideInInlineEditors] string KeyEquip;
     [PreviewField(Alignment = ObjectFieldAlignment.Left)]
     public Sprite Icon;
     public string Names;

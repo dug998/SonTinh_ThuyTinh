@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ButtonBattleHeroUi : ButtonBase
 {
     [Header("___ Data ___"), Space(20)]
-    public DataHero _data;
+    public HeroProfile _heroProfile;
     public bool _canUse;
     public bool _canActive = false;
     public int _price;
@@ -24,12 +24,13 @@ public class ButtonBattleHeroUi : ButtonBase
     }
     public override void Init(object data)
     {
-        _data = (DataHero)data;
-        _iconCard.sprite = _data._spriteCard;
-        _price = _data._price;
+        _heroProfile = (HeroProfile)data;
+        DataHeroSo _data = _heroProfile.dataHero;
+        _iconCard.sprite = _data.so_spriteCard;
+        _price = _data.so_price;
         _canActive = true;
         _txtPrice.text = _price.ToString();
-        _duration = _data._timeRecoveryCard;
+        _duration = _data.so_timeRecoveryCard;
 
     }
     private void OnEnable()
@@ -63,7 +64,7 @@ public class ButtonBattleHeroUi : ButtonBase
             Debug.Log("No  Active");
             return;
         }
-        print(_data._id + " : " + _data._title);
+      //  print(_data.so_id + " : " + _data.so_title);
         PopupGamePlay._curBattleCard = this;
         PopupController.Instance._popupGamePlay.SetFocus();
     }

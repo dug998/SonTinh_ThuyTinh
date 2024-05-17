@@ -5,12 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DataHeroGames", menuName = "Game/DataHeroGames")]
 public class DataHeroGames : ScriptableObject
 {
-    public List<DataHero> dataHeros = new List<DataHero>();
+    public List<DataHeroSo> dataHeros = new List<DataHeroSo>();
     //private void OnValidate()
     //{
     //    foreach (var card in dataHeros)
     //    {
-    //        card._spriteCard = card._spriteiIcon;
+    //        card.so_spriteCard = card._spriteiIcon;
     //    }
     //}
 }

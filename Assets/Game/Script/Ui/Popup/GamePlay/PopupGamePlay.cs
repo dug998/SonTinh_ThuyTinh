@@ -87,7 +87,7 @@ public class PopupGamePlay : PopupBase
         for (int i = 0; i < dataCards.Length; i++)
         {
             ButtonBattleHeroUi ui = _listBattleCardUi[i];
-            DataHero data = dataCards[i]._data;
+            HeroProfile data = dataCards[i]._heroProfile;
             ui.Show();
             ui.Init(data);
         }

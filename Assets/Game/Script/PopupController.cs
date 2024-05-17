@@ -21,6 +21,7 @@ public class PopupController : MonoBehaviour
     public PopupSetting _popupSetting;
     public PopupInventory _popupInventory;
     public PopupReward _popupReward;
+    public PopupUpgradeHero _popupUpgradeHero;
 
     [Header(" --- Game Play --- "), Space(20)]
 
@@ -97,6 +98,9 @@ public class PopupController : MonoBehaviour
             case TypePopup.PopupInventory:
                 popup = _popupInventory;
                 break;
+            case TypePopup.PopupUpgradeHero:
+                popup = _popupUpgradeHero;
+                break;
             default:
                 popup = _popupHome;
                 break;
@@ -121,5 +125,6 @@ public enum TypePopup
     PopupMission,
     PopupSetting,
     PopupListHeros,
-    PopupInventory
+    PopupInventory,
+    PopupUpgradeHero
 }

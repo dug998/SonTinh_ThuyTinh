@@ -22,7 +22,7 @@ public class PopupChoiceHero : PopupBase
     [Header(" ____ Slot ____ "), Space(30)]
     public List<HeroSlotUi> _listHeroSlotUi;
     [Header(" ____ Hero ____ ")]
-    public HeroesInfo _heroesInfo;
+    public HeroesInfoUi _heroesInfo;
     bool _canPlay;
     protected override void Awake()
     {
@@ -84,7 +84,7 @@ public class PopupChoiceHero : PopupBase
     #region Hero Button
     public void LoadDataCard()
     {
-        List<DataHero> dataHero = _dataHeros.dataHeros;
+        List<DataHeroSo> dataHero = _dataHeros.dataHeros;
         foreach (var ui in _listCardUi)
         {
             ui.Hide();
@@ -92,7 +92,7 @@ public class PopupChoiceHero : PopupBase
         for (int i = 0; i < dataHero.Count; i++)
         {
             ButtonHeroUi ui = _listCardUi[i];
-            DataHero data = dataHero[i];
+            DataHeroSo data = dataHero[i];
             ui.Show();
             ui.Init(data);
             ui.RemoveAll();
@@ -108,13 +108,13 @@ public class PopupChoiceHero : PopupBase
         ButtonHeroUi[] dataCards = _HeroChoiseBattle.ToArray();
         for (int i = 0; i < dataCards.Length; i++)
         {
-            DataHero data = dataCards[i]._data;
-            if (data != null && _currentSlot < _maxCurrentSlot)
+            HeroProfile _heroProfile = dataCards[i]._heroProfile;
+            if (_heroProfile != null && _currentSlot < _maxCurrentSlot)
             {
                 _currentSlot++;
             }
             HeroSlotUi card = _listHeroSlotUi[i];
-            card.UpdateData(data);
+            card.UpdateData(_heroProfile.dataHero);
             card.Show();
         }
         if (_currentSlot == _maxCurrentSlot)

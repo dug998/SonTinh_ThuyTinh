@@ -51,15 +51,15 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
     }
     public void SpawnObj()
     {
-        DataHero card = PopupGamePlay._curBattleCard._data;
-        if (PopupGamePlay.CheckEnoughCoin(card._price))
+        DataHeroSo card = PopupGamePlay._curBattleCard._heroProfile.dataHero;
+        if (PopupGamePlay.CheckEnoughCoin(card.so_price))
         {
             PopupGamePlay._curBattleCard.UsingCard();
             _isFull = true;
-            _children = Instantiate(card._ObjPref, transform);
-            PopupGamePlay.UpdateCoin(-card._price);
+            _children = Instantiate(card.so_ObjPref, transform);
+            PopupGamePlay.UpdateCoin(-card.so_price);
             ObjectSonTinh objectBase = _children.GetComponent<ObjectSonTinh>();
-            LogGame.Log(objectBase.name + " -- " + card._name);
+            LogGame.Log(objectBase.name + " -- " + card.so_name);
             objectBase.Born(card);
             objectBase.SetSortingOrder(_sortingOrderChild);
             _children.transform.localPosition = new Vector3(0, .2f);

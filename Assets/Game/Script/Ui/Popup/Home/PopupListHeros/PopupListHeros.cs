@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PopupListHeros : PopupBase
 {
-    List<DataHero> _dataHeros;
+    List<DataHeroSo> _dataHeros;
     public GameObject parentSlotHero;
     public ButtonHeroInfoUi _prefabSlotHeroInfo;
     List<ButtonHeroInfoUi> buttonHeroInfoUis;

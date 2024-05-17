@@ -9,7 +9,7 @@ public class ButtonHeroInfoUi : ButtonBase
     [SerializeField] int _id;
     [SerializeField] TextMeshProUGUI _txtTitle, txtName;
     [SerializeField] Image _spriteIcon;
-    [HideInInspector] public DataHero _data;
+    [HideInInspector] public DataHeroSo _data;
     protected bool _selected = true;
 
     protected override void Awake()
@@ -22,10 +22,10 @@ public class ButtonHeroInfoUi : ButtonBase
     }
     public override void Init(object data)
     {
-        _data = (DataHero)data;
-        _id = _data._id;
-        txtName.text = _data._name;
-        _spriteIcon.sprite = _data._spriteAvatar;
+        _data = (DataHeroSo)data;
+        _id = _data.so_id;
+        txtName.text = _data.so_name;
+        _spriteIcon.sprite = _data.so_spriteAvatar;
 
     }
     public void ChooseHero()

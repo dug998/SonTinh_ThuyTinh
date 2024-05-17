@@ -97,6 +97,7 @@ public static class UserData
         }
     }
     #endregion
+    #region Hero
     public static int maxNumberHeroBattle
     {
         get
@@ -109,4 +110,13 @@ public static class UserData
             PlayerPrefs.SetInt("KeyMaxNumberCardBattle", value);
         }
     }
+    public static int GetValuesStartHero(string key)
+    {
+        return PlayerPrefs.GetInt(key, 0);
+    }
+    public static void SetValuesStartHero(string key, int value)
+    {
+        PlayerPrefs.SetInt(key, value);
+    }
+    #endregion
 }

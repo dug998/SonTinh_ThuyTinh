@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public static DataLevel _dataCurLevel;
     public static GameState _gameState;
 
-    [Header(" ___ Pref __ "), Space(20)]
+    [Header(" ___ Cheat __ "), Space(20)]
     public GameObject _prefLeveGame;
     [ReadOnly] public GameLevel _curLevelGame;
     public void Awake()
@@ -72,7 +72,7 @@ public class ObjTag
 #if UNITY_EDITOR
 
 
-public static class Pref
+public static class Cheat
 {
     [MenuItem("player_pref/clear_all")]
     public static void clear_all()

@@ -11,20 +11,22 @@ public class ButtonHeroUi : ButtonBase
     [SerializeField] int _id;
     [SerializeField] TextMeshProUGUI _textTitle;
     [SerializeField] Image _spriteIcon;
-    [HideInInspector] public DataHero _data;
+    [HideInInspector] public HeroProfile _heroProfile;
     protected bool _selected = true;
     public GameObject _maskSelected;
     public override void Init(object data)
     {
-        _data = (DataHero)data;
-        _id = _data._id;
-        _textTitle.text = _data._title;
-        _spriteIcon.sprite = _data._spriteCard;
+        _heroProfile = (HeroProfile)data;
+        DataHeroSo _data = _heroProfile.dataHero;
+        _data = (DataHeroSo)data;
+        _id = _data.so_id;
+        _textTitle.text = _data.so_title;
+        _spriteIcon.sprite = _data.so_spriteCard;
         SetSelected(false);
     }
     public void ChooseHero()
     {
-        PopupController.Instance._popupChoiceHero._heroesInfo.Init(_data);
+        PopupController.Instance._popupChoiceHero._heroesInfo.Init(_heroProfile);
         if (_selected)
         {
             return;

@@ -6,13 +6,12 @@ public class ObjectSonTinh : ObjectBase
 {
     //  public bool _jumpable = true;
     public SpriteRenderer _iconObj;
-    [HideInInspector] public DataHero _dataHero;
+    [HideInInspector] public HeroProfile _heroProfile;
     public override void Born(Object data = null)
     {
         orginSpeed = Vector2.zero;
-        _dataHero = (DataHero)data;
-        Debug.LogError(_dataHero._name);
-        _health.SetMaxHealth((int)_dataHero._statHp);
+        _heroProfile = (HeroProfile)data;
+        _health.SetMaxHealth((_heroProfile._MaxtHp));
 
         base.Born(data);
     }

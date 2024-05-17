@@ -9,13 +9,13 @@ using UnityEngine.UI;
 public class PopupInventory : PopupBase
 {
     int MaxItem = 50;
-    public EquipItem _prefabEquip;
+    public EquipItemUi _prefabEquip;
     public GameObject _parentEquip;
     [ReadOnly]
-    public List<EquipItem> _listEquipItem;
+    public List<EquipItemUi> _listEquipItem;
     public List<ItemGame> _itemGames;
     public GameObject _ObjFocus;
-    EquipItem _currSlotSee;
+    EquipItemUi _currSlotSee;
     [Header(" Info Item ")]
     public GameObject _objItemInfo;
     public Image _icon;
@@ -29,7 +29,7 @@ public class PopupInventory : PopupBase
         _listEquipItem.Clear();
         for (int i = 0; i < MaxItem; i++)
         {
-            EquipItem item = Instantiate(_prefabEquip, _parentEquip.transform);
+            EquipItemUi item = Instantiate(_prefabEquip, _parentEquip.transform);
             _listEquipItem.Add(item);
         }
     }
@@ -46,7 +46,7 @@ public class PopupInventory : PopupBase
             _listEquipItem[i].Init(_itemGames[i].dataItem);
         }
     }
-    public void SeeInformation(EquipItem slot)
+    public void SeeInformation(EquipItemUi slot)
     {
         if (_currSlotSee == null)
         {

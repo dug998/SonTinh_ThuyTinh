@@ -46,8 +46,8 @@ public class ST_BulletRegular : ObjectBase
         if (_effect != null)
         {
             Instantiate(_effect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            _effect.transform.localScale = Vector2.one * 0.5f;
         }
-        _effect.transform.localScale = Vector2.one * 0.5f;
         Died();
     }
     public override void Move()

@@ -28,7 +28,7 @@ public class HeroSlotUi : MonoBehaviour
         }
         _maskAdd.SetActive(false);
     }
-    public void UpdateData(DataHero data)
+    public void UpdateData(DataHeroSo data)
     {
         if (_locked)
         {
@@ -39,8 +39,8 @@ public class HeroSlotUi : MonoBehaviour
         {
             _maskAdd.SetActive(true);
         }
-        _txtName.text = data._title;
-        _txtPrice.text = data._price.ToString();
-        _icon.sprite = data._spriteCard;
+        _txtName.text = data.so_title;
+        _txtPrice.text = data.so_price.ToString();
+        _icon.sprite = data.so_spriteCard;
     }
 }
