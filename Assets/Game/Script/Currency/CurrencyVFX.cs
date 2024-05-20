@@ -41,7 +41,7 @@ public class CurrencyVFX : MonoBehaviour
         List<GameObject> ListObj = new List<GameObject>();
         for (int i = 0; i < 5; i++)
         {
-            GameObject newObj = (IsCoins) ? ObjectPool.Instance.Get(ObjectPool.Instance.Gold) : ObjectPool.Instance.Get(ObjectPool.Instance.Gem);
+            GameObject newObj = CurrencyObjectPool.Instance.Get(IsCoins ? CurrencyObjectPool.Instance.Gold : CurrencyObjectPool.Instance.Gem);
             newObj.gameObject.SetActive(true);
             ListObj.Add(newObj);
             newObj.SetActive(true);
@@ -62,9 +62,9 @@ public class CurrencyVFX : MonoBehaviour
             .OnComplete(() =>
             {
                 ObjecPrefab.SetActive(false);
-                ObjectPool.Instance.Return(ObjecPrefab);
+                CurrencyObjectPool.Instance.Return(ObjecPrefab);
                 // SoundHome.instance.PlayShot(SoundHome.instance.Gold, 0.5f);
-               
+
             });
 
             yield return new WaitForSeconds(0.04f);

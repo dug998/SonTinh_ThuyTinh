@@ -16,4 +16,6 @@ public static class EventGame
     #endregion
     public static Action<bool> OnNotifyQuest;
     public static Action<bool> OnNotifyDaily;
+
+    public static Action <bool> OnNotifyWeather;
 }

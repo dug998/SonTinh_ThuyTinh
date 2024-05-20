@@ -17,9 +17,9 @@ public class MonkeyDouble : ST_Monkey
             yield return new WaitForSeconds(.5f);
             _myAnim.SetBool("hit", true);
             yield return new WaitForSeconds(.3f);
-            SpawnButtlet();
+            SpawnButtlets();
             yield return new WaitForSeconds(.3f);
-            SpawnButtlet();
+            SpawnButtlets();
             yield return new WaitForSeconds(.5f);
             _myAnim.SetBool("hit", false);
             yield return new WaitForSeconds(_nextHitting);

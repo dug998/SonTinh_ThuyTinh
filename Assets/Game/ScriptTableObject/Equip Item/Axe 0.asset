@@ -12,13 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef6e9082667fa74098d7553a50adf35, type: 3}
   m_Name: Axe 0
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 5a927d8bb3ac7434db5fe487560c6d01, type: 3}
-  Names: Axe 0
-  ColorBG: {r: 0, g: 0, b: 0, a: 0}
-  Description: 
-  IconLevel:
-  - {fileID: 2800000, guid: 5a927d8bb3ac7434db5fe487560c6d01, type: 3}
-  - {fileID: 2800000, guid: e74a482de2bdc43f78d747cfdf14d810, type: 3}
-  - {fileID: 2800000, guid: d8984d8219d8b4d6591efbba556cc279, type: 3}
-  - {fileID: 2800000, guid: ec0f3dca92bc44ca59a7cfee7fc1a76c, type: 3}
-  - {fileID: 2800000, guid: c07f8506dd7e442748cae004e26e2080, type: 3}
+  so_spIcon: {fileID: 21300000, guid: 5a927d8bb3ac7434db5fe487560c6d01, type: 3}
+  so_typeItem: 0
+  so_names: Axe 0
+  so_colorBG: {r: 0, g: 0, b: 0, a: 0}
+  so_description: 

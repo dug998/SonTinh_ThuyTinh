@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b7ec5ab2b5f994685671175e985f4f, type: 3}
+  m_Name: 8_FLAME
+  m_EditorClassIdentifier: 
+  so_id: 8
+  so_title: 
+  so_name: FLAME
+  so_description: 
+  so_price: 100
+  so_timeRecoveryCard: 2
+  so_spriteAvatar: {fileID: 21300000, guid: 606930de5c07eea4c81c1f73255cfe54, type: 3}
+  so_spriteCard: {fileID: 21300000, guid: 3663a07c5fdcabc46a8249941c094e3f, type: 3}
+  so_ObjPref: {fileID: 1704114626545994, guid: abb1f7d49bc413a46bc842fc9b9016f2, type: 3}
+  so_MaxStart: 2
+  so_statHeroHp:
+    _origin: 250
+    _maxStat: 400
+    _minStat: 0
+  so_statHeroDame:
+    _origin: 40
+    _maxStat: 400
+    _minStat: 0
+  so_StatHeroDefense:
+    _origin: 10
+    _maxStat: 400
+    _minStat: 0
+  so_itemRecipes:
+  - Icon: {fileID: 0}
+    ID: 0
+    so_priceGold: 200
+    so_percentIncrease: 2
+    ItemRecipeIngredients:
+    - dataEquipItem: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      itemCount: 20
+  - Icon: {fileID: 0}
+    ID: 2
+    so_priceGold: 200
+    so_percentIncrease: 3
+    ItemRecipeIngredients:
+    - dataEquipItem: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      itemCount: 10

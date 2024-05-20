@@ -8,15 +8,15 @@ public class Wizard : ObjectCounterAttack
     {
         yield return new WaitUntil(() => GameManager._gameState == GameState.PLAYING);
         yield return new WaitForSeconds(_nextHitting);
-        SpawnButtlet();
-        UpdateHealth(-_health.GetMaxHealth());
+        SpawnButtlets();
+        ReceiveDame(-_health.GetMaxHealth());
     }
 
     public override void Move()
     {
     }
 
-    public override void SpawnButtlet()
+    public override void SpawnButtlets()
     {
         Instantiate(_bulletPref, _locationAppears.position, Quaternion.Euler(new Vector3(0, 0, 0)));
 

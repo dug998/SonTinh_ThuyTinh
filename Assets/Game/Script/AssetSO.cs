@@ -7,7 +7,7 @@ public class AssetSO : MonoBehaviour
     public static AssetSO Instance;
     public DailyRewardSO _dataRewardDailyMonth;
     public DataHeroGames _dataHeroGames;
-    public List<EquipItemSO> _dataEquipItems;
+    public List<ItemSO> _dataEquipItems;
     private void Awake()
     {
         Instance = this;

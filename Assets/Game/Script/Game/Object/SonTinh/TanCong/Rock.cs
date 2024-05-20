@@ -16,16 +16,17 @@ public class Rock : ObjectCounterAttack
             yield return new WaitForSeconds(.5f);
             _myAnim.SetBool("hit", true);
             yield return new WaitForSeconds(.3f);
-            SpawnButtlet();
+            SpawnButtlets();
             yield return new WaitForSeconds(.4f);
             _myAnim.SetBool("hit", false);
             yield return new WaitForSeconds(_nextHitting);
         }
     }
 
-    public override void SpawnButtlet()
+    public override void SpawnButtlets()
     {
-        Instantiate(_bulletPref, _locationAppears.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+
+        BornBullet(_poolBullet, _statDame, Vector2.right * 8, _locationAppears.position);
 
     }
 

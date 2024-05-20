@@ -34,8 +34,8 @@ public class Quest : MonoBehaviour
         _questInfoData = questInfo;
         _questState = questState;
         _currQuestStepIndex = currentQuestStepIndex;
+        _spIcon = questInfo.questStepPrefabs[_currQuestStepIndex]._spIcon;
         _questStepStates = questStepStates;
-
     }
     public void MoveToNextStep()
     {
@@ -86,7 +86,8 @@ public class Quest : MonoBehaviour
     public string GetFullStatusText()
     {
         string fullStatus = "";
-
+        Debug.Log("index :" + _currQuestStepIndex);
+        Debug.Log("index :" + _currQuestStepIndex + " __" + _questStepStates[_currQuestStepIndex].status);
         if (_questState == QuestState.REQUIREMENTS_NOT_MET)
         {
             fullStatus = "Requirements are not yet met to start this quest.";
@@ -97,17 +98,10 @@ public class Quest : MonoBehaviour
         }
         else
         {
-            // display all previous quests with strikethroughs
-            for (int i = 0; i < _currQuestStepIndex; i++)
-            {
-                fullStatus += _questStepStates[i].status;
-            }
-            // display the current step, if it exists
             if (CurrentStepExists())
             {
                 fullStatus += _questStepStates[_currQuestStepIndex].status;
             }
-            // when the quest is completed or turned in
             if (_questState == QuestState.CAN_FINISH)
             {
                 fullStatus += " The quest is ready to be turned in.";

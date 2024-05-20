@@ -5783,10 +5783,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _btn: {fileID: 3422752489274317681}
   justClick: 1
-  _maskActiviy: {fileID: 0}
-  _txtDesc: {fileID: 0}
+  _imgBg: {fileID: 0}
+  _spBgSelect: {fileID: 0}
+  _spBgUnSelect: {fileID: 0}
+  _txtName: {fileID: 0}
+  _colorNameSelect: {r: 0, g: 0, b: 0, a: 0}
+  _colorNameUnSelect: {r: 0, g: 0, b: 0, a: 0}
   _icon: {fileID: 0}
-  _bg: {fileID: 0}
+  _spIconSelect: {fileID: 0}
+  _spIconUnSelect: {fileID: 0}
+  _txtDesc: {fileID: 0}
+  _objNotify: {fileID: 0}
 --- !u!1 &3422752489825459700
 GameObject:
   m_ObjectHideFlags: 0
@@ -10852,9 +10859,10 @@ MonoBehaviour:
   _namePack: Tiniy of Gold
   _amount: 20
   _price: 0
-  btnPuy: {fileID: 2990262706818619362}
+  btnBuy: {fileID: 2990262706818619362}
   _iconItem: {fileID: 3422752489097673873}
   _txtValues: {fileID: 3422752488903307928}
+  _items: []
 --- !u!1 &3422752490280223469
 GameObject:
   m_ObjectHideFlags: 0

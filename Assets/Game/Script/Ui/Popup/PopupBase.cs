@@ -25,7 +25,7 @@ public class PopupBase : MonoBehaviour
     }
     public virtual void Hide()
     {
-        _canvasGroup.DOFade(0, 1).From(1).SetEase(Ease.OutCubic).OnComplete(() =>
+        _canvasGroup.DOFade(0, 0.5f).From(1).SetEase(Ease.OutCubic).OnComplete(() =>
         {
             gameObject.SetActive(false);
         });

@@ -53,7 +53,7 @@ public class Snake : ObjectCounterAttack
         }
     }
 
-    public override void SpawnButtlet()
+    public override void SpawnButtlets()
     {
         throw new System.NotImplementedException();
     }

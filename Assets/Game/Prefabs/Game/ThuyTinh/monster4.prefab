@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 61700590673591342}
   - component: {fileID: 50799708325948418}
   - component: {fileID: 95198124133943664}
+  - component: {fileID: 2015674517396144268}
+  - component: {fileID: 3319616356593806391}
+  - component: {fileID: 3357967415702188269}
   m_Layer: 14
   m_Name: monster4
   m_TagString: thuyTinh
@@ -155,6 +158,58 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2015674517396144268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644129136192086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b2aa41eb4c3834d8f5d320a06c8fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectBase: {fileID: 3357967415702188269}
+  _maxHealth: 1000
+  _sliderHealth: {fileID: 0}
+  _txtHealth: {fileID: 0}
+--- !u!114 &3319616356593806391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644129136192086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b567e0621a04fb840adfde91edb200f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 0}
+  _material: {fileID: 0}
+--- !u!114 &3357967415702188269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644129136192086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c4ec36e244a9449b372a7ce6e21c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 2015674517396144268}
+  _Dead: {fileID: 3319616356593806391}
+  _isDead: 0
+  currSpeed: {x: 0, y: 0}
+  orginSpeed: {x: 0.3, y: 0}
+  _bulletPref: {fileID: 0}
+  _locationAppears: {fileID: 0}
+  _nextHitting: 0
+  canBeFreeze: 1
+  dieFrozenFX: {fileID: 0}
 --- !u!1 &1992113317475766
 GameObject:
   m_ObjectHideFlags: 0

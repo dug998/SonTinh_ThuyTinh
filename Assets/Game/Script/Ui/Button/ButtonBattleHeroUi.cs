@@ -64,7 +64,7 @@ public class ButtonBattleHeroUi : ButtonBase
             Debug.Log("No  Active");
             return;
         }
-      //  print(_data.so_id + " : " + _data.so_title);
+      //  print(_dataReward.so_id + " : " + _dataReward.so_title);
         PopupGamePlay._curBattleCard = this;
         PopupController.Instance._popupGamePlay.SetFocus();
     }

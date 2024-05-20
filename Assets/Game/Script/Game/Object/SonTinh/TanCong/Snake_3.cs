@@ -18,7 +18,7 @@ public class Snake_3 : ObjectCounterAttack
             yield return new WaitForSeconds(.5f);
             _myAnim.SetBool("hit", true);
             yield return new WaitForSeconds(.2f);
-            SpawnButtlet();
+            SpawnButtlets();
 
             yield return new WaitForSeconds(.3f);
             _myAnim.SetBool("hit", false);
@@ -26,12 +26,12 @@ public class Snake_3 : ObjectCounterAttack
         }
     }
 
-    public override void SpawnButtlet()
+    public override void SpawnButtlets()
     {
-        Instantiate(_bulletPref, ballShotTop.position, Quaternion.Euler(new Vector3(0, 0, 0)));
 
-        Instantiate(_bulletPref, ballShotMid.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-        Instantiate(_bulletPref, ballShotBot.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+        BornBullet(_poolBullet, _statDame, Vector2.right * 8, ballShotTop.position);
+        BornBullet(_poolBullet, _statDame, Vector2.right * 8, ballShotMid.position);
+        BornBullet(_poolBullet, _statDame, Vector2.right * 8, ballShotBot.position);
     }
 
 

@@ -1,7 +1,6 @@
 
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [System.Serializable]
@@ -26,6 +25,6 @@ public class ItemRecipe
 [System.Serializable]
 public class ItemRecipeIngredient
 {
-    public EquipItemSO dataEquipItem;
+    public ItemSO dataEquipItem;
     public int itemCount;
 }

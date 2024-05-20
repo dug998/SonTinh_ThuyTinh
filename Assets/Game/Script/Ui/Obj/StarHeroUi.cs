@@ -17,5 +17,12 @@ public class StarHeroUi : MonoBehaviour
 
         }
     }
+    public void ShowStatMax(int numberMax)
+    {
+        for (int i = 0; i < _listStart.Count; i++)
+        {
+            _listStart[i].gameObject.SetActive(i < numberMax);
 
+        }
+    }
 }

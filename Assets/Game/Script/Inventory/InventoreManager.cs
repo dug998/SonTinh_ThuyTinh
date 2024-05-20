@@ -9,8 +9,8 @@ using UnityEngine;
 public class ItemGame
 {
     public ItemJson itemJson;
-    public EquipItemSO dataItem;
-    public ItemGame(ItemJson itemJson, EquipItemSO data)
+    public ItemSO dataItem;
+    public ItemGame(ItemJson itemJson, ItemSO data)
     {
         this.itemJson = itemJson;
         this.dataItem = data;
@@ -19,13 +19,20 @@ public class ItemGame
     {
         itemJson.UpdateQuantity(quantity);
     }
+    public void AddQuantity(int quantity)
+    {
+        itemJson.AddQuantity(quantity);
+    }
+    public int GetQuantity() {
+        return itemJson.quantity;
+    }
 }
 
 [RequireComponent(typeof(InventoreJson))]
 public class InventoreManager : MonoBehaviour
 {
     public static InventoreManager Instance;
-    List<EquipItemSO> _dataEquipItems;
+    List<ItemSO> _dataEquipItems;
     InventoreJson _inventoreJson;
 
     public List<ItemGame> _itemGames;
@@ -58,7 +65,7 @@ public class InventoreManager : MonoBehaviour
         }
         foreach (var item in allItemJson.items)
         {
-            EquipItemSO data = _dataEquipItems.Find(x => x.GetKey() == item.keyEquip);
+            ItemSO data = _dataEquipItems.Find(x => x.GetKey() == item.keyEquip);
             _itemGames.Add(new ItemGame(item, data));
         }
     }
@@ -72,29 +79,30 @@ public class InventoreManager : MonoBehaviour
         _inventoreJson.SetAllItemJson(allItemJson);
         _inventoreJson.SaveInventory();
     }
-    public void AddItem(string keyEquip, int quantity = 1)
+    void AddItem(string keyEquip, int quantity = 1)
     {
         ItemGame item = FindItem(keyEquip);
         if (item != null)
         {
-            item.UpdateQuantity(quantity);
+            item.AddQuantity(quantity);
         }
         else
         {
-            EquipItemSO data = _dataEquipItems.Find(x => x.GetKey() == keyEquip);
+            ItemSO data = _dataEquipItems.Find(x => x.GetKey() == keyEquip);
             ItemJson i = new ItemJson(keyEquip, quantity);
             _itemGames.Add(new ItemGame(i, data));
         }
     }
-    public void AddItem(EquipItemSO dataEquip)
+    public void AddItem(ItemSO dataEquip, int quantity = 1)
     {
-        AddItem(dataEquip.GetKey());
+        LogGame.Log("Add equip :" + dataEquip.GetKey());
+        AddItem(dataEquip.GetKey(), quantity);
     }
-    public int QuantityItem(EquipItemSO dataEquip)
+    public int GetQuantityItem(ItemSO dataEquip)
     {
-        return QuantityItem(dataEquip.GetKey());
+        return GetQuantityItem(dataEquip.GetKey());
     }
-    public int QuantityItem(string keyEquip)
+    int GetQuantityItem(string keyEquip)
     {
         ItemGame item = FindItem(keyEquip);
         if (item == null)
@@ -104,11 +112,11 @@ public class InventoreManager : MonoBehaviour
         }
         return item.itemJson.quantity;
     }
-    public void DeductItem(EquipItemSO dataEquip, int quantity)
+    public void DeductItem(ItemSO dataEquip, int quantity)
     {
         DeductItem(dataEquip.GetKey(), quantity);
     }
-    public void DeductItem(string keyEquip, int quantity)
+    void DeductItem(string keyEquip, int quantity)
     {
         ItemGame item = FindItem(keyEquip);
         if (item == null)
@@ -140,6 +148,7 @@ public class InventoreManager : MonoBehaviour
     [Button]
     public void AddItemsRandom()
     {
+
         AddItem(_dataEquipItems[Random.Range(0, _dataEquipItems.Count)]);
     }
 }

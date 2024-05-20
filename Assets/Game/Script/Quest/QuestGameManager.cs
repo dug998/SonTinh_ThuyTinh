@@ -27,7 +27,7 @@ public class QuestGameManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(5);
             foreach (var quest in questMap.Values)
             {
                 if (quest._questState == QuestState.REQUIREMENTS_NOT_MET && CheckRequirementsMet(quest))
@@ -53,6 +53,10 @@ public class QuestGameManager : MonoBehaviour
         QuestEvents.onAdvanceQuest -= AdvanceQuest;
         QuestEvents.onFinishQuest -= FinishQuest;
         QuestEvents.onQuestStepStateChange -= QuestStepStateChange;
+    }
+    private void OnApplicationQuit()
+    {
+        SaveQuestMap();
     }
     private bool CheckRequirementsMet(Quest quest)
     {
@@ -124,6 +128,13 @@ public class QuestGameManager : MonoBehaviour
             idToQuestMap.Add(questInfo.id, QuestsToJson.LoadQuest(questInfo));
         }
         return idToQuestMap;
+    }
+    private void SaveQuestMap()
+    {
+        foreach (var quest in questMap.Values)
+        {
+            QuestsToJson.SaveQuest(quest);
+        }
     }
 
 }

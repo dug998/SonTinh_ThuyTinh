@@ -1,5 +1,4 @@
-using Sirenix.OdinInspector;
-using Sirenix.OdinInspector.Editor.Examples;
+﻿using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,7 +16,7 @@ public class DataHeroSo : ScriptableObject
     [TextArea]
     public string so_description;
     public int so_price = 25;
-    public float so_timeRecoveryCard;
+    public float so_timeRecoveryCard = 2;
     [PreviewField()]
     public Sprite so_spriteAvatar;
 
@@ -34,13 +33,27 @@ public class DataHeroSo : ScriptableObject
     [Header("Upgrade")]
     [TableList]
     public List<ItemRecipe> so_itemRecipes;
+#if UNITY_EDITOR
     public void OnValidate()
     {
         so_MaxStart = so_itemRecipes.Count;
 
+        string fullString = so_spriteCard.name;
+
+        string[] result = fullString.Split("_");
+
+        // Viết hoa chữ cái đầu
+        so_name = result[0];
+        so_name = so_name.ToUpper();
+
+        string _nameFile = so_id + "_" + so_name;
+        string assetPath = UnityEditor.AssetDatabase.GetAssetPath(this);
+        UnityEditor.AssetDatabase.RenameAsset(assetPath, _nameFile);
     }
 
+#endif
 }
+
 [System.Serializable]
 public class StatHeroSO
 {

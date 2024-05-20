@@ -35,6 +35,16 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
             _isFull = false;
         }
     }
+    public void RemoveChildren()
+    {
+        if (_isFull && _children != null)
+        {
+
+            Debug.Log("remove");
+            Destroy(_children);
+            _isFull = false;
+        }
+    }
     public void OnMouseUp()
     {
         if (Time.time - _timeClick < .2f)
@@ -51,16 +61,16 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
     }
     public void SpawnObj()
     {
-        DataHeroSo card = PopupGamePlay._curBattleCard._heroProfile.dataHero;
-        if (PopupGamePlay.CheckEnoughCoin(card.so_price))
+        HeroProfile _hero = PopupGamePlay._curBattleCard._heroProfile;
+        if (PopupGamePlay.CheckEnoughCoin(_hero._price))
         {
             PopupGamePlay._curBattleCard.UsingCard();
             _isFull = true;
-            _children = Instantiate(card.so_ObjPref, transform);
-            PopupGamePlay.UpdateCoin(-card.so_price);
+            _children = Instantiate(_hero._objPrefab, transform);
+            PopupGamePlay.UpdateCoin(-_hero._price);
             ObjectSonTinh objectBase = _children.GetComponent<ObjectSonTinh>();
-            LogGame.Log(objectBase.name + " -- " + card.so_name);
-            objectBase.Born(card);
+            LogGame.Log(objectBase.name + " -- " + _hero._price);
+            objectBase.Born(_hero);
             objectBase.SetSortingOrder(_sortingOrderChild);
             _children.transform.localPosition = new Vector3(0, .2f);
         }

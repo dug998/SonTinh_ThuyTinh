@@ -5,24 +5,12 @@ using UnityEngine;
 /// <summary>
 ///  ĐẠN CƠ BẢN
 /// </summary>
-public class ST_BulletRegular : ObjectBase
+public class ST_BulletRegular : BulletBase
 {
-
-    [SerializeField] protected int dame = 10;
-    public GameObject _effect;
     public bool canFire;
-    private void OnEnable()
-    {
-        Born(null);
-
-
-    }
     public override void Born(Object data = null)
     {
         currSpeed = orginSpeed;
-    }
-    public override void UpdateHealth(int values)
-    {
     }
     void FixedUpdate()
     {
@@ -35,14 +23,13 @@ public class ST_BulletRegular : ObjectBase
         if (collision.gameObject.CompareTag(ObjTag.thuyTinh))
         {
             CollideWithMonsters(collision.gameObject);
-
         }
 
     }
     public virtual void CollideWithMonsters(GameObject obj)
     {
         ObjectBase monsterHealth = obj.GetComponent<ObjectBase>();
-        monsterHealth.UpdateHealth(-dame);
+        monsterHealth.ReceiveDame(-dame);
         if (_effect != null)
         {
             Instantiate(_effect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
@@ -50,14 +37,7 @@ public class ST_BulletRegular : ObjectBase
         }
         Died();
     }
-    public override void Move()
-    {
-        _myBody.velocity = currSpeed;
-    }
+  
 
-    public override IEnumerator EffectDie()
-    {
-        yield return null;
-        gameObject.SetActive(false);
-    }
+   
 }

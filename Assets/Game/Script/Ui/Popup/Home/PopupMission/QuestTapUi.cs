@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 public class QuestTapUi : MonoBehaviour
 {
-    public Quest _quest;
+    [ReadOnly] public Quest _quest;
     public Image _imgIcon;
     public TextMeshProUGUI _txtName;
     public TextMeshProUGUI _txtDescription;
@@ -16,6 +17,10 @@ public class QuestTapUi : MonoBehaviour
     public Slider _sliderProgress;
     public Button _btnClam;
     public Button _btnStart;
+
+    public ItemUi _itemUi, _itemUiDemo;
+    [Header(" data ")]
+    [ReadOnly] public Reward _rewards;
     private void Awake()
     {
         _btnClam.onClick.AddListener(() =>
@@ -49,6 +54,7 @@ public class QuestTapUi : MonoBehaviour
         else if (_quest._questState == QuestState.CAN_FINISH)
         {
             _btnClam.gameObject.SetActive(true);
+            _itemUi.gameObject.SetActive(true);
 
         }
         else if (_quest._questState == QuestState.FINISHED)
@@ -69,9 +75,14 @@ public class QuestTapUi : MonoBehaviour
     public void Init(Quest quest)
     {
         _quest = quest;
-        QuestInfoSO questdata = quest._questInfoData;
-        _imgIcon.sprite = quest._spIcon;
+        QuestInfoSO questdata = _quest._questInfoData;
+        _imgIcon.sprite = _quest._spIcon;
         _txtName.text = questdata.displayName;
+        _rewards = questdata._itemRewards;
+
+        _itemUi.Init(_rewards._ItemSO, _rewards._valuesRw);
+        _itemUiDemo.Init(_rewards._ItemSO, _rewards._valuesRw);
+        _itemUi.gameObject.SetActive(false);
         ChangeQuestState(_quest);
 
     }
@@ -90,7 +101,7 @@ public class QuestTapUi : MonoBehaviour
     }
     public void OnClickClaim()
     {
-
+        PopupController.Instance.ShowPopup(TypePopup.PopupReward, _rewards);
     }
 
 }

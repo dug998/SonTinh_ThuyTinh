@@ -18,7 +18,6 @@ public class ButtonHeroUi : ButtonBase
     {
         _heroProfile = (HeroProfile)data;
         DataHeroSo _data = _heroProfile.dataHero;
-        _data = (DataHeroSo)data;
         _id = _data.so_id;
         _textTitle.text = _data.so_title;
         _spriteIcon.sprite = _data.so_spriteCard;

@@ -7,20 +7,15 @@ public class DailyRewardSO : ScriptableObject
 {
     public List<Reward> _dataRewardDays;
     public Sprite _iconGold, _iconGem;
+    public List<ItemSO> _listItemsSo;
     private void OnValidate()
     {
         int dem = 5;
         foreach (Reward reward in _dataRewardDays)
         {
-            if (reward.typeReward == TypeReward.gold)
-            {
-                reward._spIcon = _iconGold;
-            }
-            else if (reward.typeReward == TypeReward.gem)
-            {
-                reward._spIcon = _iconGem;
-            }
-            reward.valuesRw = 40 + dem;
+            ItemSO item = _listItemsSo[Random.Range(0, _listItemsSo.Count)];
+            reward._ItemSO = item;
+            reward._valuesRw = 40 + dem;
             dem += 5;
         }
     }

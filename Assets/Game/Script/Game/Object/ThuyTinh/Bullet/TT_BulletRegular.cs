@@ -10,7 +10,7 @@ public class TT_BulletRegular : ObjectBase
     public override void Born(Object data = null)
     {
     }
-    public override void UpdateHealth(int values)
+    public override void ReceiveDame(int values)
     {
     }
     void FixedUpdate()
@@ -31,7 +31,7 @@ public class TT_BulletRegular : ObjectBase
     public virtual void CollideWithMonsters(GameObject obj)
     {
         ObjectBase Health = obj.GetComponent<ObjectBase>();
-        Health.UpdateHealth(-dame);
+        Health.ReceiveDame(-dame);
 
     }
     public override void Move()

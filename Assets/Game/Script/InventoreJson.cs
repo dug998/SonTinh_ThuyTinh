@@ -11,6 +11,10 @@ public class ItemJson
     {
         this.quantity = quantity;
     }
+    public void AddQuantity(int add)
+    {
+        this.quantity += add;
+    }
     public ItemJson(string keyEquip, int quantity)
     {
         this.keyEquip = keyEquip;

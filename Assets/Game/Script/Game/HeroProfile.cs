@@ -6,6 +6,10 @@ using UnityEngine;
 public class HeroProfile : MonoBehaviour
 {
     public DataHeroSo dataHero;
+    [ReadOnly] public Sprite _iconHero { get; private set; }
+    [ReadOnly] public string _nameHero { get; private set; }
+    [ReadOnly] public int _price { get; private set; }
+    [ReadOnly] public GameObject _objPrefab { get; private set; }
     [ReadOnly] public int _currentStart { get; private set; }
     [ReadOnly] public int _maxStart { get; private set; }
     public int _currentHp { get; private set; }
@@ -23,6 +27,11 @@ public class HeroProfile : MonoBehaviour
     public void Init(DataHeroSo dataHero)
     {
         this.dataHero = dataHero;
+        _price = dataHero.so_price;
+        _objPrefab = dataHero.so_ObjPref;
+        _iconHero = dataHero.so_spriteAvatar;
+        _nameHero = dataHero.so_name;
+
         _maxStart = dataHero.so_MaxStart;
         _statHeroSoHp = dataHero.so_statHeroHp;
         _statHeroSoDame = dataHero.so_statHeroDame;
@@ -32,11 +41,12 @@ public class HeroProfile : MonoBehaviour
         _MaxtDame = _statHeroSoDame._maxStat;
         _MaxtDefense = _statHeroSoDefense._maxStat;
 
+        _currentStart = UserData.GetValuesStartHero(dataHero.KeyHero());
+
         _currentHp = CalculateCurrenStat(_statHeroSoHp);
         _currentDame = CalculateCurrenStat(_statHeroSoDame);
         _currentDefense = CalculateCurrenStat(_statHeroSoDefense);
 
-        _currentStart = UserData.GetValuesStartHero(dataHero.KeyHero());
 
     }
     public int CalculateCurrenStat(StatHeroSO statHeroSO)

@@ -202,8 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 2617694392872966762}
-  _maxHealth: 500
-  _currentHealth: 0
+  _maxHealth: 1200
+  _sliderHealth: {fileID: 0}
+  _txtHealth: {fileID: 0}
 --- !u!114 &2617694392872966762
 MonoBehaviour:
   m_ObjectHideFlags: 0

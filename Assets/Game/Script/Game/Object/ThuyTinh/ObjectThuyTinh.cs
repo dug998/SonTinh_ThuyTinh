@@ -24,7 +24,7 @@ public abstract class ObjectThuyTinh : ObjectBase
         base.Born();
         StartCoroutine(Attack());
     }
-     public void FixedUpdate()
+    public void FixedUpdate()
     {
         Move();
     }
@@ -49,7 +49,18 @@ public abstract class ObjectThuyTinh : ObjectBase
     }
     public abstract IEnumerator Attack();
     public abstract void SpawnButtlet();
-
+    public override void AffectedByWeather(bool isRain)
+    {
+        base.AffectedByWeather(isRain);
+        if (isRain)
+        {
+            currSpeed = orginSpeed * 1.1f;
+        }
+        else
+        {
+            currSpeed = orginSpeed * 0.9f;
+        }
+    }
     public override void Died()
     {
         _isDead = true;
@@ -98,6 +109,7 @@ public abstract class ObjectThuyTinh : ObjectBase
             _stand = false;
         }
     }
+    #region  Freeze
     public virtual void Freeze(float time)
     {
         if (_objEFFECT == ObjEFFECT.FREEZE)
@@ -128,5 +140,5 @@ public abstract class ObjectThuyTinh : ObjectBase
         currSpeed = orginSpeed;
         _objEFFECT = ObjEFFECT.NONE;
     }
-
+    #endregion
 }

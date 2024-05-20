@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b7ec5ab2b5f994685671175e985f4f, type: 3}
+  m_Name: 12_FREEZE
+  m_EditorClassIdentifier: 
+  so_id: 12
+  so_title: 
+  so_name: FREEZE
+  so_description: 
+  so_price: 100
+  so_timeRecoveryCard: 2
+  so_spriteAvatar: {fileID: 21300000, guid: 94507e6a8ff709e4892fd80bd794ab4a, type: 3}
+  so_spriteCard: {fileID: 21300000, guid: a2d8d0871c8ff4844801310f66481230, type: 3}
+  so_ObjPref: {fileID: 1085200651963302, guid: 0bb927883e806904e917b8a3652a6837, type: 3}
+  so_MaxStart: 2
+  so_statHeroHp:
+    _origin: 250
+    _maxStat: 400
+    _minStat: 0
+  so_statHeroDame:
+    _origin: 40
+    _maxStat: 400
+    _minStat: 0
+  so_StatHeroDefense:
+    _origin: 10
+    _maxStat: 400
+    _minStat: 0
+  so_itemRecipes:
+  - Icon: {fileID: 0}
+    ID: 0
+    so_priceGold: 200
+    so_percentIncrease: 2
+    ItemRecipeIngredients:
+    - dataEquipItem: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      itemCount: 20
+  - Icon: {fileID: 0}
+    ID: 2
+    so_priceGold: 200
+    so_percentIncrease: 3
+    ItemRecipeIngredients:
+    - dataEquipItem: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      itemCount: 10

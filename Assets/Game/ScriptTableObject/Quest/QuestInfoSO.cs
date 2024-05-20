@@ -18,8 +18,7 @@ public class QuestInfoSO : ScriptableObject
     public List<QuestStepSO> questStepPrefabs;
 
     [Header("Rewards")]
-    public int goldReward;
-    public int experienceReward;
+    public Reward _itemRewards;
 #if UNITY_EDITOR
     private void OnValidate()
     {

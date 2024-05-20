@@ -21,6 +21,7 @@ public static class QuestsToJson
     public static Quest LoadQuest(QuestInfoSO questInfo)
     {
         GameObject newGameObject = new GameObject("Quest");
+        newGameObject.transform.SetParent(QuestGameManager.instance.transform);
 
         Quest quest = newGameObject.AddComponent<Quest>();
         try
@@ -50,6 +51,7 @@ public static class QuestsToJson
             QuestJson questData = GetQuestJson(quest);
             string serializedData = JsonUtility.ToJson(questData);
             PlayerPrefs.SetString(quest._questInfoData.id, serializedData);
+            Debug.LogError("save quest with id " + quest._questInfoData.id);
         }
         catch (System.Exception e)
         {

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public abstract class ObjectDefense : ObjectSonTinh
 {
-    public override void UpdateHealth(int values)
+    public override void ReceiveDame(int values)
     {
-        base.UpdateHealth(values);
+        base.ReceiveDame(values);
         StatusObjHealth();
     }
     public abstract void StatusObjHealth();

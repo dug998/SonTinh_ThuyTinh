@@ -29,6 +29,14 @@ public abstract class ObjectBase : MonoBehaviour
         _health = GetComponent<HealthBase>();
         _Dead = GetComponent<Dead>();
     }
+    private void OnEnable()
+    {
+        EventGame.OnNotifyWeather += AffectedByWeather;
+    }
+    private void OnDisable()
+    {
+        EventGame.OnNotifyWeather -= AffectedByWeather;
+    }
     public virtual void Start()
     {
         _myAnim = GetComponent<Animator>();
@@ -53,11 +61,11 @@ public abstract class ObjectBase : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    public virtual void UpdateHealth(int values)
+    public virtual void ReceiveDame(int values)
     {
         if (values < 0)
         {
-            _health.TakeDame(values);
+            _health.ReceiveDame(values);
         }
     }
     public virtual void ChangeSpeed(float values)
@@ -69,17 +77,23 @@ public abstract class ObjectBase : MonoBehaviour
     {
         currSpeed = values;
     }
-
+    public void SetPos(Vector2 values)
+    {
+        transform.position = values;
+    }
+    public HealthBase GetHealthBase()
+    {
+        return _health;
+    }
+    public virtual void AffectedByWeather(bool isRain)
+    {
+    }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(ObjTag.deadZone))
         {
             Died();
         }
-    }
-    public HealthBase GetHealthBase()
-    {
-        return _health;
     }
 }
 public enum ObjEFFECT

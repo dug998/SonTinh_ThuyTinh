@@ -9,6 +9,8 @@ public class GameLevel : MonoBehaviour
     [SerializeField] SpawnThuyTinh _pawnThuyTinh;
     public Camera _camera;
     public LayerMask _layerMask;
+    public ObjPickax _objPickax;
+    public bool _canUsePickax;
     private void Awake()
     {
         _camera = Camera.main;
@@ -28,6 +30,38 @@ public class GameLevel : MonoBehaviour
         {
             hit.collider.GetComponent<Coin>()?.TakeCoin(PopupGamePlay._posCoin);
         }
+        if (_canUsePickax)
+        {
 
+            _objPickax.SetPos(_camera.ScreenToWorldPoint(Input.mousePosition));
+            if (Input.GetMouseButtonUp(0))
+            {
+                CompleteUsePickax();
+            }
+        }
+
+    }
+    public void UsePickax()
+    {
+        if (_canUsePickax)
+        {
+            return;
+        }
+        Debug.Log("use");
+        _canUsePickax = true;
+        _objPickax.SetPos(_camera.ScreenToWorldPoint(Input.mousePosition));
+        _objPickax.StartUse();
+        _objPickax.gameObject.SetActive(true);
+
+    }
+    public void CompleteUsePickax()
+    {
+        if (!_canUsePickax)
+        {
+            return;
+        }
+        _canUsePickax = false;
+        _objPickax.CompleteUse();
+        _objPickax.gameObject.SetActive(false);
     }
 }

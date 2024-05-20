@@ -28,6 +28,7 @@ public class PopupController : MonoBehaviour
     public PopupGamePlay _popupGamePlay;
     public PopupWinGame _popupWinGame;
     public PopupLose _popupLose;
+    public PopupPause _popupPause;
 
     public void Init()
     {
@@ -62,7 +63,9 @@ public class PopupController : MonoBehaviour
             case TypePopup.PopupLose:
                 popup = _popupLose;
                 break;
-
+            case TypePopup.PopupPause:
+                popup = _popupPause;
+                break;
 
             case TypePopup.PopupHome:
                 popup = _popupHome;
@@ -101,6 +104,9 @@ public class PopupController : MonoBehaviour
             case TypePopup.PopupUpgradeHero:
                 popup = _popupUpgradeHero;
                 break;
+            case TypePopup.PopupReward:
+                popup = _popupReward;
+                break;
             default:
                 popup = _popupHome;
                 break;
@@ -114,6 +120,7 @@ public enum TypePopup
     PopupGamePlay,
     PopupWinGame,
     PopupLose,
+    PopupPause,
 
     PopupHome,
     PopupLoading,
@@ -126,5 +133,6 @@ public enum TypePopup
     PopupSetting,
     PopupListHeros,
     PopupInventory,
-    PopupUpgradeHero
+    PopupUpgradeHero,
+    PopupReward
 }

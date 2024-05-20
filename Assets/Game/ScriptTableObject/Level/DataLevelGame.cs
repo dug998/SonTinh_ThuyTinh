@@ -80,7 +80,6 @@ public class DataLevel
         {
             _numberMaxObj += x._numberMonter;
         }
-        Debug.Log(_numberMaxObj);
         float _cur = 0;
         for (int i = 0; i < _dataLevelAttacks.Count; i++)
         {

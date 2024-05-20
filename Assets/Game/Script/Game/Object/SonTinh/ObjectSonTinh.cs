@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,22 @@ public class ObjectSonTinh : ObjectBase
 {
     //  public bool _jumpable = true;
     public SpriteRenderer _iconObj;
-    [HideInInspector] public HeroProfile _heroProfile;
+    [ReadOnly] public HeroProfile _heroProfile;
+
+    [Header("Stat")]
+    [ReadOnly] public int _statHp;
+    [ReadOnly] public int _statDame;
+    [ReadOnly] public int _statDefense;
+
     public override void Born(Object data = null)
     {
         orginSpeed = Vector2.zero;
         _heroProfile = (HeroProfile)data;
-        _health.SetMaxHealth((_heroProfile._MaxtHp));
+        _statHp = _heroProfile._currentHp;
+        _statDame = _heroProfile._currentDame;
+        _statDefense = _heroProfile._currentDefense;
+
+        _health.SetMaxHealth((_statHp));
 
         base.Born(data);
     }

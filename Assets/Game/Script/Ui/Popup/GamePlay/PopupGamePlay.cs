@@ -10,6 +10,8 @@ public class PopupGamePlay : PopupBase
 
     public static Vector2 _posCoin = Vector2.zero;
     public static ButtonBattleHeroUi _curBattleCard;
+
+    public GameObject _bgDark;
     public GameObject _objFocus;
     [Header(" ____ Coin ____ ")]
 
@@ -22,11 +24,24 @@ public class PopupGamePlay : PopupBase
     public List<ButtonBattleHeroUi> _listBattleCardUi;
 
     public StageInfoCurrent _stageInfoCurrent;
+
+    [Header(" Button ")]
+    public ButtonUi _btnPause;
     protected override void Awake()
     {
         base.Awake();
-
-
+        _btnPause.AddEvent(() =>
+        {
+            PopupController.Instance.ShowPopup(TypePopup.PopupPause);
+        });
+      
+    }
+    public void OnDownPickax()
+    {
+        if (GameManager.Instance._curLevelGame != null)
+        {
+            GameManager.Instance._curLevelGame.UsePickax();
+        }
     }
     public override void Show(object data = null)
     {
@@ -36,7 +51,6 @@ public class PopupGamePlay : PopupBase
         _curCoins = 0;
         _curBattleCard = null;
         SetFocus();
-        // GameManager._targetCoin = _parentCoin.transform;
         LoadBattleCard();
         HomeTower.Instance.Born();
         UpdateCoin(0);
@@ -48,12 +62,17 @@ public class PopupGamePlay : PopupBase
     public void OnEnable()
     {
         EventGame.changeCoin += UpdateTextCoin;
+        EventGame.OnNotifyWeather += OnNotifyWeather;
     }
     public void OnDisable()
     {
         EventGame.changeCoin -= UpdateTextCoin;
+        EventGame.OnNotifyWeather -= OnNotifyWeather;
     }
-   
+    public void OnNotifyWeather(bool isRain)
+    {
+        _bgDark.gameObject.SetActive(isRain);
+    }
     public void SetFocus()
     {
         _objFocus.SetActive(_curBattleCard != null);

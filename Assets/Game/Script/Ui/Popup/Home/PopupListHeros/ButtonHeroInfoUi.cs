@@ -9,7 +9,7 @@ public class ButtonHeroInfoUi : ButtonBase
     [SerializeField] int _id;
     [SerializeField] TextMeshProUGUI _txtTitle, txtName;
     [SerializeField] Image _spriteIcon;
-    [HideInInspector] public DataHeroSo _data;
+    [HideInInspector] public HeroProfile _heroProfile;
     protected bool _selected = true;
 
     protected override void Awake()
@@ -22,7 +22,8 @@ public class ButtonHeroInfoUi : ButtonBase
     }
     public override void Init(object data)
     {
-        _data = (DataHeroSo)data;
+        _heroProfile = (HeroProfile)data;
+        DataHeroSo _data = _heroProfile.dataHero;
         _id = _data.so_id;
         txtName.text = _data.so_name;
         _spriteIcon.sprite = _data.so_spriteAvatar;
@@ -30,7 +31,7 @@ public class ButtonHeroInfoUi : ButtonBase
     }
     public void ChooseHero()
     {
-        PopupController.Instance.ShowPopup(TypePopup.PopupInfoHeros, _data);
+        PopupController.Instance.ShowPopup(TypePopup.PopupInfoHeros, _heroProfile);
     }
 
 }

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PopupListHeros : PopupBase
 {
-    List<DataHeroSo> _dataHeros;
+    List<HeroProfile> heroProfiles;
     public GameObject parentSlotHero;
     public ButtonHeroInfoUi _prefabSlotHeroInfo;
     List<ButtonHeroInfoUi> buttonHeroInfoUis;
     protected override void Awake()
     {
         base.Awake();
-        _dataHeros = AssetSO.Instance._dataHeroGames.dataHeros;
+        heroProfiles = HeroManager.Instance._heroProfiles;
         Init();
     }
     public void Init()
     {
-        foreach (var hero in _dataHeros)
+        foreach (var hero in heroProfiles)
         {
             ButtonHeroInfoUi btnHero = Instantiate(_prefabSlotHeroInfo, parentSlotHero.transform);
             btnHero.Init(hero);

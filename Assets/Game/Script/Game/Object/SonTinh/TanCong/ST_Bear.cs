@@ -9,7 +9,7 @@ public class ST_Bear : ObjectCounterAttack
         throw new System.NotImplementedException();
     }
 
-    public override void SpawnButtlet()
+    public override void SpawnButtlets()
     {
         throw new System.NotImplementedException();
     }

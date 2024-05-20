@@ -13,101 +13,70 @@ MonoBehaviour:
   m_Name: DailyRewardSO
   m_EditorClassIdentifier: 
   _dataRewardDays:
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 45
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 50
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 55
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 60
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 65
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 70
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 75
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 80
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 85
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 90
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 95
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 100
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 105
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 110
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 115
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 120
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 125
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 130
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 135
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 140
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 145
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 150
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 155
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 160
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 165
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 170
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 175
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 180
-  - _spIcon: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
-    typeReward: 1
-    valuesRw: 185
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 190
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 195
-  - _spIcon: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
-    typeReward: 0
-    valuesRw: 200
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 45
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 50
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 55
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 60
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 65
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 70
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 75
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 80
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 85
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 90
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 95
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 100
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 105
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 110
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 115
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 120
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 125
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 130
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 135
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 140
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 145
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 150
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 155
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 160
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 165
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 170
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 175
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 180
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 185
+  - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+    _valuesRw: 190
+  - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+    _valuesRw: 195
   _iconGold: {fileID: 21300000, guid: b2c9069c90d6e4525b38373fea3f1fbe, type: 3}
   _iconGem: {fileID: 21300000, guid: cf52ff05a86264942b435e0ac031a4cf, type: 3}
+  _listItemsSo:
+  - {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+  - {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}

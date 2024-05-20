@@ -9,13 +9,12 @@ using UnityEngine.UI;
 public class PopupInventory : PopupBase
 {
     int MaxItem = 50;
-    public EquipItemUi _prefabEquip;
+    public ItemUi _prefabEquip;
     public GameObject _parentEquip;
-    [ReadOnly]
-    public List<EquipItemUi> _listEquipItem;
-    public List<ItemGame> _itemGames;
+    [ReadOnly] public List<ItemUi> _listEquipItem;
+    [ReadOnly] public List<ItemGame> _itemGames;
     public GameObject _ObjFocus;
-    EquipItemUi _currSlotSee;
+    ItemUi _currSlotSee;
     [Header(" Info Item ")]
     public GameObject _objItemInfo;
     public Image _icon;
@@ -23,13 +22,14 @@ public class PopupInventory : PopupBase
     protected override void Awake()
     {
         base.Awake();
+        Init();
     }
     public void Init()
     {
         _listEquipItem.Clear();
         for (int i = 0; i < MaxItem; i++)
         {
-            EquipItemUi item = Instantiate(_prefabEquip, _parentEquip.transform);
+            ItemUi item = Instantiate(_prefabEquip, _parentEquip.transform);
             _listEquipItem.Add(item);
         }
     }
@@ -43,10 +43,10 @@ public class PopupInventory : PopupBase
         _itemGames = InventoreManager.Instance.GetListItemGame();
         for (int i = 0; i < _itemGames.Count; i++)
         {
-            _listEquipItem[i].Init(_itemGames[i].dataItem);
+            _listEquipItem[i].Init(_itemGames[i].dataItem, _itemGames[i].GetQuantity());
         }
     }
-    public void SeeInformation(EquipItemUi slot)
+    public void SeeInformation(ItemUi slot)
     {
         if (_currSlotSee == null)
         {
@@ -62,8 +62,8 @@ public class PopupInventory : PopupBase
 
         }
 
-        EquipItemSO dataEquip = slot._dataEquip;
-        _icon.sprite = dataEquip.Icon;
-        _txtName.text = dataEquip.Names;
+        ItemSO dataEquip = slot._dataItem;
+        _icon.sprite = dataEquip.so_spIcon;
+        _txtName.text = dataEquip.so_names;
     }
 }

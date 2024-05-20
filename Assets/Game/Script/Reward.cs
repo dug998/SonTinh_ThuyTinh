@@ -6,14 +6,15 @@ using UnityEngine;
 public class Reward
 {
     [PreviewField(Alignment = ObjectFieldAlignment.Left)]
-    public Sprite _spIcon;
-    public TypeReward typeReward;
-    public int valuesRw;
-   
+    public ItemSO _ItemSO;
+    public int _valuesRw;
+
 }
-public enum TypeReward
+public enum TypeItem
 {
+    none,
     gold,
     gem,
+
 
 }

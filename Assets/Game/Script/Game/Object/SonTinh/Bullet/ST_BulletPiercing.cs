@@ -11,13 +11,13 @@ public class ST_BulletPiercing : ST_BulletRegular
         base.Born(data);
         Invoke(nameof(DiedImmediate), _timeLife);
     }
-    public override void UpdateHealth(int values)
+    public override void ReceiveDame(int values)
     {
     }
     public override void CollideWithMonsters(GameObject obj)
     {
         ObjectBase monsterHealth = obj.GetComponent<ObjectBase>();
-        monsterHealth.UpdateHealth(-dame);
+        monsterHealth.ReceiveDame(-dame);
         if (_effect != null)
         {
             Instantiate(_effect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));

@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,6 @@ public class PopupChoiceHero : PopupBase
 
     [Header(" ____ Card Hero ____ "), Space(30)]
 
-    public DataHeroGames _dataHeros;
     public List<ButtonHeroUi> _listCardUi;
 
     [Header(" ____ Slot ____ "), Space(30)]
@@ -84,15 +84,15 @@ public class PopupChoiceHero : PopupBase
     #region Hero Button
     public void LoadDataCard()
     {
-        List<DataHeroSo> dataHero = _dataHeros.dataHeros;
+        List<HeroProfile> dataHeroProfile = HeroManager.Instance._heroProfiles;
         foreach (var ui in _listCardUi)
         {
             ui.Hide();
         }
-        for (int i = 0; i < dataHero.Count; i++)
+        for (int i = 0; i < dataHeroProfile.Count; i++)
         {
             ButtonHeroUi ui = _listCardUi[i];
-            DataHeroSo data = dataHero[i];
+            HeroProfile data = dataHeroProfile[i];
             ui.Show();
             ui.Init(data);
             ui.RemoveAll();

@@ -26,7 +26,7 @@ public class Shrew : ObjectCounterAttack
     {
     }
 
-    public override void SpawnButtlet()
+    public override void SpawnButtlets()
     {
     }
     protected override void OnTriggerStay2D(Collider2D collision)
@@ -42,8 +42,8 @@ public class Shrew : ObjectCounterAttack
         if (collision.gameObject.CompareTag(ObjTag.thuyTinh) && _isHitting)
         {
             ObjectBase monsterHealth = collision.GetComponent<ObjectBase>();
-            monsterHealth.UpdateHealth(-monsterHealth.GetHealthBase().GetMaxHealth());
-            UpdateHealth(-_health.GetMaxHealth());
+            monsterHealth.ReceiveDame(-monsterHealth.GetHealthBase().GetMaxHealth());
+            ReceiveDame(-_health.GetMaxHealth());
         }
     }
     public override IEnumerator EffectDie()

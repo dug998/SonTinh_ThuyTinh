@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RewardDay : MonoBehaviour
 {
     [Header(" --- data --- ")]
-    Reward _data;
+    Reward _dataReward;
     int _indexDay;
     public Image _imgIcon;
     public TextMeshProUGUI _txtDay;
@@ -19,12 +19,12 @@ public class RewardDay : MonoBehaviour
     public GameObject _objAvailable;
     public void Init(int index, Reward data)
     {
-        _data = data;
+        _dataReward = data;
         _indexDay = index + 1;
-        _imgIcon.sprite = data._spIcon;
+        _imgIcon.sprite = data._ItemSO.so_spIcon;
         _imgIcon.SetNativeSize();
         _txtDay.text = _indexDay.ToString();
-        _txtValues.text = _data.valuesRw.ToString();
+        _txtValues.text = _dataReward._valuesRw.ToString();
 
     }
     public void UpdateStatus(statusReward status)
@@ -45,7 +45,7 @@ public class RewardDay : MonoBehaviour
     }
     public void GetReward()
     {
-        PopupController.Instance._popupReward.GetReward(_data);
+        PopupController.Instance._popupReward.Show(_dataReward);
     }
     void Claimed()
     {

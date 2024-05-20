@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ST_Fire : ObjectBase
+public class ST_Fire : ObjectCounterAttack
 {
-    public GameObject fire_ball;
+    public override IEnumerator Attack()
+    {
+        throw new System.NotImplementedException();
+    }
 
     public override IEnumerator EffectDie()
     {
@@ -16,16 +19,20 @@ public class ST_Fire : ObjectBase
     {
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public override void SpawnButtlets()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
             var obj = collision.GetComponent<ST_BulletRegular>();
             if (obj != null && obj.canFire)
             {
-
-                Instantiate(fire_ball, collision.gameObject.transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-                Destroy(collision.gameObject);
+                BornBullet(_poolBullet, _statDame, Vector2.right * 8, _locationAppears.position);
+                obj.DiedImmediate();
 
             }
 
