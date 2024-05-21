@@ -70,12 +70,15 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
             PopupGamePlay.UpdateCoin(-_hero._price);
             ObjectSonTinh objectBase = _children.GetComponent<ObjectSonTinh>();
             LogGame.Log(objectBase.name + " -- " + _hero._price);
+
             objectBase.Born(_hero);
             objectBase.SetSortingOrder(_sortingOrderChild);
             _children.transform.localPosition = new Vector3(0, .2f);
         }
         else
         {
+
+            PopupController.Instance.ShowPopup(TypePopup.PopupNotife, new DataMessage(TypeMessage.Error, "", " Not enough coins !"));
             LogGame.LogError(" Not enough coins");
         }
     }

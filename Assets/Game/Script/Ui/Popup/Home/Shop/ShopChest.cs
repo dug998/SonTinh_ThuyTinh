@@ -18,6 +18,7 @@ public class ShopChest : MonoBehaviour
         if (UserData.GemGame < _price)
         {
             LogGame.Log(" Not enough gem !");
+            PopupController.Instance.ShowPopup(TypePopup.PopupNotife, new DataMessage(TypeMessage.None, "", " Not enough gem !"));
             return;
         }
         UserData.GemGame -= _price;

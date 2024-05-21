@@ -32,6 +32,7 @@ public class Pool
     void spawnAClone(Transform container, Dictionary<int, int> dicClones)
     {
         var clone = Object.Instantiate(go, container);
+        clone.SetActive(false);
         clone.transform.localScale = Vector3.one;
         clone.name += (actives.Count + deactives.Count);
         deactives.Enqueue(clone);

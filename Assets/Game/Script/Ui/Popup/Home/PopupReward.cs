@@ -34,6 +34,7 @@ public class PopupReward : PopupBase
         if (rewards == null)
         {
             LogGame.LogError("Null rewards !");
+            PopupController.Instance.ShowPopup(TypePopup.PopupNotife, new DataMessage(TypeMessage.Error, "", " Null rewards !"));
             return;
         }
         base.Show(data);

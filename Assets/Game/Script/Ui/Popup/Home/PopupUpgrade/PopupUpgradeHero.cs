@@ -68,15 +68,15 @@ public class PopupUpgradeHero : PopupBase
         _heroUpgrade = (HeroProfile)data;
         _iconHero.sprite = _heroUpgrade._iconHero;
         _txtNameHero.text = _heroUpgrade._nameHero;
-        if (CheckHaveUpgrade())
-        {
-            _itemRecipeUpgrade = _heroUpgrade.GetItemRecipeUpgrade(_currentStart);
-            ShowStatHeroUdgrade();
-        }
         _starHeroUi.ShowStatMax(_heroUpgrade._maxStart);
         _currentStart = _heroUpgrade._currentStart;
         _starHeroUi.Show(_currentStart);
         ShowStatHeroCurrent();
+        if (CheckHaveUpgrade())
+        {
+            _itemRecipeUpgrade = _heroUpgrade.GetIndexItemRecipeUpgrade(_currentStart);
+            ShowStatHeroUdgrade();
+        }
 
 
     }
@@ -147,7 +147,7 @@ public class PopupUpgradeHero : PopupBase
         }
         Deductdients(_itemRecipeUpgrade);
         UpgradeComplete();
-        LogGame.Log("Complete");
+        PopupController.Instance.ShowPopup(TypePopup.PopupNotife, new DataMessage(TypeMessage.Success, "", " Upgrade Complete !"));
     }
     public bool HaveItemRecipe()
     {

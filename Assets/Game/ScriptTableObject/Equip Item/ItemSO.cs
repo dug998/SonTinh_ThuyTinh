@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 [CreateAssetMenu(fileName = "EquipSO", menuName = "Game/EquipSO")]
 public class ItemSO : ScriptableObject
 {
-    [HideInInlineEditors] string KeyEquip;
+    [ReadOnly]public string KeyEquip;
     [PreviewField(Alignment = ObjectFieldAlignment.Left)]
     public Sprite so_spIcon;
     public TypeItem so_typeItem;
@@ -21,7 +21,7 @@ public class ItemSO : ScriptableObject
     //  public List<Texture> IconLevel;
     public string GetKey()
     {
-        return KeyEquip;
+        return "Key_so_ "+ KeyEquip;
     }
 #if UNITY_EDITOR
     //private void OnValidate()
@@ -38,8 +38,8 @@ public class ItemSO : ScriptableObject
     //        Debug.Log(result); // In ra "Gold"
     //        result = result.Replace("_", " ");
 
-    //        // Viết hoa chữ cái đầu
-    //        result = char.ToUpper(result[0]) + result.Substring(1);
+    //        Viết hoa chữ cái đầu
+    //       result = char.ToUpper(result[0]) + result.Substring(1);
     //        so_names = result;
     //        string assetPath = UnityEditor.AssetDatabase.GetAssetPath(this);
     //        UnityEditor.AssetDatabase.RenameAsset(assetPath, so_names);

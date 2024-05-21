@@ -11,7 +11,7 @@ public class DataHeroSo : ScriptableObject
     public string so_name;
     public string KeyHero()
     {
-        return so_name;
+        return "Key_so_hero_" + so_name;
     }
     [TextArea]
     public string so_description;

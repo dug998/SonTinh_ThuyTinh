@@ -48,6 +48,10 @@ public class PopupInventory : PopupBase
     }
     public void SeeInformation(ItemUi slot)
     {
+        if(slot._dataItem == null)
+        {
+            return;
+        }
         if (_currSlotSee == null)
         {
             _currSlotSee = slot;

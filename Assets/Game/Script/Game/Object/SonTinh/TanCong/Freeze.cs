@@ -14,7 +14,7 @@ public class Freeze : ObjectCounterAttack
             yield return new WaitForSeconds(.5f);
             yield return new WaitForSeconds(.5f);
             SpawnButtlets();
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(_nextHitting);
         }
     }
 
@@ -22,7 +22,7 @@ public class Freeze : ObjectCounterAttack
     {
         foreach (var direc in direcBullets)
         {
-            BornBullet(_poolBullet, _statDame, (direc.transform.position - _locationAppears.position).normalized, _locationAppears.position);
+            BornBullet(_poolBullet, _statDame, (_locationAppears.transform.position - direc.transform.position).normalized, _locationAppears.position);
         }
     }
 }

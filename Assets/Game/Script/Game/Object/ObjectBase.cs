@@ -73,7 +73,11 @@ public abstract class ObjectBase : MonoBehaviour
         currSpeed *= values;
         currSpeed.x = Mathf.Clamp(currSpeed.x, _minSpeed, _maxSpeed);
     }
-    public void SetSpeed(Vector2 values)
+    public void SetSpeedOrigin(Vector2 values)
+    {
+        orginSpeed = values;
+    }
+    public void SetSpeedCurr(Vector2 values)
     {
         currSpeed = values;
     }

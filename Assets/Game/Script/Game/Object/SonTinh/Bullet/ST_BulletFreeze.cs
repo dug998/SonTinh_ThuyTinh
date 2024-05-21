@@ -7,6 +7,6 @@ public class ST_BulletFreeze : ST_BulletRegular
     public override void CollideWithMonsters(GameObject obj)
     {
         base.CollideWithMonsters(obj);
-        obj.GetComponent<ObjectThuyTinh>().Freeze(3);
+        obj.GetComponent<ObjectThuyTinh>().Freeze(2);
     }
 }

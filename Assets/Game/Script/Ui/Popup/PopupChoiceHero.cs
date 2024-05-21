@@ -38,7 +38,6 @@ public class PopupChoiceHero : PopupBase
         base.Show(data);
         if (_HeroChoiseBattle.Count > 0)
             _HeroChoiseBattle.Clear();
-        _currentSlot = 0;
         Init();
     }
     public void Init()
@@ -111,7 +110,7 @@ public class PopupChoiceHero : PopupBase
             HeroProfile _heroProfile = dataCards[i]._heroProfile;
             if (_heroProfile != null && _currentSlot < _maxCurrentSlot)
             {
-                _currentSlot++;
+                _currentSlot += 1;
             }
             HeroSlotUi card = _listHeroSlotUi[i];
             card.UpdateData(_heroProfile.dataHero);
@@ -119,19 +118,19 @@ public class PopupChoiceHero : PopupBase
         }
         if (_currentSlot == _maxCurrentSlot)
         {
-            Debug.Log(" Full Slot");
+            Debug.Log(" Full Slot" + _currentSlot + "_" + _maxCurrentSlot);
 
             _canPlay = true;
             _btnPlay.Activity(_canPlay);
         }
-
+        Debug.Log(" Slot" + _currentSlot + "_" + _maxCurrentSlot);
     }
     #endregion
 
 
     public void AddCardBattle(ButtonHeroUi card)
     {
-        if (_HeroChoiseBattle.Count >= UserData.maxNumberHeroBattle)
+        if (_HeroChoiseBattle.Count >= _maxCurrentSlot)
         {
             Debug.Log("remove card");
             ButtonHeroUi btnCard = _HeroChoiseBattle.Dequeue();

@@ -134,7 +134,7 @@ public abstract class ObjectThuyTinh : ObjectBase
     {
 
         _sprite.color = new Color(0.504717f, 0.6808742f, 1, 1);
-        currSpeed = Vector2.zero;
+        currSpeed = currSpeed * .5f;
         yield return new WaitForSeconds(time);
         _sprite.color = new Color(1, 1, 1, 1);
         currSpeed = orginSpeed;

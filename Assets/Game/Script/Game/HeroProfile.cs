@@ -88,7 +88,7 @@ public class HeroProfile : MonoBehaviour
     {
         return _currentStart < _maxStart;
     }
-    public ItemRecipe GetItemRecipeUpgrade(int index)
+    public ItemRecipe GetIndexItemRecipeUpgrade(int index)
     {
         index = Mathf.Clamp(index, 0, _maxStart);
         return dataHero.so_itemRecipes[index];

@@ -149,7 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 5383479916419458471}
   _maxHealth: 0
-  _currentHealth: 0
+  _sliderHealth: {fileID: 0}
+  _txtHealth: {fileID: 0}
 --- !u!114 &1865759483641827008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,10 +183,13 @@ MonoBehaviour:
   currSpeed: {x: 0, y: 0}
   orginSpeed: {x: 6, y: 0}
   _iconObj: {fileID: 212252573026535024}
-  _dataHero: {fileID: 0}
+  _heroProfile: {fileID: 0}
+  _statHp: 0
+  _statDame: 0
+  _statDefense: 0
   _bulletPref: {fileID: 1616963858812800, guid: f71fe2ac181a9e348a39fd319ce74fba, type: 3}
   _locationAppears: {fileID: 4390895638232538}
-  _nextHitting: 1
+  _nextHitting: 8
   direcBullets:
   - {fileID: 4691826191180835273}
   - {fileID: 9002636725288287585}

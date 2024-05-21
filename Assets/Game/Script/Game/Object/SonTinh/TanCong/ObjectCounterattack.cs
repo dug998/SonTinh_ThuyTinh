@@ -52,7 +52,7 @@ public abstract class ObjectCounterAttack : ObjectSonTinh
         obj.gameObject.SetActive(true);
         obj.SetPos(pos);
         obj.SetDame(_dame);
-        obj.SetSpeed(speed);
+        obj.SetSpeedOrigin(speed);
         obj.Born();
     }
     public override IEnumerator EffectDie()

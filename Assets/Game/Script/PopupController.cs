@@ -6,6 +6,7 @@ public class PopupController : MonoBehaviour
 {
     public static PopupController Instance;
     public PopupLoading _popupLoading;
+    public PopupNotife _popupNotife;
 
     [Header(" --- Home --- "), Space(20)]
     public PopupHome _popupHome;
@@ -107,6 +108,10 @@ public class PopupController : MonoBehaviour
             case TypePopup.PopupReward:
                 popup = _popupReward;
                 break;
+
+            case TypePopup.PopupNotife:
+                popup = _popupNotife;
+                break;
             default:
                 popup = _popupHome;
                 break;
@@ -116,6 +121,7 @@ public class PopupController : MonoBehaviour
 }
 public enum TypePopup
 {
+    PopupNotife,
 
     PopupGamePlay,
     PopupWinGame,
