@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 /// <summary>
 /// block (cell) can contain 1 object
 /// </summary>
-public class BlockLand : MonoBehaviour, IPointerClickHandler
+public class BlockLand : MonoBehaviour
 {
     public static BlockLand _curBlock;
     public SpriteRenderer _spriteIcon;
@@ -83,8 +83,4 @@ public class BlockLand : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
 }
