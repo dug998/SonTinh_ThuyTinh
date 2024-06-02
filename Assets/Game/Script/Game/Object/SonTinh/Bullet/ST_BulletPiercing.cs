@@ -17,7 +17,7 @@ public class ST_BulletPiercing : ST_BulletRegular
     public override void CollideWithMonsters(GameObject obj)
     {
         ObjectBase monsterHealth = obj.GetComponent<ObjectBase>();
-        monsterHealth.ReceiveDame(-dame);
+        monsterHealth.ReceiveDame(-_dame);
         if (_effect != null)
         {
             Instantiate(_effect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));

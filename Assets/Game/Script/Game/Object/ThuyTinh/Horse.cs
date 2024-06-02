@@ -62,7 +62,7 @@ public class Horse : ObjectThuyTinh
             else
             {
                 _isHitting = true;
-                _stand = true;
+                _isStand = true;
             }
         }
     }

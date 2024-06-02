@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hamster : ObjectExploit
 {
-    public override IEnumerator Exploit()
+    public override IEnumerator StartExploit()
     {
         yield return new WaitForSeconds(_nextExploit);
         while (true)

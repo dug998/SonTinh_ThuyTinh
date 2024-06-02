@@ -6,7 +6,6 @@ using UnityEngine;
 public class ObjectSonTinh : ObjectBase
 {
     //  public bool _jumpable = true;
-    public SpriteRenderer _iconObj;
     [ReadOnly] public HeroProfile _heroProfile;
 
     [Header("Stat")]
@@ -41,6 +40,6 @@ public class ObjectSonTinh : ObjectBase
     }
     public void SetSortingOrder(int order)
     {
-        _iconObj.sortingOrder = order;
+        _sprite.sortingOrder = order;
     }
 }

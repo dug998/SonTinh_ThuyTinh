@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BulletBase : ObjectBase
 {
-    [SerializeField] protected int dame = 10;
+    [SerializeField] protected int _dame = 10;
+    [SerializeField] public bool _canFire;
     public GameObject _effect;
     public override IEnumerator EffectDie()
     {
@@ -21,6 +22,6 @@ public class BulletBase : ObjectBase
     }
     public void SetDame(int newDame)
     {
-        dame = newDame;
+        _dame = newDame;
     }
 }

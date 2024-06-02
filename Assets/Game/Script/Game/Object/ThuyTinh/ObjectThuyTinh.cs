@@ -7,7 +7,7 @@ public abstract class ObjectThuyTinh : ObjectBase
     [Header(" ___ Object Counterattack ___"), Space(30)]
     [SerializeField] protected GameObject _bulletPref;
     [SerializeField] protected Transform _locationAppears;
-    protected bool _isHitting = false, _stand = false;
+    protected bool _isHitting = false, _isStand = false;
     [SerializeField] protected float _nextHitting;
 
 
@@ -15,7 +15,7 @@ public abstract class ObjectThuyTinh : ObjectBase
     [Space]
 
     [Header("Freeze Option")]
-    [HideInInspector] public bool canBeFreeze = true;
+    [HideInInspector] public bool _canBeFreeze = true;
     //public float timeFreeze = 5;
     [HideInInspector] public GameObject dieFrozenFX;
 
@@ -36,7 +36,7 @@ public abstract class ObjectThuyTinh : ObjectBase
             _myAnim.SetBool("walk", false);
             return;
         }
-        if (_stand)
+        if (_isStand)
         {
             _myBody.velocity = Vector2.zero;
             _myAnim.SetBool("walk", false);
@@ -64,7 +64,7 @@ public abstract class ObjectThuyTinh : ObjectBase
     public override void Died()
     {
         _isDead = true;
-        _stand = true;
+        _isStand = true;
         base.Died();
     }
     public override IEnumerator EffectDie()
@@ -88,7 +88,7 @@ public abstract class ObjectThuyTinh : ObjectBase
         if (collision.gameObject.CompareTag(ObjTag.sonTinh) && collision.isTrigger == true)
         {
             _isHitting = true;
-            _stand = true;
+            _isStand = true;
         }
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -97,7 +97,7 @@ public abstract class ObjectThuyTinh : ObjectBase
         if (collision.gameObject.CompareTag(ObjTag.sonTinh) && collision.isTrigger == true)
         {
             _isHitting = true;
-            _stand = true;
+            _isStand = true;
         }
 
     }
@@ -106,7 +106,7 @@ public abstract class ObjectThuyTinh : ObjectBase
         if (collision.gameObject.CompareTag(ObjTag.sonTinh))
         {
             _isHitting = false;
-            _stand = false;
+            _isStand = false;
         }
     }
     #region  Freeze
@@ -124,7 +124,7 @@ public abstract class ObjectThuyTinh : ObjectBase
 
         }
 
-        if (canBeFreeze)
+        if (_canBeFreeze)
         {
             _objEFFECT = ObjEFFECT.FREEZE;
             StartCoroutine(UnFreezeCo(time));

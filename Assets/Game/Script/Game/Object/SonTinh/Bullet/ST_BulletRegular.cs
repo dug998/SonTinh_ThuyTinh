@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class ST_BulletRegular : BulletBase
 {
-    public bool canFire;
     public override void Born(Object data = null)
     {
         currSpeed = orginSpeed;
@@ -29,7 +28,7 @@ public class ST_BulletRegular : BulletBase
     public virtual void CollideWithMonsters(GameObject obj)
     {
         ObjectBase monsterHealth = obj.GetComponent<ObjectBase>();
-        monsterHealth.ReceiveDame(-dame);
+        monsterHealth.ReceiveDame(-_dame);
         if (_effect != null)
         {
             Instantiate(_effect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));

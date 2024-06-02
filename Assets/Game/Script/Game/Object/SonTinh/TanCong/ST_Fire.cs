@@ -29,7 +29,7 @@ public class ST_Fire : ObjectCounterAttack
         if (collision.gameObject.CompareTag("Ball"))
         {
             var obj = collision.GetComponent<ST_BulletRegular>();
-            if (obj != null && obj.canFire)
+            if (obj != null && obj._canFire)
             {
                 BornBullet(_poolBullet, _statDame, Vector2.right * 8, _locationAppears.position);
                 obj.DiedImmediate();
