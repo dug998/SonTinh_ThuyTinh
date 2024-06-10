@@ -6,11 +6,19 @@ using UnityEngine.UI;
 
 public class PopupWinGame : PopupBase
 {
+
     [Header(" ______ Button  _____ "), Space(20)]
 
     public ButtonBase _btnHome;
     public ButtonBase _btnContinue;
     public ButtonBase _btnReplay;
+
+    [Header(" ______ Data  _____ "), Space(20)]
+
+    public GameObject _parentItemsReward;
+    public GameObject _PrefItemUi;
+    List<ItemUi> _ListItemUi;
+    List<Reward> rewards;
 
     protected override void Awake()
     {
@@ -18,12 +26,22 @@ public class PopupWinGame : PopupBase
         _btnHome.AddEvent(OnClickButtonHome);
         _btnContinue.AddEvent(OnClickButtonContinue);
         _btnReplay.AddEvent(OnClickButtonReplay);
+
+        for (int i = 0; i < 6; i++)
+        {
+            ItemUi obj = Instantiate(_PrefItemUi, _parentItemsReward.transform).GetComponent<ItemUi>();
+            obj.gameObject.SetActive(false);
+            obj.transform.SetParent(_parentItemsReward.transform);
+            obj.transform.localScale = Vector3.one;
+            _ListItemUi.Add(obj);
+        }
     }
     public override void Show(object data = null)
     {
         base.Show(data);
         _isShow = true;
-
+        rewards = (List<Reward>)data;
+        LoadReward();
     }
     public override void Hide()
     {
@@ -31,12 +49,48 @@ public class PopupWinGame : PopupBase
         base.Hide();
 
     }
+    public void LoadReward()
+    {
+        foreach (var itemUi in _ListItemUi)
+        {
+            itemUi.gameObject.SetActive(false);
+        }
+        for (int i = 0; i < rewards.Count; i++)
+        {
+            _ListItemUi[i].gameObject.SetActive(true);
+            _ListItemUi[i].Init(rewards[i]._ItemSO, rewards[i]._valuesRw);
+        }
+    }
+    public void OnClickTakeReward()
+    {
+        foreach (Reward reward in rewards)
+        {
+            TakeReward(reward);
+        }
+    }
+    void TakeReward(Reward reward)
+    {
+        switch (reward._ItemSO.so_typeItem)
+        {
+            case TypeItem.gold:
+                UserData.GoldGame += reward._valuesRw;
+                break;
+            case TypeItem.gem:
+                UserData.GemGame += reward._valuesRw;
+                break;
+            case TypeItem.none:
+                InventoreManager.Instance.AddItem(reward._ItemSO, reward._valuesRw);
+                break;
+
+        }
+    }
     public void OnClickButtonHome()
     {
         if (!_isShow)
         {
             return;
         }
+        OnClickTakeReward();
         Hide();
         PopupController.Instance.ShowPopup(TypePopup.PopupHome);
         CanvasManager.Instance._Bg.SetActive(true);
@@ -47,6 +101,7 @@ public class PopupWinGame : PopupBase
         {
             return;
         }
+        OnClickTakeReward();
         Hide();
         // lấy level tiếp theo
         GameManager._dataCurLevel = GameManager.Instance._dataLevels.GetLevel(GameManager._dataCurLevel._id);
@@ -60,6 +115,7 @@ public class PopupWinGame : PopupBase
         {
             return;
         }
+        OnClickTakeReward();
         Hide();
         PopupController.Instance.ShowPopup(TypePopup.PopupGamePlay);
 

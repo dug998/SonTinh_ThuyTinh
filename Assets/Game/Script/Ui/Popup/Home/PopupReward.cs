@@ -8,7 +8,7 @@ public class PopupReward : PopupBase
     public ButtonUi _btnClaim;
     public GameObject _parentItemsReward;
     public GameObject _PrefItemUi;
-    public List<ItemUi> _ListItemUi;
+    List<ItemUi> _ListItemUi;
     List<Reward> rewards;
     protected override void Awake()
     {

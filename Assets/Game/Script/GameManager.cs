@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         if (state == GameState.WIN_GAME)
         {
 
-            PopupController.Instance.ShowPopup(TypePopup.PopupWinGame);
+            PopupController.Instance.ShowPopup(TypePopup.PopupWinGame, _dataCurLevel._itemsRewards);
         }
         else if (state == GameState.LOSE_GAME)
         {

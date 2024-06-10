@@ -39,6 +39,8 @@ public class DataLevel
     public int _id;
     public string _title;
     public string _description;
+
+    [PreviewField()]
     public Sprite _spriteiIcon;
     [Header(" ___ data Monter ___ "), Space(30)]
     public int _timeWait = 3;
@@ -47,7 +49,8 @@ public class DataLevel
     public List<DataOneStageAttack> _dataLevelAttacks;
 
     [ReadOnly] public List<float> _dataStageInfos;
-
+    public List<Reward> _itemsRewards;
+#if UNITY_EDITOR
     public void OnValuesChange()
     {
         if (_numberStageAttack > 5)
@@ -89,7 +92,4 @@ public class DataLevel
         }
     }
 }
-public class DataStageInfo
-{
-
-}
+#endif

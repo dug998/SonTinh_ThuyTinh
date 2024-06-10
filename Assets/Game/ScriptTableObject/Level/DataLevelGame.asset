@@ -26,6 +26,16 @@ MonoBehaviour:
     _dataStageInfos:
     - 0.5
     - 1
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 50
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 10
   - _id: 2
     _title: 2
     _description: 
@@ -41,6 +51,16 @@ MonoBehaviour:
     - 0.30769232
     - 0.61538464
     - 1
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 50
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 10
   - _id: 3
     _title: 3
     _description: 
@@ -58,6 +78,16 @@ MonoBehaviour:
     - 0.47058824
     - 0.7058824
     - 1
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 50
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 10
   - _id: 4
     _title: 4
     _description: 
@@ -75,6 +105,16 @@ MonoBehaviour:
     - 0.44444445
     - 0.7222222
     - 1
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 50
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 10
   - _id: 5
     _title: 5
     _description: 
@@ -92,6 +132,16 @@ MonoBehaviour:
     - 0.47368422
     - 0.7368421
     - 1
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 50
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 10
   - _id: 6
     _title: 6
     _description: 
@@ -111,6 +161,16 @@ MonoBehaviour:
     - 0.6
     - 0.8
     - 1
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 50
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 10
   - _id: 7
     _title: 7
     _description: 
@@ -130,6 +190,16 @@ MonoBehaviour:
     - 0.6
     - 0.8
     - 1
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 200
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 50
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 20
   - _id: 8
     _title: 8
     _description: 
@@ -139,6 +209,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 200
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 50
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 20
   - _id: 9
     _title: 9
     _description: 
@@ -148,6 +228,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 200
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 50
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 20
   - _id: 10
     _title: 10
     _description: 
@@ -157,6 +247,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 200
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 30
   - _id: 11
     _title: 11
     _description: 
@@ -166,6 +266,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 200
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 30
   - _id: 12
     _title: 12
     _description: 
@@ -175,6 +285,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 200
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 30
   - _id: 13
     _title: 13
     _description: 
@@ -184,6 +304,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 200
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 30
   - _id: 14
     _title: 14
     _description: 
@@ -193,6 +323,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 200
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 30
   - _id: 15
     _title: 15
     _description: 
@@ -202,6 +342,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 200
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 100
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 30
   - _id: 16
     _title: 16
     _description: 
@@ -211,6 +361,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 250
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 150
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 50
   - _id: 17
     _title: 17
     _description: 
@@ -220,6 +380,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 250
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 150
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 50
   - _id: 18
     _title: 18
     _description: 
@@ -229,6 +399,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 250
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 150
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 50
   - _id: 19
     _title: 19
     _description: 
@@ -238,6 +418,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 250
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 150
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 50
   - _id: 20
     _title: 20
     _description: 
@@ -247,6 +437,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 250
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 150
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 50
   - _id: 21
     _title: Level 21
     _description: 
@@ -256,6 +456,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 250
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 150
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 50
   - _id: 22
     _title: Level 22
     _description: 
@@ -265,6 +475,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 250
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 150
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 50
   - _id: 23
     _title: Level 23
     _description: 
@@ -274,6 +494,16 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 250
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 150
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 50
   - _id: 24
     _title: Level 24
     _description: 
@@ -283,3 +513,13 @@ MonoBehaviour:
     _numberMaxObj: 0
     _dataLevelAttacks: []
     _dataStageInfos: []
+    _itemsRewards:
+    - _ItemSO: {fileID: 11400000, guid: 0a3611d72c3e8724887d0e14610a478c, type: 2}
+      so_names: Color gold 01
+      _valuesRw: 250
+    - _ItemSO: {fileID: 11400000, guid: 8afe70666d6965c439e3fa459dffd703, type: 2}
+      so_names: Color gem 01
+      _valuesRw: 150
+    - _ItemSO: {fileID: 11400000, guid: f4ca553b4f6f7b946a9abc592ab98b36, type: 2}
+      so_names: Axe 0
+      _valuesRw: 50

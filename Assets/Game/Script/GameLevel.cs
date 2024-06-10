@@ -21,10 +21,12 @@ public class GameLevel : MonoBehaviour
         _factoryCoin.SpawnCoins();
         StartCoroutine(_pawnThuyTinh.CreateArmyList(dataLevel));
     }
+    Ray ray;
+    RaycastHit2D hit;
     void Update()
     {
-        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, _layerMask);
+         ray = _camera.ScreenPointToRay(Input.mousePosition);
+         hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, _layerMask);
 
         if (hit.collider != null && hit.collider.CompareTag("Gold"))
         {

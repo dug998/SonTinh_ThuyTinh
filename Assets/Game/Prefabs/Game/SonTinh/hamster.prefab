@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectBase: {fileID: 5960005822627243466}
+  _maxHealth: 0
   _sliderHealth: {fileID: 6200257392078321482}
   _txtHealth: {fileID: 5797254625911342725}
 --- !u!114 &5960005822627243466
@@ -159,7 +160,6 @@ MonoBehaviour:
   _isDead: 0
   currSpeed: {x: 0, y: 0}
   orginSpeed: {x: 6, y: 0}
-  _iconObj: {fileID: 212968696152483376}
   _heroProfile: {fileID: 0}
   _statHp: 0
   _statDame: 0
@@ -223,9 +223,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 124092162432092166, guid: 60bfb1e196a8e924b9c610da5623cfb9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2844050426333133293, guid: 60bfb1e196a8e924b9c610da5623cfb9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491119955407104, guid: 60bfb1e196a8e924b9c610da5623cfb9, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5231501784304073811, guid: 60bfb1e196a8e924b9c610da5623cfb9, type: 3}
       propertyPath: m_Pivot.x
