@@ -12,12 +12,20 @@ public class GameManager : MonoBehaviour
     public CanvasManager _canvasManager;
     [Header(" ----  DATA --- ")]
     public DataLevelGame _dataLevels;
-
     public static DataLevel _dataCurLevel;
     public static GameState _gameState;
 
-    [Header(" ___ Cheat __ "), Space(20)]
+    [Header(" ___  __ "), Space(20)]
     public GameObject _prefLeveGame;
+
+    public int _currentLevel
+    {
+        get { return UserData.CurrentLevel; }
+        set
+        {
+            UserData.CurrentLevel = value;
+        }
+    }
     [ReadOnly] public GameLevel _curLevelGame { get; private set; }
     public void Awake()
     {

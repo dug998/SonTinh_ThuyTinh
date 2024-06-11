@@ -56,6 +56,7 @@ public class PopupChoiceLevel : PopupBase
     #region Level Button
     public void LoadDataLevel()
     {
+        int currentLevel = GameManager.Instance._currentLevel;
         List<DataLevel> dataLevel = GameManager.Instance._dataLevels.dataLevels;
         foreach (var ui in _listLevelUi)
         {
@@ -66,9 +67,7 @@ public class PopupChoiceLevel : PopupBase
             ButtonLevelUi ui = _listLevelUi[i];
             DataLevel data = dataLevel[i];
             ui.Show();
-            ui.Init(data);
-            ui.AddEvent(() => ChooseLevel(ui));
-
+            ui.Init((data, i > currentLevel));
         }
 
     }
@@ -76,10 +75,10 @@ public class PopupChoiceLevel : PopupBase
     {
         if (_currBtnLevelUi != null)
         {
-            _currBtnLevelUi.onSelect(false);
+            _currBtnLevelUi.OnFocus(false);
         }
         _currBtnLevelUi = ui;
-        _currBtnLevelUi.onSelect(true);
+        _currBtnLevelUi.OnFocus(true);
         Debug.Log(" chọn level ");
         _canPlay = true;
         _btnPlay.Activity(_canPlay);

@@ -43,7 +43,7 @@ public class PopupChoiceHero : PopupBase
     public void Init()
     {
         CloseDataHeroSlotUi();
-        LoadDataCard();
+        LoadDataHero();
         _canPlay = false;
         _btnPlay.Activity(_canPlay);
     }
@@ -81,7 +81,7 @@ public class PopupChoiceHero : PopupBase
     #endregion
 
     #region Hero Button
-    public void LoadDataCard()
+    public void LoadDataHero()
     {
         List<HeroProfile> dataHeroProfile = HeroManager.Instance._heroProfiles;
         foreach (var ui in _listCardUi)
@@ -92,6 +92,10 @@ public class PopupChoiceHero : PopupBase
         {
             ButtonHeroUi ui = _listCardUi[i];
             HeroProfile data = dataHeroProfile[i];
+            if (!data._own)
+            {
+                continue;
+            }
             ui.Show();
             ui.Init(data);
             ui.RemoveAll();

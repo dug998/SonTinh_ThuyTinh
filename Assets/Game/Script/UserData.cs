@@ -2,6 +2,15 @@ using UnityEngine;
 
 public static class UserData
 {
+    public static int CurrentLevel
+    {
+        get { return PlayerPrefs.GetInt("key_current_level", 1); }
+        set
+        {
+            PlayerPrefs.SetInt("key_current_level", value);
+        }
+    }
+
     #region Currency
     public static int GoldGame
     {
@@ -107,13 +116,21 @@ public static class UserData
             PlayerPrefs.SetInt("KeyMaxNumberCardBattle", value);
         }
     }
+    public static bool GetOwnHero(string key)
+    {
+        return PlayerPrefs.GetInt("key_own_" + key, 0) == 1;
+    }
+    public static void SetOwnHero(string key, bool values)
+    {
+        PlayerPrefs.GetInt("key_own_" + key, values ? 1 : 0);
+    }
     public static int GetValuesStartHero(string key)
     {
-        return PlayerPrefs.GetInt(key, 0);
+        return PlayerPrefs.GetInt("key_start_" + key, 0);
     }
     public static void SetValuesStartHero(string key, int value)
     {
-        PlayerPrefs.SetInt(key, value);
+        PlayerPrefs.SetInt("key_start_" + key, value);
     }
     #endregion
 }

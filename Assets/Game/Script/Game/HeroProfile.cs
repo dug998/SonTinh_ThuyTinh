@@ -10,6 +10,7 @@ public class HeroProfile : MonoBehaviour
     [ReadOnly] public string _nameHero { get; private set; }
     [ReadOnly] public int _price { get; private set; }
     [ReadOnly] public GameObject _objPrefab { get; private set; }
+    [ReadOnly] public bool _own { get; private set; }
     [ReadOnly] public int _currentStart { get; private set; }
     [ReadOnly] public int _maxStart { get; private set; }
     public int _currentHp { get; private set; }
@@ -27,6 +28,7 @@ public class HeroProfile : MonoBehaviour
     public void Init(DataHeroSo dataHero)
     {
         this.dataHero = dataHero;
+        GetOwn();
         _price = dataHero.so_price;
         _objPrefab = dataHero.so_ObjPref;
         _iconHero = dataHero.so_spriteAvatar;
@@ -41,6 +43,7 @@ public class HeroProfile : MonoBehaviour
         _MaxtDame = _statHeroSoDame._maxStat;
         _MaxtDefense = _statHeroSoDefense._maxStat;
 
+
         _currentStart = UserData.GetValuesStartHero(dataHero.KeyHero());
 
         _currentHp = CalculateCurrenStat(_statHeroSoHp);
@@ -48,6 +51,15 @@ public class HeroProfile : MonoBehaviour
         _currentDefense = CalculateCurrenStat(_statHeroSoDefense);
 
 
+    }
+    public void GetOwn()
+    {
+        _own = UserData.GetOwnHero(dataHero.KeyHero());
+    }
+    public void SetOwn(bool values)
+    {
+        _own = values;
+        UserData.SetOwnHero(dataHero.KeyHero(), values);
     }
     public int CalculateCurrenStat(StatHeroSO statHeroSO)
     {
