@@ -92,10 +92,7 @@ public class PopupChoiceHero : PopupBase
         {
             ButtonHeroUi ui = _listCardUi[i];
             HeroProfile data = dataHeroProfile[i];
-            if (!data._own)
-            {
-                continue;
-            }
+            
             ui.Show();
             ui.Init(data);
             ui.RemoveAll();

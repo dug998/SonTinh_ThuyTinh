@@ -11,7 +11,7 @@ public class Witch : ObjectThuyTinh
     public override void Born(Object data = null)
     {
         base.Born(data);
-        _grounds = GameManager.Instance._curLevelGame._grounds;
+        _grounds = GameManager.Instance._curGameLevel._grounds;
         InvokeRepeating(nameof(Spawn), _spawnRate, _nextSpawn);
     }
     public virtual void Spawn()

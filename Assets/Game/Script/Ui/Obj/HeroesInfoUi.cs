@@ -15,8 +15,16 @@ public class HeroesInfoUi : MonoBehaviour
     public StatHeroUi _StatHeroHp;
     public StatHeroUi _StatHeroDamage;
     public StatHeroUi _StatHeroDefense;
+    private void OnEnable()
+    {
+        if (_curHeroProfile == null)
+        {
+            gameObject.SetActive(false);
+        }
+    }
     public void Init(HeroProfile heroProfile)
     {
+
         if (_curHeroProfile == heroProfile)
         {
             return;
@@ -31,6 +39,15 @@ public class HeroesInfoUi : MonoBehaviour
         _StatHeroDamage.UpdateStat(heroProfile._currentDame, heroProfile._MaxtDame);
         _StatHeroDefense.UpdateStat(heroProfile._currentDefense, heroProfile._MaxtDefense);
 
+        if (_curHeroProfile != null)
+        {
+            gameObject.SetActive(true);
+        }
     }
+    private void OnDisable()
+    {
+        _curHeroProfile = null;
+        gameObject.SetActive(false);
 
+    }
 }

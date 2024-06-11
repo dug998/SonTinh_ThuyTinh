@@ -14,6 +14,6 @@ public class HomeMenu : MonoBehaviour
         _btnShop.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupShop));
         _btnHero.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupListHeros));
         _btnInventory.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupInventory));
-        _btnUpgrade.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupUpgradeHero, HeroManager.Instance.GetHeroProfile()));
+      //  _btnUpgrade.onClick.AddListener(() => PopupController.Instance.ShowPopup(TypePopup.PopupUpgradeHero, HeroManager.Instance.GetHeroProfile()));
     }
 }

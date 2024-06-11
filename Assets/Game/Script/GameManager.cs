@@ -23,10 +23,27 @@ public class GameManager : MonoBehaviour
         get { return UserData.CurrentLevel; }
         set
         {
+            if (value <= 0)
+            {
+                value = 1;
+            }
             UserData.CurrentLevel = value;
         }
     }
-    [ReadOnly] public GameLevel _curLevelGame { get; private set; }
+    public int _maxLevelUnlock
+    {
+        get { return UserData.MaxLevelUnlock; }
+        set
+        {
+            if (value <= 0)
+            {
+                value = 1;
+            }
+            UserData.MaxLevelUnlock = value;
+        }
+    }
+    public static int _maxLevelGame = 20;
+    [ReadOnly] public GameLevel _curGameLevel { get; private set; }
     public void Awake()
     {
         Instance = this;
@@ -37,11 +54,11 @@ public class GameManager : MonoBehaviour
     public void StartLevelGame()
     {
         _gameState = GameState.PLAYING;
-        if (_curLevelGame != null)
-            Destroy(_curLevelGame.gameObject);
-        _curLevelGame = Instantiate(_prefLeveGame, transform).GetComponent<GameLevel>();
+        if (_curGameLevel != null)
+            Destroy(_curGameLevel.gameObject);
+        _curGameLevel = Instantiate(_prefLeveGame, transform).GetComponent<GameLevel>();
 
-        _curLevelGame.GetComponent<GameLevel>().Init(_dataCurLevel);
+        _curGameLevel.GetComponent<GameLevel>().Init(_dataCurLevel);
 
     }
 
@@ -61,6 +78,28 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    public void UpdateLevelGame(int add)
+    {
+        _currentLevel += add;
+
+        if (_currentLevel > _maxLevelUnlock)
+        {
+            _maxLevelUnlock = _currentLevel;
+        }
+        if (_currentLevel > _maxLevelGame || _maxLevelUnlock > _maxLevelGame)
+        {
+
+            _maxLevelUnlock = _maxLevelGame;
+            _currentLevel = _maxLevelGame;
+        }
+        Debug.Log(_currentLevel + " _ " + _maxLevelUnlock);
+    }
+    public DataLevel GetDataLevel(int index)
+    {
+        Debug.Log("eve :" + index);
+        return _dataLevels.GetDataLevel(index - 1);
+    }
+
     public void PauseGame()
     {
         Time.timeScale = 0;

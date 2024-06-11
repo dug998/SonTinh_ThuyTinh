@@ -23,11 +23,11 @@ MonoBehaviour:
   so_ObjPref: {fileID: 1431679075634172, guid: e05e18db7c87c2047acc731ad3025337, type: 3}
   so_MaxStart: 2
   so_statHeroHp:
-    _origin: 250
+    _origin: 350
     _maxStat: 400
     _minStat: 0
   so_statHeroDame:
-    _origin: 40
+    _origin: 35
     _maxStat: 400
     _minStat: 0
   so_StatHeroDefense:

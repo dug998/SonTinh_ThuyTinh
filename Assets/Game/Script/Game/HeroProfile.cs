@@ -28,7 +28,7 @@ public class HeroProfile : MonoBehaviour
     public void Init(DataHeroSo dataHero)
     {
         this.dataHero = dataHero;
-        GetOwn();
+        GetOwnHero();
         _price = dataHero.so_price;
         _objPrefab = dataHero.so_ObjPref;
         _iconHero = dataHero.so_spriteAvatar;
@@ -52,14 +52,16 @@ public class HeroProfile : MonoBehaviour
 
 
     }
-    public void GetOwn()
+    public void GetOwnHero()
     {
         _own = UserData.GetOwnHero(dataHero.KeyHero());
+        Debug.Log(" 0wn" + dataHero.KeyHero() + "_" + _own);
     }
-    public void SetOwn(bool values)
+    public void SetOwnHero(bool values)
     {
         _own = values;
         UserData.SetOwnHero(dataHero.KeyHero(), values);
+        Debug.Log(" 0wn" + dataHero.KeyHero() + "_" + _own);
     }
     public int CalculateCurrenStat(StatHeroSO statHeroSO)
     {

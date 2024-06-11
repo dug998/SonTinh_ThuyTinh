@@ -10,6 +10,22 @@ public static class UserData
             PlayerPrefs.SetInt("key_current_level", value);
         }
     }
+    public static int MaxLevelUnlock
+    {
+        get { return PlayerPrefs.GetInt("key_max_level_unlock", 1); }
+        set
+        {
+            PlayerPrefs.SetInt("key_max_level_unlock", value);
+        }
+    }
+    public static bool firstTimePlayGame
+    {
+        get { return PlayerPrefs.GetInt("key_first_time_play_game", 1) == 1; }
+        set
+        {
+            PlayerPrefs.SetInt("key_first_time_play_game", value ? 1 : 0);
+        }
+    }
 
     #region Currency
     public static int GoldGame
@@ -18,7 +34,7 @@ public static class UserData
         set
         {
             PlayerPrefs.SetInt("key_gold_game", value);
-            EventGame.UpdateCurrencyStatus.Invoke();
+            EventGame.UpdateCurrencyStatus?.Invoke();
 
         }
     }
@@ -28,7 +44,7 @@ public static class UserData
         set
         {
             PlayerPrefs.SetInt("key_gem_game", value);
-            EventGame.UpdateCurrencyStatus.Invoke();
+            EventGame.UpdateCurrencyStatus?.Invoke();
         }
     }
     public static int EnergyGame
@@ -108,7 +124,7 @@ public static class UserData
     {
         get
         {
-            return PlayerPrefs.GetInt("KeyMaxNumberCardBattle", 3);
+            return PlayerPrefs.GetInt("KeyMaxNumberCardBattle", 2);
         }
         set
         {
@@ -122,7 +138,7 @@ public static class UserData
     }
     public static void SetOwnHero(string key, bool values)
     {
-        PlayerPrefs.GetInt("key_own_" + key, values ? 1 : 0);
+        PlayerPrefs.SetInt("key_own_" + key, values ? 1 : 0);
     }
     public static int GetValuesStartHero(string key)
     {

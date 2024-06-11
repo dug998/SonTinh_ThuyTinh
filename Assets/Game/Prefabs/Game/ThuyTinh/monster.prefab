@@ -195,7 +195,7 @@ MonoBehaviour:
   _bulletPref: {fileID: 1074870381605142, guid: 2183003d329f46346b2ceb276b42254e, type: 3}
   _locationAppears: {fileID: 4801058324159018}
   _nextHitting: 1
-  canBeFreeze: 1
+  _canBeFreeze: 1
   dieFrozenFX: {fileID: 0}
 --- !u!114 &6461152052721522188
 MonoBehaviour:
@@ -253,9 +253,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 124092162432092166, guid: 60bfb1e196a8e924b9c610da5623cfb9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2844050426333133293, guid: 60bfb1e196a8e924b9c610da5623cfb9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3166491119955407104, guid: 60bfb1e196a8e924b9c610da5623cfb9, type: 3}
       propertyPath: m_PresetInfoIsWorld

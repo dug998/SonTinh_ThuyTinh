@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DataOneStage_1
   m_EditorClassIdentifier: 
   _level: 0
-  _numberMonter: 4
-  _nextTime: 12
+  _numberMonter: 2
+  _nextTime: 5
   _typeMonsters:
   - {fileID: 4358261425712808292, guid: b7a4f5bd442dfdf4abb89cd2c152908b, type: 3}
   - {fileID: 4358261425712808292, guid: b7a4f5bd442dfdf4abb89cd2c152908b, type: 3}

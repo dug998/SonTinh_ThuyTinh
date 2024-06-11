@@ -32,7 +32,7 @@ public class ButtonLevelUi : ButtonBase
     {
         if (_isLock)
         {
-            PopupController.Instance.ShowPopup(TypePopup.PopupNotife, new DataMessage(TypeMessage.Success, "", " Upgrade Complete !"));
+            PopupController.Instance.ShowPopup(TypePopup.PopupNotife, new DataMessage(TypeMessage.Success, "", " Please complete the levels first !"));
             return;
         }
         PopupController.Instance._popupChoiceLevel.ChooseLevel(this);

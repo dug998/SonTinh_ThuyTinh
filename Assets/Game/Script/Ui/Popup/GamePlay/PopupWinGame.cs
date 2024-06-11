@@ -17,7 +17,7 @@ public class PopupWinGame : PopupBase
 
     public GameObject _parentItemsReward;
     public GameObject _PrefItemUi;
-    List<ItemUi> _ListItemUi;
+    List<ItemUi> _ListItemUi = new List<ItemUi>();
     List<Reward> rewards;
 
     protected override void Awake()
@@ -27,14 +27,7 @@ public class PopupWinGame : PopupBase
         _btnContinue.AddEvent(OnClickButtonContinue);
         _btnReplay.AddEvent(OnClickButtonReplay);
 
-        for (int i = 0; i < 6; i++)
-        {
-            ItemUi obj = Instantiate(_PrefItemUi, _parentItemsReward.transform).GetComponent<ItemUi>();
-            obj.gameObject.SetActive(false);
-            obj.transform.SetParent(_parentItemsReward.transform);
-            obj.transform.localScale = Vector3.one;
-            _ListItemUi.Add(obj);
-        }
+        InstantiateItems();
     }
     public override void Show(object data = null)
     {
@@ -49,8 +42,22 @@ public class PopupWinGame : PopupBase
         base.Hide();
 
     }
+    void InstantiateItems()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            ItemUi obj = Instantiate(_PrefItemUi, _parentItemsReward.transform).GetComponent<ItemUi>();
+            obj.gameObject.SetActive(false);
+            obj.transform.SetParent(_parentItemsReward.transform);
+            obj.transform.localScale = Vector3.one;
+            _ListItemUi.Add(obj);
+        }
+    }
     public void LoadReward()
     {
+        if (_ListItemUi.Count < 0)
+            InstantiateItems();
+
         foreach (var itemUi in _ListItemUi)
         {
             itemUi.gameObject.SetActive(false);
@@ -103,8 +110,9 @@ public class PopupWinGame : PopupBase
         }
         OnClickTakeReward();
         Hide();
+        GameManager.Instance.UpdateLevelGame(1);
         // lấy level tiếp theo
-        GameManager._dataCurLevel = GameManager.Instance._dataLevels.GetLevel(GameManager._dataCurLevel._id);
+        GameManager._dataCurLevel = GameManager.Instance.GetDataLevel(GameManager.Instance._currentLevel);
         PopupController.Instance.ShowPopup(TypePopup.PopupGamePlay);
         GameManager.Instance.StartLevelGame();
 

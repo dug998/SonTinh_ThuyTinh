@@ -38,9 +38,9 @@ public class PopupGamePlay : PopupBase
     }
     public void OnDownPickax()
     {
-        if (GameManager.Instance._curLevelGame != null)
+        if (GameManager.Instance._curGameLevel != null)
         {
-            GameManager.Instance._curLevelGame.UsePickax();
+            GameManager.Instance._curGameLevel.UsePickax();
         }
     }
     public override void Show(object data = null)

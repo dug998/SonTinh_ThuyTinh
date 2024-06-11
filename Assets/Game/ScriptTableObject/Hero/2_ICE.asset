@@ -27,7 +27,7 @@ MonoBehaviour:
     _maxStat: 400
     _minStat: 0
   so_statHeroDame:
-    _origin: 40
+    _origin: 30
     _maxStat: 400
     _minStat: 0
   so_StatHeroDefense:

@@ -7,16 +7,21 @@ using UnityEngine.UI;
 
 public class ButtonHeroUi : ButtonBase
 {
-
     [SerializeField] int _id;
+    [SerializeField] bool _isLock;
     [SerializeField] TextMeshProUGUI _textTitle;
     [SerializeField] Image _spriteIcon;
     [HideInInspector] public HeroProfile _heroProfile;
     protected bool _selected = true;
     public GameObject _maskSelected;
+    public GameObject _ObjLock;
+    
     public override void Init(object data)
     {
         _heroProfile = (HeroProfile)data;
+
+        _isLock = !_heroProfile._own;
+        _ObjLock.SetActive(_isLock);
         DataHeroSo _data = _heroProfile.dataHero;
         _id = _data.so_id;
         _textTitle.text = _data.so_title;
@@ -25,6 +30,10 @@ public class ButtonHeroUi : ButtonBase
     }
     public void ChooseHero()
     {
+        if (_isLock)
+        {
+            return;
+        }
         PopupController.Instance._popupChoiceHero._heroesInfo.Init(_heroProfile);
         if (_selected)
         {

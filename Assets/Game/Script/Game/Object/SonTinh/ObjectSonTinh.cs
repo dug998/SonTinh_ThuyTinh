@@ -40,6 +40,10 @@ public class ObjectSonTinh : ObjectBase
     }
     public void SetSortingOrder(int order)
     {
+        if (_sprite == null)
+        {
+            _sprite = GetComponent<SpriteRenderer>();
+        }
         _sprite.sortingOrder = order;
     }
 }

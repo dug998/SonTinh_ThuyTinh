@@ -10,7 +10,7 @@ public class DataLevelGame : ScriptableObject
 
     public List<DataLevel> dataLevels = new List<DataLevel>();
 
-    public DataLevel GetLevel(int index)
+    public DataLevel GetDataLevel(int index)
     {
         if (index > dataLevels.Count)
         {
